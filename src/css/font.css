@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'FZZY';
+  src: url('./font/FZZY.eot');
+  src:
+    url('./font/FZZY.eot?#font-spider') format('embedded-opentype'),
+    url('./font/FZZY.woff') format('woff'),
+    url('./font/FZZY.ttf') format('truetype'),
+    url('./font/FZZY.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FZLT';
+  src: url('./font/FZLT.eot');
+  src:
+    url('./font/FZLT.eot?#font-spider') format('embedded-opentype'),
+    url('./font/FZLT.woff') format('woff'),
+    url('./font/FZLT.ttf') format('truetype'),
+    url('./font/FZLT.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AG';
+  src: url('./font/AGENCYR.eot');
+  src:
+    url('./font/AGENCYR.eot?#font-spider') format('embedded-opentype'),
+    url('./font/AGENCYR.woff') format('woff'),
+    url('./font/AGENCYR.ttf') format('truetype'),
+    url('./font/AGENCYR.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
