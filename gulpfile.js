@@ -1,69 +1,63 @@
-const gulp = require('gulp')
-const uglify = require('gulp-uglify')
-const minifyCSS = require('gulp-minify-css')
-const imagemin = require('gulp-imagemin')
-const sass = require('gulp-ruby-sass')
-const watch = require('gulp-watch')
-const rename = require("gulp-rename")
-const concat = require('gulp-concat')
-const fontSpider = require('gulp-font-spider')
-const package = require('./package.json')
 
-const componentJS = "src/js/components/"
-const bowerSrc = "bower_components/"
-// 压缩 js 文件
-gulp.task('script', function() {
-    gulp.src([bowerSrc + 'jquery/dist/jquery.slim.js',
-              componentJS + 'component.js',
-              'src/js/app.js'
-            ])
-        .pipe(concat('app.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('build/js'))
-        .pipe(rename({ suffix: '.min' }))
+/*  工具基本库  */
+const gulp = require('gulp')                    // 引入gulp基础库
+const watch = require('gulp-watch')             // 监听
+const rename = require("gulp-rename")           // 重命名
+const package = require('./package.json')       // 引入package
+const plumber = require('gulp-plumber');        // 防止编译错误报错终止监听
+/*  css  */
+const minifyCSS = require('gulp-minify-css')    // css压缩
+const sass = require('gulp-ruby-sass')          // sass编译
+/*  javascript  */
+const uglify = require('gulp-uglify')           // JS代码压缩
+const babel = require('gulp-babel')             // ES6转换（gulp-babel babel-preset-es2015）
+/*  images  */
+const imagemin = require('gulp-imagemin')       // 图片压缩
+
+/*  dist输出路径  */
+const DIST_PATH = 'dist'
+/*  build输出路径  */
+const BUILD_PATH = 'build'
+
+/*  将html复制到dist目录  */
+gulp.task('html', () => {
+  gulp.src('./src/*.html')
+    .pipe(gulp.dest(DIST_PATH))
 })
-
+/*  task:编译sass，并输出到dist/css目录下  */
+gulp.task('sass', () => {
+  return sass('src/css/app.scss')
+    .pipe(plumber())
+	  .on('error', function (err) {
+      console.error('Error!', err.message)
+    })
+    .pipe(gulp.dest(DIST_PATH + '/css'))
+})
+/*  task:JavaScript通过babel转化es5，并输出到dist/js目录下  */
+gulp.task('js', () => {
+  gulp.src('./src/js/app.js')
+    .pipe(plumber())
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(gulp.dest(DIST_PATH + '/js'))
+})
 // 压缩图片
-gulp.task('images', function () {
-    gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-        .pipe(imagemin())
-        .pipe(gulp.dest('build/images'))
+gulp.task('images', () => {
+  gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+    .pipe(imagemin())
+    .pipe(gulp.dest(DIST_PATH + '/images'))
 })
-
-// 编译sass
-gulp.task('sass', function () {
-    return sass('src/css/app.scss')
-	   .on('error', function (err) {
-            console.error('Error!', err.message)
-        })
-        // 压缩编译好的css文件
-        .pipe(minifyCSS())
-        // 将编译并压缩的css文件另存到dist/css目录下
-        .pipe(gulp.dest('build/css'))
-        .pipe(rename({ suffix: '.min' }))
-})
-
-// 字体
-gulp.task('font', function() {
-    return gulp.src('./index.html')
-        .pipe(fontSpider());
-});
 
 // 自动监听
-gulp.task('auto', function () {
-    gulp.watch('src/js/*', ['script']),
-    gulp.watch('src/js/components/*', ['script']),
-    gulp.watch('src/images/*.*)', ['images']),
+gulp.task('auto', () => {
+    gulp.watch('src/*.html', ['html']),
+    gulp.watch('src/js/*', ['js']),
+    gulp.watch('src/js/components/*', ['js']),
     gulp.watch('src/css/*', ['sass']),
     gulp.watch('src/css/components/*', ['sass']),
-    gulp.watch('./index.html', ['font'])
-})
-
-// 打包
-gulp.task('build', function () {
-  gulp.src('./index.html').pipe(gulp.dest(package.name)),
-  gulp.src('./build/**').pipe(gulp.dest(package.name + '/build'))
+    gulp.watch('src/images/*)', ['images'])
 })
 
 // 默认动作
-gulp.task('default', ['script', 'sass', 'images', 'font', 'auto'])
+gulp.task('default', ['js', 'sass', 'images', 'auto'])
