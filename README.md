@@ -1,8 +1,8 @@
 # 基于Gulp项目目录搭建
 
-- 创建项目：`npm install`
+### 项目依赖
 
-- 依赖环境：`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015`
+- 项目依赖：`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect`
 
 ### Gulp-Task命令
 
@@ -17,3 +17,18 @@
 - `gulp js` 编译 `es6` 并复制到 `dist/js` 目录。
 
 - `gulp images` 压缩图片并复制到 `dist/images` 目录。
+
+### Changelog
+
+  #### v1.1.0
+
+  增加项目依赖: `gulp-connect` (项目热加载)
+
+  ```
+  // gulp-connect options
+  port: 8080,
+  root: './src',
+  livereload: true
+  ```
+
+  监听`./src`目录下的所有文件。

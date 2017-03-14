@@ -1,6 +1,6 @@
 {
   "name": "Build_Project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
@@ -19,5 +19,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-connect": "^5.0.0"
+  }
 }

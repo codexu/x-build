@@ -2,10 +2,11 @@
 /*  工具基本库  */
 const gulp = require('gulp')                    // 引入gulp基础库
 const watch = require('gulp-watch')             // 监听
-const plumber = require('gulp-plumber');        // 防止编译错误报错终止监听
+const plumber = require('gulp-plumber')         // 防止编译错误报错终止监听
+const connect = require('gulp-connect')         // 启动WEB服务，热加载
 
 /*  htmlmin  */
-const htmlmin = require('gulp-htmlmin');
+const htmlmin = require('gulp-htmlmin')
 /*  css  */
 const minifyCSS = require('gulp-minify-css')    // css压缩
 const sass = require('gulp-ruby-sass')          // sass编译
@@ -20,9 +21,18 @@ const DIST_PATH = 'dist'
 /*  build输出路径  */
 const BUILD_PATH = 'build'
 
+gulp.task('connect', function() {
+  connect.server({
+    port: 8080,
+    root: './src',
+    livereload: true
+  })
+})
+
 /*  将html复制到dist目录  */
 gulp.task('html', () => {
   gulp.src('./src/*.html')
+    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH))
 })
 /*  task:编译sass，并输出到dist/css目录下  */
@@ -32,6 +42,7 @@ gulp.task('sass', () => {
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })
+    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/css'))
 })
 /*  task:JavaScript通过babel转化es5，并输出到dist/js目录下  */
@@ -41,12 +52,14 @@ gulp.task('js', () => {
     .pipe(babel({
       presets: ['es2015']
     }))
+    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/js'))
 })
 /*  压缩图片  */
 gulp.task('images', () => {
   gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
     .pipe(imagemin())
+    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/images'))
 })
 
@@ -102,4 +115,4 @@ gulp.task('auto', () => {
 })
 
 // 默认动作
-gulp.task('default', ['js', 'sass', 'images', 'auto'])
+gulp.task('default', ['js', 'sass', 'images', 'auto', 'connect'])
