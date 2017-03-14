@@ -4,6 +4,7 @@ const gulp = require('gulp')                    // 引入gulp基础库
 const watch = require('gulp-watch')             // 监听
 const plumber = require('gulp-plumber')         // 防止编译错误报错终止监听
 const connect = require('gulp-connect')         // 启动WEB服务，热加载
+const cache = require('gulp-cache')             // 拉取缓存
 
 /*  htmlmin  */
 const htmlmin = require('gulp-htmlmin')
@@ -57,10 +58,17 @@ gulp.task('js', () => {
 })
 /*  压缩图片  */
 gulp.task('images', () => {
-  gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-    .pipe(imagemin())
+  return watch('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
+    gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+    .pipe(cache(imagemin({
+      optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+      progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+      interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+      multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
+    })))
     .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/images'))
+  })
 })
 
 /*  build  */
