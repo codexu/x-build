@@ -25,7 +25,7 @@ const BUILD_PATH = 'build'
 gulp.task('connect', function() {
   connect.server({
     port: 8080,
-    root: './src',
+    root: './dist',
     livereload: true
   })
 })
@@ -33,8 +33,8 @@ gulp.task('connect', function() {
 /*  将html复制到dist目录  */
 gulp.task('html', () => {
   gulp.src('./src/*.html')
-    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH))
+    .pipe(connect.reload())
 })
 /*  task:编译sass，并输出到dist/css目录下  */
 gulp.task('sass', () => {
@@ -43,8 +43,8 @@ gulp.task('sass', () => {
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })
-    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/css'))
+    .pipe(connect.reload())
 })
 /*  task:JavaScript通过babel转化es5，并输出到dist/js目录下  */
 gulp.task('js', () => {
@@ -53,8 +53,8 @@ gulp.task('js', () => {
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/js'))
+    .pipe(connect.reload())
 })
 /*  压缩图片  */
 gulp.task('images', () => {
@@ -66,8 +66,8 @@ gulp.task('images', () => {
       interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
       multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
     })))
-    .pipe(connect.reload())
     .pipe(gulp.dest(DIST_PATH + '/images'))
+    .pipe(connect.reload())
   })
 })
 
@@ -123,4 +123,4 @@ gulp.task('auto', () => {
 })
 
 // 默认动作
-gulp.task('default', ['js', 'sass', 'images', 'auto', 'connect'])
+gulp.task('default', ['html', 'js', 'sass', 'images', 'auto', 'connect'])
