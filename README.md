@@ -1,8 +1,22 @@
 # 基于Gulp项目目录搭建
 
-### 项目依赖
+### 搭建环境
 
 - 项目依赖：`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache`
+
+- 项目结构：
+
+```
+Build_Project/
+├── node_modules/ (项目依赖)
+├── build/ (上线目录)
+├── dist/ (本地服务器目录)
+└── src/ (生产目录)
+    ├── css/
+    ├── images/
+    ├── js/
+    └── index.html
+```
 
 ### Gulp-Task命令
 
