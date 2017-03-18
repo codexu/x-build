@@ -25,7 +25,8 @@
     - `build` 压缩代码，生成 **'/build'** 目录
 
 - **项目依赖**:
-`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache`
+
+`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache` `gulp-autoprefixer`
 
 - **项目结构**:
 
@@ -42,6 +43,10 @@ Build_Project/
 ```
 
 ### Changelog
+
+#### v1.3.0  自动添加CSS兼容性前缀
+
+增加项目依赖: `gulp-autoprefixer`
 
 #### v1.2.1  修改网站热加载BUG
 

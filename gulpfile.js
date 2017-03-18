@@ -1,4 +1,3 @@
-
 /*  工具基本库  */
 const gulp = require('gulp')                    // 引入gulp基础库
 const watch = require('gulp-watch')             // 监听
@@ -11,6 +10,7 @@ const htmlmin = require('gulp-htmlmin')
 /*  css  */
 const minifyCSS = require('gulp-minify-css')    // css压缩
 const sass = require('gulp-ruby-sass')          // sass编译
+const autoprefixer = require('gulp-autoprefixer') // 兼容前缀
 /*  javascript  */
 const uglify = require('gulp-uglify')           // JS代码压缩
 const babel = require('gulp-babel')             // ES6转换（gulp-babel babel-preset-es2015）
@@ -40,6 +40,7 @@ gulp.task('html', () => {
 gulp.task('sass', () => {
   return sass('src/css/app.scss')
     .pipe(plumber())
+    .pipe(autoprefixer())
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })
@@ -105,6 +106,7 @@ gulp.task('build', ()=> {
   // sass编译压缩
   return sass('./src/css/app.scss')
     .pipe(plumber())
+    .pipe(autoprefixer())
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })

@@ -3,10 +3,18 @@
   "version": "1.2.0",
   "description": "",
   "main": "gulpfile.js",
-  "dependencies": {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
     "babel-preset-es2015": "^6.24.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
+    "gulp-cache": "^0.4.6",
+    "gulp-connect": "^5.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-minify-css": "^1.2.4",
@@ -14,14 +22,5 @@
     "gulp-ruby-sass": "^2.1.1",
     "gulp-uglify": "^2.1.0",
     "gulp-watch": "^4.3.11"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "gulp-cache": "^0.4.6",
-    "gulp-connect": "^5.0.0"
   }
 }
