@@ -8,4 +8,16 @@ h1{
 }
 p{
   margin-top: 20px;
+  margin-bottom: 20px;
+  .terminal{
+    background: #eee;
+    padding: 5px 20px;
+  }
+}
+a{
+  text-align: center;
+  display: block;
+  &:hover{
+    color: green;
+  }
 }
