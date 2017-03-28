@@ -49,7 +49,7 @@ gulp.task('sass', () => {
 })
 /*  task:JavaScript通过babel转化es5，并输出到dist/js目录下  */
 gulp.task('js', () => {
-  gulp.src('./src/js/app.js')
+  gulp.src('./src/js/*.js')
     .pipe(plumber())
     .pipe(babel({
       presets: ['es2015']
@@ -75,7 +75,7 @@ gulp.task('images', () => {
 /*  build  */
 gulp.task('build', ()=> {
   // ES6编译压缩
-  gulp.src('./src/js/app.js')
+  gulp.src('./src/js/*.js')
     .pipe(plumber())
     .pipe(babel({
       presets: ['es2015']
