@@ -44,6 +44,8 @@ Build_Project/
 
 ### Changelog
 
+#### v1.3.1  增加`src/images`目录，增加所有js文件监听
+
 #### v1.3.0  自动添加CSS兼容性前缀
 
 增加项目依赖: `gulp-autoprefixer`
