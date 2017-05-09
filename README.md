@@ -1,6 +1,6 @@
 # 基于Gulp项目目录搭建
 
-### 搭建环境
+## 搭建环境
 
 - **使用说明**:
 
@@ -42,48 +42,49 @@ Build_Project/
     └── index.html
 ```
 
-### Changelog
 
-#### v1.4.0
+## Changelog
 
-增加项目依赖: `gulp-jade`
+- #### v1.4.0
 
-所有的html均使用jade模板引擎
+  增加项目依赖: `gulp-jade`
 
-所有的css由scss转变为sass
+  所有的html均使用jade模板引擎
 
-#### v1.3.1  增加`src/images`目录，增加所有js文件监听
+  所有的css由scss转变为sass
 
-#### v1.3.0  自动添加CSS兼容性前缀
+- #### v1.3.1  增加`src/images`目录，增加所有js文件监听
 
-增加项目依赖: `gulp-autoprefixer`
+- #### v1.3.0  自动添加CSS兼容性前缀
 
-#### v1.2.1  修改网站热加载BUG
+  增加项目依赖: `gulp-autoprefixer`
 
-#### v1.2.0  优化图片压缩
+- #### v1.2.1  修改网站热加载BUG
 
-增加项目依赖: `gulp-cache` (用于图片压缩拉取缓存)
+- #### v1.2.0  优化图片压缩
 
-- 修改 `images` 事件，使用 `gulp-watch` 监听增加新文件。
+  增加项目依赖: `gulp-cache` (用于图片压缩拉取缓存)
 
-- 对 `imagemin` 增加配置
+  修改 `images` 事件，使用 `gulp-watch` 监听增加新文件。
 
-```
-optimizationLevel: 5,  // 优化等级
-progressive: true,     // 无损压缩jpg图片
-interlaced: true,      // 隔行扫描gif进行渲染
-multipass: true        //多次优化svg直到完全优化
-```
+  对 `imagemin` 增加配置
 
-#### v1.1.0  启动服务器并实现网站热加载
+  ```
+  optimizationLevel: 5,  // 优化等级
+  progressive: true,     // 无损压缩jpg图片
+  interlaced: true,      // 隔行扫描gif进行渲染
+  multipass: true        //多次优化svg直到完全优化
+  ```
 
-增加项目依赖: `gulp-connect` (项目热加载)
+- #### v1.1.0  启动服务器并实现网站热加载
 
-```
-// gulp-connect options
-port: 8080,
-root: './src',
-livereload: true
-```
+  增加项目依赖: `gulp-connect` (项目热加载)
 
-监听`./src`目录下的所有文件。
+  ```
+  // gulp-connect options
+  port: 8080,
+  root: './src',
+  livereload: true
+  ```
+
+  监听`./src`目录下的所有文件。
