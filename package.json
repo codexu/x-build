@@ -1,6 +1,6 @@
 {
-  "name": "Build_Project",
-  "version": "1.2.0",
+  "name": "x-build",
+  "version": "1.4.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {

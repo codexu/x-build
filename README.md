@@ -2,6 +2,8 @@
 
 ## 搭建环境
 
+> 已发布到`npm`, `npm install x-build`
+
 - **使用说明**:
 
   - 首次安装 `npm install`
