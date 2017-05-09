@@ -26,7 +26,7 @@
 
 - **项目依赖**:
 
-`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache` `gulp-autoprefixer`
+`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache` `gulp-autoprefixer` `gulp-jade`
 
 - **项目结构**:
 
@@ -43,6 +43,14 @@ Build_Project/
 ```
 
 ### Changelog
+
+#### v1.4.0
+
+增加项目依赖: `gulp-jade`
+
+所有的html均使用jade模板引擎
+
+所有的css由scss转变为sass
 
 #### v1.3.1  增加`src/images`目录，增加所有js文件监听
 

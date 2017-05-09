@@ -6,6 +6,7 @@ const connect = require('gulp-connect')         // 启动WEB服务，热加载
 const cache = require('gulp-cache')             // 拉取缓存
 
 /*  htmlmin  */
+const jade = require('gulp-jade');
 const htmlmin = require('gulp-htmlmin')
 /*  css  */
 const minifyCSS = require('gulp-minify-css')    // css压缩
@@ -32,13 +33,15 @@ gulp.task('connect', function() {
 
 /*  将html复制到dist目录  */
 gulp.task('html', () => {
-  gulp.src('./src/*.html')
+  gulp.src('./src/*.jade')
+    .pipe(plumber())
+    .pipe(jade())
     .pipe(gulp.dest(DIST_PATH))
     .pipe(connect.reload())
 })
 /*  task:编译sass，并输出到dist/css目录下  */
 gulp.task('sass', () => {
-  return sass('src/css/app.scss')
+  return sass('src/css/app.sass')
     .pipe(plumber())
     .pipe(autoprefixer())
 	  .on('error', function (err) {
@@ -94,7 +97,9 @@ gulp.task('build', ()=> {
     minifyJS:true,
     minifyCSS:true
   }
-  gulp.src('./src/*.html')
+  gulp.src('./src/*.jade')
+    .pipe(plumber())
+    .pipe(jade())
     .pipe(htmlmin(HTML_OPTIONS))
     .pipe(gulp.dest(BUILD_PATH))
 
@@ -104,7 +109,7 @@ gulp.task('build', ()=> {
   .pipe(gulp.dest(BUILD_PATH + '/images'))
 
   // sass编译压缩
-  return sass('./src/css/app.scss')
+  return sass('./src/css/app.sass')
     .pipe(plumber())
     .pipe(autoprefixer())
 	  .on('error', function (err) {
@@ -116,7 +121,8 @@ gulp.task('build', ()=> {
 
 // 自动监听
 gulp.task('auto', () => {
-    gulp.watch('src/*.html', ['html']),
+    gulp.watch('src/*.jade', ['html']),
+    gulp.watch('src/templates/*.jade', ['html']),
     gulp.watch('src/js/*', ['js']),
     gulp.watch('src/js/components/*', ['js']),
     gulp.watch('src/css/*', ['sass']),
