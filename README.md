@@ -4,33 +4,33 @@
 
 > npm install x-build
 
-- **使用说明**:
+## 使用说明
 
-  - 首次安装 `npm install`
+- 首次安装 `npm install`
 
-  - 指令: `gulp` `gulp build`
+- 指令: `gulp` `gulp build`
 
-  - 任务(task):
+- 任务(task):
 
-    - `html` 自动复制到 **'/dist'** 目录
+  - `html` 自动复制到 **'/dist'** 目录
 
-    - `sass` 编译sass，css文件复制到 **'/dist/css'** 目录
+  - `sass` 编译sass，css文件复制到 **'/dist/css'** 目录
 
-    - `es6` 使用`babel`编译es6语法，并将js文件复制到 **'/dist/js'** 目录
+  - `es6` 使用`babel`编译es6语法，并将js文件复制到 **'/dist/js'** 目录
 
-    - `images` 监听图片变化，并压缩复制到 **'/dist/images'** 目录
+  - `images` 监听图片变化，并压缩复制到 **'/dist/images'** 目录
 
-    - `connect` 监听 **html** 、 **sass** 、 **js** 、 **images** 实现浏览器自动刷新
+  - `connect` 监听 **html** 、 **sass** 、 **js** 、 **images** 实现浏览器自动刷新
 
-    - `plumber` 阻止 **sass** 、 **js** 编译错误跳出
+  - `plumber` 阻止 **sass** 、 **js** 编译错误跳出
 
-    - `build` 压缩代码，生成 **'/build'** 目录
+  - `build` 压缩代码，生成 **'/build'** 目录
 
-- **项目依赖**:
+## 项目依赖
 
 `gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache` `gulp-autoprefixer` `gulp-jade`
 
-- **项目结构**:
+## 项目结构
 
 ```
 Build_Project/
