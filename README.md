@@ -1,8 +1,8 @@
-# 基于Gulp项目目录搭建
+# x-build 基于Gulp的自动化搭建工具
 
 ## 搭建环境
 
-> 已发布到`npm`, `npm install x-build`
+> npm install x-build
 
 - **使用说明**:
 
@@ -41,11 +41,15 @@ Build_Project/
     ├── css/
     ├── images/
     ├── js/
-    └── index.html
+    └── index.jade
 ```
 
 
 ## Changelog
+
+- #### v1.4.1
+
+  修改项目目录结构
 
 - #### v1.4.0
 
