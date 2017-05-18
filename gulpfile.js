@@ -74,6 +74,12 @@ gulp.task('images', () => {
     .pipe(connect.reload())
   })
 })
+/* font */
+gulp.task('font', ()=> {
+  return gulp.src('src/css/font/**/*')
+    .pipe(gulp.dest(DIST_PATH + '/css/font'))
+})
+
 
 /*  build  */
 gulp.task('build', ()=> {
@@ -117,6 +123,9 @@ gulp.task('build', ()=> {
     })
     .pipe(minifyCSS())
     .pipe(gulp.dest(BUILD_PATH + '/css'))
+
+  return gulp.src('src/css/font/**/*')
+    .pipe(gulp.dest(BUILD_PATH + '/css/font'))
 })
 
 // 自动监听
@@ -128,7 +137,8 @@ gulp.task('auto', () => {
     gulp.watch('src/css/*', ['sass']),
     gulp.watch('src/css/components/*', ['sass']),
     gulp.watch('src/images/*)', ['images'])
+    gulp.watch('src/css/font/**/*)', ['font'])
 })
 
 // 默认动作
-gulp.task('default', ['html', 'js', 'sass', 'images', 'auto', 'connect'])
+gulp.task('default', ['html', 'js', 'sass', 'images', 'auto', 'connect', 'font'])
