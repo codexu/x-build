@@ -52,7 +52,7 @@ gulp.task('sass', () => {
 })
 /*  task:JavaScript通过babel转化es5，并输出到dist/js目录下  */
 gulp.task('js', () => {
-  gulp.src('./src/js/*.js')
+  gulp.src('./src/js/**/*')
     .pipe(plumber())
     .pipe(babel({
       presets: ['es2015']
