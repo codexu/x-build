@@ -139,7 +139,7 @@ gulp.task('build', ()=> {
 // 自动监听
 gulp.task('auto', () => {
     gulp.watch('src/*.jade', ['html']),
-    gulp.watch('src/templates/*.jade', ['html']),
+    gulp.watch('src/view/*.jade', ['html']),
     gulp.watch('src/js/*', ['js']),
     gulp.watch('src/js/components/*', ['js']),
     gulp.watch('src/css/*', ['sass']),
