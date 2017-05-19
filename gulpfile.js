@@ -39,6 +39,11 @@ gulp.task('html', () => {
     .pipe(gulp.dest(DIST_PATH))
     .pipe(connect.reload())
 })
+/*  ico  */
+gulp.task('ico', () => {
+  gulp.src('./src/favicon.ico')
+    .pipe(gulp.dest(DIST_PATH))
+})
 /*  task:编译sass，并输出到dist/css目录下  */
 gulp.task('sass', () => {
   return sass('src/css/app.sass')
@@ -62,8 +67,8 @@ gulp.task('js', () => {
 })
 /*  压缩图片  */
 gulp.task('images', () => {
-  return watch('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
-    gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+  return watch('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
+    gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
     .pipe(cache(imagemin({
       optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
       progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
@@ -126,6 +131,9 @@ gulp.task('build', ()=> {
 
   return gulp.src('src/css/font/**/*')
     .pipe(gulp.dest(BUILD_PATH + '/css/font'))
+  /*  ico  */
+  gulp.src('./src/favicon.ico')
+    .pipe(gulp.dest(BUILD_PATH))
 })
 
 // 自动监听
@@ -141,4 +149,4 @@ gulp.task('auto', () => {
 })
 
 // 默认动作
-gulp.task('default', ['html', 'js', 'sass', 'images', 'auto', 'connect', 'font'])
+gulp.task('default', ['html', 'ico', 'js', 'sass', 'images', 'auto', 'connect', 'font'])

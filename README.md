@@ -47,10 +47,14 @@ Build_Project/
 
 ## Changelog
 
+- #### v1.4.3
+
+  增加 `favicon.ico`
+
 - #### v1.4.2
 
   `scr/css` 目录下添加 `font` 目录，添加 `auto` 和 `build` 事件。
-  
+
 - #### v1.4.1
 
   修改项目目录结构
