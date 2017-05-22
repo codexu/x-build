@@ -141,9 +141,9 @@ gulp.task('auto', () => {
     gulp.watch('src/*.jade', ['html']),
     gulp.watch('src/view/*.jade', ['html']),
     gulp.watch('src/js/*', ['js']),
-    gulp.watch('src/js/components/*', ['js']),
+    gulp.watch('src/js/class/*', ['js']),
     gulp.watch('src/css/*', ['sass']),
-    gulp.watch('src/css/components/*', ['sass']),
+    gulp.watch('src/css/class/*', ['sass']),
     gulp.watch('src/images/*)', ['images'])
     gulp.watch('src/css/font/**/*)', ['font'])
 })
