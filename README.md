@@ -2,29 +2,17 @@
 
 ## 搭建环境
 
-> npm install x-build
+> npm安装： `npm install x-build`
+
+> git安装： `git clone https://github.com/codexu/x-build.git`
 
 ## 使用说明
 
-- 首次安装 `npm install`
+本项目基于Gulp，满足日常的压缩、编译功能，功能包括sass、jade、es6编译、图片压缩、热更新。
+
+- 依赖安装 `npm install`
 
 - 指令: `gulp` `gulp build`
-
-- 任务(task):
-
-  - `html` 自动复制到 **'/dist'** 目录
-
-  - `sass` 编译sass，css文件复制到 **'/dist/css'** 目录
-
-  - `es6` 使用`babel`编译es6语法，并将js文件复制到 **'/dist/js'** 目录
-
-  - `images` 监听图片变化，并压缩复制到 **'/dist/images'** 目录
-
-  - `connect` 监听 **html** 、 **sass** 、 **js** 、 **images** 实现浏览器自动刷新
-
-  - `plumber` 阻止 **sass** 、 **js** 编译错误跳出
-
-  - `build` 压缩代码，生成 **'/build'** 目录
 
 ## 项目依赖
 
@@ -33,7 +21,7 @@
 ## 项目结构
 
 ```
-Build_Project/
+x-build/
 ├── node_modules/ (项目依赖)
 ├── build/ (上线目录)
 ├── dist/ (本地服务器目录)
