@@ -35,6 +35,10 @@ x-build/
 
 ## Changelog
 
+- #### v1.4.4
+
+  修复 `gulp-autoprefixer` 配置错误的bug，导致不自动添加前缀。
+
 - #### v1.4.3
 
   增加 `favicon.ico`

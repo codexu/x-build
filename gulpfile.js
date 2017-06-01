@@ -48,7 +48,11 @@ gulp.task('ico', () => {
 gulp.task('sass', () => {
   return sass('src/css/app.sass')
     .pipe(plumber())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
+      cascade: true,
+      remove:true
+    }))
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })
@@ -122,7 +126,11 @@ gulp.task('build', ()=> {
   // sass编译压缩
   return sass('./src/css/app.sass')
     .pipe(plumber())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
+      cascade: true,
+      remove:true
+    }))
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })
