@@ -12,20 +12,18 @@
 
 - 依赖安装 `npm install`
 
-- 指令: `gulp` `gulp build`
+- 指令: `gulp` `gulp del`
 
 ## 项目依赖
 
-`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-autoprefixer` `gulp-jade` `imagemin-pngquant`
+`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-autoprefixer` `gulp-jade` `imagemin-pngquant` `del`
 
 ## 项目结构
 
 ```
 x-build/
-├── node_modules/ (项目依赖)
-├── build/ (上线目录)
-├── dist/ (本地服务器目录)
-└── src/ (生产目录)
+├── server/ (服务器目录)
+└── app/ (生产目录)
     ├── css/
     ├── images/
     ├── js/
@@ -34,6 +32,14 @@ x-build/
 
 
 ## Changelog
+
+- #### v1.5.0
+
+  重构项目结构，开发目录由`src`修改为`app`，测试服务器目录与打包目录合并为`server`。
+
+  剔除`gulp build`命令，上线的目录为`server`。
+
+  添加新命令`gulp del`，用以清理server目录。
 
 - #### v1.4.5
 

@@ -3,12 +3,13 @@ const gulp = require('gulp')                    // 引入gulp基础库
 const watch = require('gulp-watch')             // 监听
 const plumber = require('gulp-plumber')         // 防止编译错误报错终止监听
 const connect = require('gulp-connect')         // 启动WEB服务，热加载
+const del = require('del')                      // 清除垃圾文件
 
 /*  htmlmin  */
 const jade = require('gulp-jade');
 const htmlmin = require('gulp-htmlmin')
 /*  css  */
-const minifyCSS = require('gulp-minify-css')    // css压缩
+const cleanCSS = require('gulp-clean-css')    // css压缩
 const sass = require('gulp-ruby-sass')          // sass编译
 const autoprefixer = require('gulp-autoprefixer') // 兼容前缀
 /*  javascript  */
@@ -19,35 +20,35 @@ const imagemin = require('gulp-imagemin')       // 图片压缩
 const cache = require('gulp-cache')             // 拉取缓存
 const pngquant = require('imagemin-pngquant')   // 深度压缩图片
 
-/*  dist输出路径  */
-const DIST_PATH = 'dist'
-/*  build输出路径  */
-const BUILD_PATH = 'build'
+/*  server输出路径  */
+const SERVER_PATH = 'server'
 
 gulp.task('connect', function() {
   connect.server({
     port: 8080,
-    root: './dist',
+    root: SERVER_PATH,
     livereload: true
   })
 })
 
-/*  将html复制到dist目录  */
+/*  编译jade并复制到sever目录  */
 gulp.task('html', () => {
-  gulp.src('./src/*.jade')
+  gulp.src('./app/*.jade')
     .pipe(plumber())
     .pipe(jade())
-    .pipe(gulp.dest(DIST_PATH))
+    .pipe(gulp.dest(SERVER_PATH))
     .pipe(connect.reload())
 })
+
 /*  ico  */
 gulp.task('ico', () => {
-  gulp.src('./src/favicon.ico')
-    .pipe(gulp.dest(DIST_PATH))
+  gulp.src('./app/favicon.ico')
+    .pipe(gulp.dest(SERVER_PATH))
 })
-/*  task:编译sass，并输出到dist/css目录下  */
+
+/*  task:编译sass，并输出到server/css目录下  */
 gulp.task('sass', () => {
-  return sass('src/css/app.sass')
+  return sass('app/css/app.sass')
     .pipe(plumber())
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
@@ -57,112 +58,58 @@ gulp.task('sass', () => {
 	  .on('error', function (err) {
       console.error('Error!', err.message)
     })
-    .pipe(gulp.dest(DIST_PATH + '/css'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest(SERVER_PATH + '/css'))
     .pipe(connect.reload())
 })
-/*  task:JavaScript通过babel转化es5，并输出到dist/js目录下  */
+
+/*  task:JavaScript通过babel转化es5，并输出到server/js目录下  */
 gulp.task('js', () => {
-  gulp.src('./src/js/**/*')
-    .pipe(plumber())
-    .pipe(babel({
-      presets: ['es2015']
-    }))
-    .pipe(gulp.dest(DIST_PATH + '/js'))
-    .pipe(connect.reload())
-})
-/*  压缩图片  */
-gulp.task('images', () => {
-  gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
-      use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
-    }))
-    .pipe(gulp.dest(DIST_PATH + '/images'))
-    .pipe(connect.reload())
-  return watch('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
-    gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
-      use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
-    }))
-    .pipe(gulp.dest(DIST_PATH + '/images'))
-    .pipe(connect.reload())
-  })
-})
-/* font */
-gulp.task('font', ()=> {
-  return gulp.src('src/css/font/**/*')
-    .pipe(gulp.dest(DIST_PATH + '/css/font'))
-})
-
-
-/*  build  */
-gulp.task('build', ()=> {
-  // ES6编译压缩
-  gulp.src('./src/js/*.js')
+  gulp.src('./app/js/**/*')
     .pipe(plumber())
     .pipe(babel({
       presets: ['es2015']
     }))
     .pipe(uglify())
-    .pipe(gulp.dest(BUILD_PATH + '/js'))
+    .pipe(gulp.dest(SERVER_PATH + '/js'))
+    .pipe(connect.reload())
+})
 
-  // html压缩
-  const HTML_OPTIONS = {
-    collapseWhitespace:true,
-    collapseBooleanAttributes:true,
-    removeComments:true,
-    removeEmptyAttributes:true,
-    removeScriptTypeAttributes:true,
-    removeStyleLinkTypeAttributes:true,
-    minifyJS:true,
-    minifyCSS:true
-  }
-  gulp.src('./src/*.jade')
-    .pipe(plumber())
-    .pipe(jade())
-    .pipe(htmlmin(HTML_OPTIONS))
-    .pipe(gulp.dest(BUILD_PATH))
-
-  // 图片压缩
-  gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-    .pipe(imagemin())
-    .pipe(gulp.dest(BUILD_PATH + '/images'))
-
-  // sass编译压缩
-  return sass('./src/css/app.sass')
-    .pipe(plumber())
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
-      cascade: true,
-      remove:true
+/*  压缩图片  */
+gulp.task('images', () => {
+  gulp.src('./app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
+      use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
     }))
-	  .on('error', function (err) {
-      console.error('Error!', err.message)
-    })
-    .pipe(minifyCSS())
-    .pipe(gulp.dest(BUILD_PATH + '/css'))
+    .pipe(gulp.dest(SERVER_PATH + '/images'))
+    .pipe(connect.reload())
+})
 
-  return gulp.src('src/css/font/**/*')
-    .pipe(gulp.dest(BUILD_PATH + '/css/font'))
-  /*  ico  */
-  gulp.src('./src/favicon.ico')
-    .pipe(gulp.dest(BUILD_PATH))
+/* font */
+gulp.task('font', ()=> {
+  return gulp.src('./app/css/font/**/*')
+    .pipe(gulp.dest(SERVER_PATH + '/css/font'))
+})
+
+/* 清理server目录 */
+gulp.task('del', (cb)=> {
+  del([SERVER_PATH], cb)
 })
 
 // 自动监听
 gulp.task('auto', () => {
-    gulp.watch('src/*.jade', ['html']),
-    gulp.watch('src/view/*.jade', ['html']),
-    gulp.watch('src/js/*', ['js']),
-    gulp.watch('src/js/class/*', ['js']),
-    gulp.watch('src/css/*', ['sass']),
-    gulp.watch('src/css/class/*', ['sass']),
-    gulp.watch('src/images/*)', ['images'])
-    gulp.watch('src/css/font/**/*)', ['font'])
+    gulp.watch('./app/*.jade', ['html'])
+    gulp.watch('./app/view/*.jade', ['html'])
+    gulp.watch('./app/js/*', ['js'])
+    gulp.watch('./app/js/class/*', ['js'])
+    gulp.watch('./app/css/*', ['sass'])
+    gulp.watch('./app/css/class/*', ['sass'])
+    gulp.watch('./app/images/*)', ['images'])
+    gulp.watch('./app/css/font/**/*)', ['font'])
+    gulp.watch('./app/images/**/*)', ['images'])
 })
 
 // 默认动作
-gulp.task('default', ['html', 'ico', 'js', 'sass', 'auto', 'connect', 'font', 'images'])
+gulp.task('default', ['auto', 'html', 'ico', 'js', 'sass', 'connect', 'font', 'images'])

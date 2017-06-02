@@ -10,10 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
     "gulp-cache": "^0.4.6",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.4.1",
     "gulp-connect": "^5.0.0",
     "gulp-eslint": "^3.0.1",
     "gulp-htmlmin": "^3.0.0",
