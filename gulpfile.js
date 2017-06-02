@@ -3,7 +3,6 @@ const gulp = require('gulp')                    // 引入gulp基础库
 const watch = require('gulp-watch')             // 监听
 const plumber = require('gulp-plumber')         // 防止编译错误报错终止监听
 const connect = require('gulp-connect')         // 启动WEB服务，热加载
-const cache = require('gulp-cache')             // 拉取缓存
 
 /*  htmlmin  */
 const jade = require('gulp-jade');
@@ -17,6 +16,8 @@ const uglify = require('gulp-uglify')           // JS代码压缩
 const babel = require('gulp-babel')             // ES6转换（gulp-babel babel-preset-es2015）
 /*  images  */
 const imagemin = require('gulp-imagemin')       // 图片压缩
+const cache = require('gulp-cache')             // 拉取缓存
+const pngquant = require('imagemin-pngquant')   // 深度压缩图片
 
 /*  dist输出路径  */
 const DIST_PATH = 'dist'
@@ -71,14 +72,21 @@ gulp.task('js', () => {
 })
 /*  压缩图片  */
 gulp.task('images', () => {
+  gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
+      use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
+    }))
+    .pipe(gulp.dest(DIST_PATH + '/images'))
+    .pipe(connect.reload())
   return watch('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
     gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-    .pipe(cache(imagemin({
-      optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
-      progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-      interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-      multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
-    })))
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
+      use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
+    }))
     .pipe(gulp.dest(DIST_PATH + '/images'))
     .pipe(connect.reload())
   })
@@ -119,9 +127,9 @@ gulp.task('build', ()=> {
     .pipe(gulp.dest(BUILD_PATH))
 
   // 图片压缩
-  gulp.src('src/images/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
-  .pipe(imagemin())
-  .pipe(gulp.dest(BUILD_PATH + '/images'))
+  gulp.src('src/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+    .pipe(imagemin())
+    .pipe(gulp.dest(BUILD_PATH + '/images'))
 
   // sass编译压缩
   return sass('./src/css/app.sass')
@@ -157,4 +165,4 @@ gulp.task('auto', () => {
 })
 
 // 默认动作
-gulp.task('default', ['html', 'ico', 'js', 'sass', 'images', 'auto', 'connect', 'font'])
+gulp.task('default', ['html', 'ico', 'js', 'sass', 'auto', 'connect', 'font', 'images'])

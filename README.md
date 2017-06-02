@@ -16,7 +16,7 @@
 
 ## 项目依赖
 
-`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-cache` `gulp-autoprefixer` `gulp-jade`
+`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-autoprefixer` `gulp-jade` `imagemin-pngquant`
 
 ## 项目结构
 
@@ -34,6 +34,11 @@ x-build/
 
 
 ## Changelog
+
+- #### v1.4.5
+
+  优化图片压缩速度太慢的bug，添加 `imagemin-pngquant` 深度压缩。
+  当监听图片时，如果直接复制大量图片，会导致压缩效率很低，可以重新启动gulp快速压缩。
 
 - #### v1.4.4
 
