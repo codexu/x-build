@@ -77,6 +77,16 @@ gulp.task('js', () => {
 
 /*  压缩图片  */
 gulp.task('images', () => {
+  return watch('app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
+    gulp.src('./app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+      .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
+        use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
+      }))
+      .pipe(gulp.dest(SERVER_PATH + '/images'))
+      .pipe(connect.reload())
+  })
   gulp.src('./app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
     .pipe(imagemin({
       progressive: true,

@@ -11,7 +11,7 @@
 本项目基于Gulp，满足日常的压缩、编译功能，功能包括sass、jade、es6编译、图片压缩、热更新。
 
 - 依赖安装 `npm install`
-
+- [ ]
 - 指令: `gulp` `gulp del`
 
 ## 项目依赖
@@ -32,6 +32,10 @@ x-build/
 
 
 ## Changelog
+
+- #### v1.5.1
+
+  修复app/images下图片不能监听的bug
 
 - #### v1.5.0
 
