@@ -8,15 +8,17 @@
 
 ## 使用说明
 
-本项目基于Gulp，满足日常的压缩、编译功能，功能包括sass、jade、es6编译、图片压缩、热更新。
+本项目基于`Gulp`，满足日常的压缩、编译功能，功能包括`sass`、`jade`、`es6` + `webpack`打包编译、图片压缩、热更新。
 
 - 依赖安装 `npm install`
-- [ ]
-- 指令: `gulp` `gulp del`
 
-## 项目依赖
+- 默认端口 `8080` , 执行gulp后访问: http://localhost:8080/
 
-`gulp` `gulp-babel` `gulp-babel` `gulp-htmlmin` `gulp-imagemin` `gulp-minify-css` `gulp-plumber` `gulp-ruby-sass` `gulp-uglify` `gulp-watch` `babel-preset-es2015` `gulp-connect` `gulp-autoprefixer` `gulp-jade` `imagemin-pngquant` `del`
+## 指令
+
+  `gulp` : 启动项目自动化编译工具。
+
+  `gulp del` : 清理 `server` 目录。
 
 ## 项目结构
 
@@ -32,6 +34,12 @@ x-build/
 
 
 ## Changelog
+
+- #### v1.6.0
+
+  添加 `webpack` 打包工具，babel-loader编译es6语法，实现模块化的javascript。
+
+  添加 `gulp-rename` 为压缩后的文件添加 `.min` 结尾。(app.min.css, app.min.js)
 
 - #### v1.5.1
 

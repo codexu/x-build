@@ -4,6 +4,7 @@ const watch = require('gulp-watch')             // 监听
 const plumber = require('gulp-plumber')         // 防止编译错误报错终止监听
 const connect = require('gulp-connect')         // 启动WEB服务，热加载
 const del = require('del')                      // 清除垃圾文件
+const rename = require('gulp-rename')
 
 /*  htmlmin  */
 const jade = require('gulp-jade');
@@ -14,7 +15,8 @@ const sass = require('gulp-ruby-sass')          // sass编译
 const autoprefixer = require('gulp-autoprefixer') // 兼容前缀
 /*  javascript  */
 const uglify = require('gulp-uglify')           // JS代码压缩
-const babel = require('gulp-babel')             // ES6转换（gulp-babel babel-preset-es2015）
+const webpack = require('webpack')
+const gulpWebpack = require('webpack-stream')
 /*  images  */
 const imagemin = require('gulp-imagemin')       // 图片压缩
 const cache = require('gulp-cache')             // 拉取缓存
@@ -59,6 +61,10 @@ gulp.task('sass', () => {
       console.error('Error!', err.message)
     })
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(rename({
+      basename:'app',
+      extname:'.min.css'
+    }))
     .pipe(gulp.dest(SERVER_PATH + '/css'))
     .pipe(connect.reload())
 })
@@ -67,10 +73,23 @@ gulp.task('sass', () => {
 gulp.task('js', () => {
   gulp.src('./app/js/**/*')
     .pipe(plumber())
-    .pipe(babel({
-      presets: ['es2015']
+    .pipe(gulpWebpack({
+      module:{
+        loaders:[{
+          test:/\.js$/,
+          loader:'babel'
+        }]
+      }
+    }),null,(err,stats)=>{
+      log(`Finished '${colors.cyan('scripts')}'`,stats.toString({
+        chunks:false
+      }))
+    })
+    .pipe(uglify({compress:{properties:false},output:{'quote_keys':true}}))
+    .pipe(rename({
+      basename:'app',
+      extname:'.min.js'
     }))
-    .pipe(uglify())
     .pipe(gulp.dest(SERVER_PATH + '/js'))
     .pipe(connect.reload())
 })
