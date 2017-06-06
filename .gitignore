@@ -1,5 +1,4 @@
 bower_components
 node_modules/
-dist/
-build/
+server/
 .sass-cache
