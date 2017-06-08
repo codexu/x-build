@@ -35,6 +35,16 @@ x-build/
 
 ## Changelog
 
+- #### v1.6.2
+
+  修改css目录结构。
+
+- #### v1.6.1
+
+  修改jade布局方式，采用 `extends layout` 的方式，组件采用 `include` 的方式。
+
+  修改部分路径不能正确监听的bug。
+
 - #### v1.6.0
 
   添加 `webpack` 打包工具，babel-loader编译es6语法，实现模块化的javascript。

@@ -129,10 +129,8 @@ gulp.task('del', (cb)=> {
 
 // 自动监听
 gulp.task('auto', () => {
-    gulp.watch('./app/*.jade', ['html'])
-    gulp.watch('./app/view/*.jade', ['html'])
-    gulp.watch('./app/js/*', ['js'])
-    gulp.watch('./app/js/class/*', ['js'])
+    gulp.watch('./app/**/*.jade', ['html'])
+    gulp.watch('./app/js/**/*.js', ['js'])
     gulp.watch('./app/css/**/*', ['sass'])
     gulp.watch('./app/images/*)', ['images'])
     gulp.watch('./app/css/font/**/*)', ['font'])
