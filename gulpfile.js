@@ -5,6 +5,7 @@ const plumber = require('gulp-plumber')         // 防止编译错误报错终�
 const connect = require('gulp-connect')         // 启动WEB服务，热加载
 const del = require('del')                      // 清除垃圾文件
 const rename = require('gulp-rename')
+const base64 = require('gulp-base64')
 
 /*  htmlmin  */
 const jade = require('gulp-jade');
@@ -52,6 +53,7 @@ gulp.task('ico', () => {
 gulp.task('sass', () => {
   return sass('app/css/app.sass')
     .pipe(plumber())
+    .pipe(base64())
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
       cascade: true,
@@ -96,8 +98,8 @@ gulp.task('js', () => {
 
 /*  压缩图片  */
 gulp.task('images', () => {
-  return watch('app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}', () => {
-    gulp.src('./app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+  return watch('app/images/**/*.{png,jpg,gif,ico,svg,JPG,PNG,GIF,ICO,SVG}', () => {
+    gulp.src('./app/images/**/*.{png,jpg,gif,ico,svg,JPG,PNG,GIF,ICO,SVG}')
       .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
@@ -106,7 +108,7 @@ gulp.task('images', () => {
       .pipe(gulp.dest(SERVER_PATH + '/images'))
       .pipe(connect.reload())
   })
-  gulp.src('./app/images/**/*.{png,jpg,gif,ico,JPG,PNG,GIF,ICO}')
+  gulp.src('./app/images/**/*.{png,jpg,gif,ico,svg,JPG,PNG,GIF,ICO,SVG}')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],//不要移除svg的viewbox属性
