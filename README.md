@@ -1,18 +1,16 @@
 # x-build 基于Gulp的自动化搭建工具
 
-## 搭建环境
+## 功能
 
-> npm安装： `npm install x-build`
+![](https://github.com/codexu/_images/blob/master/x-build.jpg)
 
-> git安装： `git clone https://github.com/codexu/x-build.git`
+## 安装
 
-## 使用说明
+> npm安装: `npm install x-build`
 
-本项目基于`Gulp`，满足日常的压缩、编译功能，功能包括`sass`、`jade`、`es6` + `webpack`打包编译、图片压缩、base64转码、热更新。
+> git安装: `git clone https://github.com/codexu/x-build.git`
 
-- 依赖安装 `npm install`
-
-- 默认端口 `8080` , 执行gulp后访问: http://localhost:8080/
+> 依赖安装: `npm install`
 
 ## 指令
 
@@ -20,25 +18,12 @@
 
   `gulp del` : 清理 `server` 目录。
 
-## 项目结构
-
-```
-x-build/
-├── server/ (服务器目录)
-└── app/ (生产目录)
-    ├── css/
-    ├── images/
-    ├── js/
-    └── index.jade
-```
-
-
 ## Changelog
 
 - #### v1.7.1
 
   所有的 `gulp.watch` 替换为 `gulp-watch`，解决新增文件和删除文件不能监听的bug。
-  
+
   jade将`block title`单独分离管理，内容区域更改为 `block main`。
 
 - #### v1.7.0
