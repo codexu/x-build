@@ -2,7 +2,13 @@
 
 ## 功能
 
+主要针对jade、sass、es6、images编译，并实时更新到浏览器。
+
 ![](https://github.com/codexu/_images/blob/master/x-build.jpg)
+
+## 开发目录结构
+
+![](https://github.com/codexu/_images/blob/master/app.jpg)
 
 ## 安装
 
