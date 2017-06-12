@@ -35,6 +35,12 @@ x-build/
 
 ## Changelog
 
+- #### v1.7.1
+
+  所有的 `gulp.watch` 替换为 `gulp-watch`，解决新增文件和删除文件不能监听的bug。
+  
+  jade将`block title`单独分离管理，内容区域更改为 `block main`。
+
 - #### v1.7.0
 
   增加项目依赖 `gulp-base64`，将css中用到的小图片以base64的方式转码，减少服务器请求。

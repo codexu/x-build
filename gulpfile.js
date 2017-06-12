@@ -51,7 +51,7 @@ gulp.task('ico', () => {
 
 /*  task:编译sass，并输出到server/css目录下  */
 gulp.task('sass', () => {
-  return sass('app/css/app.sass')
+  return sass('./app/css/app.sass')
     .pipe(plumber())
     .pipe(base64())
     .pipe(autoprefixer({
@@ -73,7 +73,7 @@ gulp.task('sass', () => {
 
 /*  task:JavaScript通过babel转化es5，并输出到server/js目录下  */
 gulp.task('js', () => {
-  gulp.src('./app/js/**/*')
+  gulp.src('./app/js/app.js')
     .pipe(plumber())
     .pipe(gulpWebpack({
       module:{
@@ -110,7 +110,7 @@ gulp.task('images', () => {
 
 /* font */
 gulp.task('font', ()=> {
-  return gulp.src('./app/css/font/**/*')
+  gulp.src('./app/css/font/**/*')
     .pipe(gulp.dest(SERVER_PATH + '/css/font'))
 })
 
@@ -120,14 +120,36 @@ gulp.task('del', (cb)=> {
 })
 
 // 自动监听
-gulp.task('auto', () => {
-    gulp.watch('./app/**/*.jade', ['html'])
-    gulp.watch('./app/js/**/*.js', ['js'])
-    gulp.watch('./app/css/**/*', ['sass'])
-    gulp.watch('./app/images/*)', ['images'])
-    gulp.watch('./app/css/font/**/*)', ['font'])
-    gulp.watch('./app/images/**/*)', ['images'])
+gulp.task('watch-html', () => {
+  return watch('./app/**/*.jade', function () {
+    gulp.start('html')
+  })
+})
+gulp.task('watch-js', () => {
+  return watch('./app/js/**/*.js', function () {
+    gulp.start('js')
+  })
+})
+gulp.task('watch-sass', () => {
+  return watch('./app/css/**/*.sass', function () {
+    gulp.start('sass')
+  })
+})
+gulp.task('watch-images', () => {
+  return watch('./app/images/**/*', function () {
+    gulp.start('images')
+  })
+})
+gulp.task('watch-font', () => {
+  return watch('./app/css/font/**/*', function () {
+    gulp.start('font')
+  })
+})
+gulp.task('watch-ico', () => {
+  return watch('./app/favicon.ico', function () {
+    gulp.start('ico')
+  })
 })
 
 // 默认动作
-gulp.task('default', ['auto', 'html', 'ico', 'js', 'sass', 'connect', 'font', 'images'])
+gulp.task('default', ['watch-html', 'watch-js', 'watch-sass', 'watch-images', 'watch-font', 'watch-ico', 'html', 'ico', 'js', 'sass', 'connect', 'font', 'images'])
