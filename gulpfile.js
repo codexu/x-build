@@ -114,6 +114,12 @@ gulp.task('font', ()=> {
     .pipe(gulp.dest(SERVER_PATH + '/css/font'))
 })
 
+/* lib */
+gulp.task('lib', ()=> {
+  gulp.src('./app/js/lib/*')
+    .pipe(gulp.dest(SERVER_PATH + '/js/lib'))
+})
+
 /* 清理server目录 */
 gulp.task('del', (cb)=> {
   del([SERVER_PATH], cb)
@@ -150,6 +156,11 @@ gulp.task('watch-ico', () => {
     gulp.start('ico')
   })
 })
+gulp.task('watch-lib', () => {
+  return watch('./app/js/lib/*', function () {
+    gulp.start('lib')
+  })
+})
 
 // 默认动作
-gulp.task('default', ['watch-html', 'watch-js', 'watch-sass', 'watch-images', 'watch-font', 'watch-ico', 'html', 'ico', 'js', 'sass', 'connect', 'font', 'images'])
+gulp.task('default', ['watch-html', 'watch-js', 'watch-sass', 'watch-images', 'watch-font', 'watch-ico', 'watch-lib', 'html', 'ico', 'js', 'sass', 'connect', 'font', 'images', 'lib'])

@@ -26,6 +26,10 @@
 
 ## Changelog
 
+- #### v1.7.3
+
+  由于webpack打包比较慢，js目录下添加lib目录存放js库。
+
 - #### v1.7.1
 
   所有的 `gulp.watch` 替换为 `gulp-watch`，解决新增文件和删除文件不能监听的bug。
