@@ -7,52 +7,15 @@
 
 ### 功能
 
-主要针对jade、sass、es6、images编译，并实时更新到浏览器。
+ - `html` : `jade编译` => `代码压缩`
 
-<table align="center" style="text-align: center">
-  <tr>
-    <th style="text-align: center">html</th>
-    <th style="text-align: center">css</th>
-    <th style="text-align: center">javascript</th>
-    <th style="text-align: center">server</th>
-    <th style="text-align: center">other</th>
-  </tr>
-  <tr>
-    <td>jade编译</td>
-    <td>sass编译</td>
-    <td>webpack+babel</td>
-    <td>浏览器热更新</td>
-    <td>图片压缩</td>
-  </tr>
-  <tr>
-    <td>代码压缩</td>
-    <td>图片转base64</td>
-    <td>代码压缩</td>
-    <td>loaclhots:8080</td>
-    <td>字体图标库</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>autoprefixer</td>
-    <td>rename</td>
-    <td></td>
-    <td>favicon.ico</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>代码压缩</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>rename</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+ - `css` : `sass编译` => `图片转base64` => `autoprefixer` => `代码压缩` => `rename`
+
+ - `javascript` : `webpack+babel` => `代码压缩` => `rename`
+
+ - `server` : `浏览器热更新` => `loaclhots:8080`
+
+ - `other` : `图片压缩` => `字体图标库` => `favicon.ico`
 
 ### 安装
 
