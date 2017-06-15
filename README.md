@@ -1,4 +1,8 @@
-# x-build 基于Gulp的自动化搭建工具
+<p align="center">
+  <img width="100"src="https://github.com/codexu/_images/blob/master/logo.png">
+</p>
+<h1 align="center">X-BUILD</h1>
+<p align="center">基于Gulp的自动化搭建工具</p>
 
 ## 功能
 
