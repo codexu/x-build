@@ -3,18 +3,58 @@
 </p>
 <h1 align="center">X-BUILD</h1>
 <p align="center">基于Gulp的自动化搭建工具</p>
+<br>
 
-## 功能
+### 功能
 
 主要针对jade、sass、es6、images编译，并实时更新到浏览器。
 
-![](https://github.com/codexu/_images/blob/master/x-build.jpg)
+<table align="center" style="text-align: center">
+  <tr>
+    <th style="text-align: center">html</th>
+    <th style="text-align: center">css</th>
+    <th style="text-align: center">javascript</th>
+    <th style="text-align: center">server</th>
+    <th style="text-align: center">other</th>
+  </tr>
+  <tr>
+    <td>jade编译</td>
+    <td>sass编译</td>
+    <td>webpack+babel</td>
+    <td>浏览器热更新</td>
+    <td>图片压缩</td>
+  </tr>
+  <tr>
+    <td>代码压缩</td>
+    <td>图片转base64</td>
+    <td>代码压缩</td>
+    <td>loaclhots:8080</td>
+    <td>字体图标库</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>autoprefixer</td>
+    <td>rename</td>
+    <td></td>
+    <td>favicon.ico</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>代码压缩</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>rename</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-## 开发目录结构
-
-![](https://github.com/codexu/_images/blob/master/app.jpg)
-
-## 安装
+### 安装
 
 > npm安装: `npm install x-build`
 
@@ -22,13 +62,13 @@
 
 > 依赖安装: `npm install`
 
-## 指令
+### 指令
 
   `gulp` : 启动项目自动化编译工具。
 
   `gulp del` : 清理 `server` 目录。
 
-## Changelog
+### Changelog
 
 - #### v1.7.3
 
