@@ -1,27 +1,30 @@
 /*  工具基本库  */
-const gulp = require('gulp')                    // 引入gulp基础库
-const watch = require('gulp-watch')             // 监听
-const plumber = require('gulp-plumber')         // 防止编译错误报错终止监听
-const connect = require('gulp-connect')         // 启动WEB服务，热加载
-const del = require('del')                      // 清除垃圾文件
-const rename = require('gulp-rename')
-const base64 = require('gulp-base64')
+const gulp    = require('gulp')                   // 引入gulp基础库
+const watch   = require('gulp-watch')             // 监听
+const plumber = require('gulp-plumber')           // 防止编译错误报错终止监听
+const connect = require('gulp-connect')           // 启动WEB服务，热加载
+const del     = require('del')                    // 清除垃圾文件
+const rename  = require('gulp-rename')
+const base64  = require('gulp-base64')
 
 /*  htmlmin  */
-const jade = require('gulp-jade');
+const jade    = require('gulp-jade');
 const htmlmin = require('gulp-htmlmin')
+
 /*  css  */
-const cleanCSS = require('gulp-clean-css')    // css压缩
-const sass = require('gulp-ruby-sass')          // sass编译
+const cleanCSS     = require('gulp-clean-css')    // css压缩
+const sass         = require('gulp-ruby-sass')    // sass编译
 const autoprefixer = require('gulp-autoprefixer') // 兼容前缀
+
 /*  javascript  */
-const uglify = require('gulp-uglify')           // JS代码压缩
-const webpack = require('webpack')
+const uglify      = require('gulp-uglify')        // JS代码压缩
+const webpack     = require('webpack')
 const gulpWebpack = require('webpack-stream')
+
 /*  images  */
-const imagemin = require('gulp-imagemin')       // 图片压缩
-const cache = require('gulp-cache')             // 拉取缓存
-const pngquant = require('imagemin-pngquant')   // 深度压缩图片
+const imagemin = require('gulp-imagemin')         // 图片压缩
+const cache    = require('gulp-cache')            // 拉取缓存
+const pngquant = require('imagemin-pngquant')     // 深度压缩图片
 
 /*  server输出路径  */
 const SERVER_PATH = 'server'
