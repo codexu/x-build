@@ -30,3 +30,5 @@
   `gulp` : 启动项目自动化编译工具。
 
   `gulp del` : 清理 `server` 目录。
+
+<a href="https://github.com/codexu/x-build/blob/master/change.log.md">change.log</a>
