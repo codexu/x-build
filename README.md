@@ -15,7 +15,7 @@
 
  - `server` : `浏览器热更新` => `loaclhots:8080`
 
- - `other` : `图片压缩` => `字体图标库` => `favicon.ico`
+ - `其他` : `图片压缩` & `字体图标库` & `favicon.ico`
 
 ### 安装
 
