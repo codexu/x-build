@@ -56,7 +56,11 @@ gulp.task('ico', () => {
 gulp.task('sass', () => {
   return sass('./app/css/app.sass')
     .pipe(plumber())
-    .pipe(base64())
+    .pipe(base64({
+      extensions: ['svg', 'png', /\.jpg#datauri$/i],
+      maxImageSize: 8*1024, // bytes
+      debug: true
+    }))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
       cascade: true,
