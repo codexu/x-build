@@ -1,5 +1,9 @@
 ### Changelog
 
+- #### v1.7.4
+
+  由gulp-ruby-sass改为gulp-sass，解决没有ruby环境的麻烦。
+
 - #### v1.7.3
 
   由于webpack打包比较慢，js目录下添加lib目录存放js库。
