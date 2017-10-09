@@ -54,7 +54,7 @@ gulp.task('ico', () => {
 
 /*  task:编译sass，并输出到server/css目录下  */
 gulp.task('sass', () => {
-  return sass('./app/css/app.sass')
+  return gulp.src('./app/css/app.sass')
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(base64({
