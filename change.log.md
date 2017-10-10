@@ -1,5 +1,9 @@
 ### Changelog
 
+- #### v1.7.6
+
+  javascript lib库增加rem换算
+
 - #### v1.7.5
 
   reset.sass 添加默认字体样式 font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif
