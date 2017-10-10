@@ -1,5 +1,9 @@
 ### Changelog
 
+- #### v1.7.5
+
+  reset.sass 添加默认字体样式 font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif
+
 - #### v1.7.4
 
   由gulp-ruby-sass改为gulp-sass，解决没有ruby环境的麻烦。
