@@ -10,7 +10,7 @@ import base64 from 'gulp-base64';
 import rename from 'gulp-rename';
 
 gulp.task('style', () => {
-  return gulp.src(['app/css/index.sass'])
+  gulp.src(['app/css/index.sass'])
     .pipe(plumber({
       errorHandle: function () {
       }
@@ -37,4 +37,8 @@ gulp.task('style', () => {
     .pipe(gulp.dest('server/public/css'))
     .pipe(gulpif(args.watch, livereload()))
     .pipe(gulpif(args.build, gulp.dest('build/css')))
+
+  gulp.src('app/css/font/**/*')
+    .pipe(gulpif(args.watch, gulp.dest('server/public/css/font')))
+    .pipe(gulpif(args.build, gulp.dest('build/css/font')))
 })
