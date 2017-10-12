@@ -4,21 +4,17 @@
 
 ## 介绍
 
-`gulp`&`webpack-stream`: 并使用babel编译es5或es3。
-
-`sass`&`jade`: 使用express推荐的极简风格模版引擎，配合sass高效搭建页面。
+x-build是基于`gulp`组建的自动化构建工具，使用express推荐的极简风格的jade模版引擎，配合sass高效整洁的搭建页面，并通过webpack&babel实现了es6模块化开发。
 
 ## 功能
 
-`图片压缩` `代码压缩` `代码编译` `服务器热更新` `course-map`
+`jade模版引擎编译` `sass编译` `es6编译(使用babel编译es5或es3,请根据需求配置.babelrc)` `服务器热加载` `autoprefixer` `base-64` `代码压缩` `图片压缩`
 
 ## 起步
 
 > 开发依赖安装: `npm install`
 
 > express server依赖安装: `cd server/` `npm install`
-
-> 编译: `gulp`
 
 > 监听: `gulp --watch`
 
