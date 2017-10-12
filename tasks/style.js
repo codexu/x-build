@@ -36,4 +36,5 @@ gulp.task('style', () => {
     }))
     .pipe(gulp.dest('server/public/css'))
     .pipe(gulpif(args.watch, livereload()))
+    .pipe(gulpif(args.build, gulp.dest('build/css')))
 })

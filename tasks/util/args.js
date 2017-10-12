@@ -14,6 +14,12 @@ const args = yargs
     describe: 'watch all files'
   })
 
+  .option('build', {
+    boolean: true,
+    default: false,
+    describe: 'build all files'
+  })
+
   .option('verbose', {
     boolean: true,
     default: false,

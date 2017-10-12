@@ -16,4 +16,5 @@ gulp.task('images', () => {
     }))
     .pipe(gulp.dest('server/public/images'))
     .pipe(gulpif(args.watch, livereload()))
+    .pipe(gulpif(args.build, gulp.dest('build/images')))
 })

@@ -24,6 +24,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.4.0",
+    "gulp-jade": "^1.1.0",
     "gulp-live-server": "0.0.30",
     "gulp-livereload": "^3.8.1",
     "gulp-plumber": "^1.1.0",

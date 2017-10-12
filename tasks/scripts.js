@@ -15,7 +15,6 @@ gulp.task('scripts', () => {
   return gulp.src(['app/js/index.js'])
     .pipe(plumber({
       errorHandle: function () {
-
       }
     }))
     .pipe(named())
@@ -39,4 +38,5 @@ gulp.task('scripts', () => {
     .pipe(uglify({ compress: { properties: false }, output: { 'quote_keys': true } }))
     .pipe(gulp.dest('server/public/js'))
     .pipe(gulpif(args.watch, livereload()))
+    .pipe(gulpif(args.build, gulp.dest('build/js')))
 })
