@@ -22,9 +22,9 @@ gulp.task('style', () => {
       debug: true
     }))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions', 'Android >= 4.0', 'Firefox <= 20'],
-      cascade: true,
-      remove: true
+      browsers: ['>1%'],
+      cascade: false,
+      remove: false
     }))
     .pipe(gulp.dest('server/public/css'))
     .pipe(cleanCSS({
@@ -34,6 +34,7 @@ gulp.task('style', () => {
       basename: 'index',
       extname: '.min.css'
     }))
+    
     .pipe(gulp.dest('server/public/css'))
     .pipe(gulpif(args.watch, livereload()))
     .pipe(gulpif(args.build, gulp.dest('build/css')))
