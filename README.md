@@ -1,35 +1,21 @@
-<p align="center">
-  <img width="100"src="https://github.com/codexu/_images/blob/master/logo.png">
-</p>
-<h1 align="center">X-BUILD</h1>
-<p align="center">基于Gulp的自动化搭建工具</p>
+<h1 align="center">X-BUILD 2.0</h1>
+<p align="center">基于gulp&webpack的自动化搭建工具</p>
 <br>
 
-### 功能
+## 介绍
 
- - `html` : `jade编译` => `代码压缩`
+x-build是基于`gulp`组建的自动化构建工具，使用express推荐的极简风格的jade模版引擎，配合sass高效整洁的搭建页面，并通过webpack&babel实现了es6模块化开发。
 
- - `css` : `sass编译` => `图片转base64` => `autoprefixer` => `代码压缩` => `rename`
+## 功能
 
- - `javascript` : `webpack+babel` => `代码压缩` => `rename`
+`jade模版引擎编译` `sass编译` `es6编译(使用babel编译es5或es3,请根据需求配置.babelrc)` `服务器热加载` `autoprefixer` `base-64` `代码压缩` `图片压缩`
 
- - `server` : `浏览器热更新` => `loaclhots:8080`
+## 起步
 
- - `其他` : `图片压缩` & `字体图标库` & `favicon.ico`
+> 开发依赖安装: `npm install`
 
-### 安装
+> express server依赖安装: `cd server/` `npm install`
 
-> npm安装: `npm install x-build`
+> 监听: `gulp --watch`
 
-> git安装: `git clone https://github.com/codexu/x-build.git`
-
-> 依赖安装: `npm install`
-
-### 指令
-
-  `gulp` : 启动项目自动化编译工具。
-
-  `gulp del` : 清理 `server` 目录。
-
-<br>
-<a href="https://github.com/codexu/x-build/blob/master/change.log.md">change.log</a>
+> 打包: `gulp --build`
