@@ -18,7 +18,15 @@
 
 ### 注意事项
 
-在使用`pug`模版引擎时，图片`img`通过`src=require()`引入：
-``` pug
-  img(src=require('./images/logo.png'))
-```
+- 在使用`pug`模版引擎时，图片`img`通过`src=require()`引入：
+  ``` pug
+    img(src=require('./images/logo.png'))
+  ```
+
+- rem布局使用：
+
+    移动端建议使用'750px'设计稿，如果网页大于750px时，font-size为100px。
+
+  rem换算：
+
+    设计稿尺寸除100，例如设计稿'20px'，换算20 / 100 = 0.2rem
