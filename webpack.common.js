@@ -27,8 +27,17 @@ module.exports = {
       {
         test: /\.sass$/,
         use: [
-          { loader: 'style-loader' }, 
+          { loader: 'style-loader' },
           { loader: 'css-loader', options: { sourceMap: true } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: {
+                path: 'postcss.config.js'
+              }
+            }
+          },
           { loader: 'sass-loader', options: { sourceMap: true } }
         ]
       },
@@ -41,9 +50,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          {
-            loader: 'url-loader?limit=8192&name=images/[hash].[ext]'
-          }
+          { loader: 'url-loader?limit=8192&name=images/[hash].[ext]' }
         ]
       }
     ]
@@ -56,7 +63,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.pug'
     }),
-    
+
     // 提取公共代码（第三方库）配置：entry.vendor
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
