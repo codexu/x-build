@@ -6,16 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   // 入口
   entry: {
-    index: './src/scripts/index.js',
-    // 配置公共库名称
-    vendor: [
-      'lodash', 'jquery'
-    ]
+    index: './src/scripts/index.js'
   },
   // 输出
   output: {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
+    filename: 'scripts/[name].[chunkhash].js',
+    chunkFilename: 'scripts/[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
   // loader
@@ -45,7 +41,9 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          { loader: 'url-loader?limit=8192' }
+          {
+            loader: 'url-loader?limit=8192&name=images/[hash].[ext]'
+          }
         ]
       }
     ]
