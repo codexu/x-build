@@ -1,20 +1,16 @@
-# x-build 3.0
+# x-build 4.0
 
 ### 开发模式
 通过命令：`npm run dev`启动本地`Web Server(http://localhost:3000/)`，默认监听端口 3000，并实时监听文件，发生改动时，浏览器会自动热更新。
 
 ### 生产模式
-通过命令：`npm run build` 对整个项目进行打包，目录（./dist）。
+通过命令：`npm run build` 对整个项目进行打包，目录（./output）。
 
 ### 功能&风格
-- 使用`pug（原名jade）`作为模版引擎。
-- 使用`sass`作为css预处理语言。
-- 使用`webpack+babel`打包模块，推荐使用`es6`编码。
-- 输出文件均使用`chunkhash`。
+- 使用`pug（原jade）`作为模版引擎。
+- 使用`stylus`作为css预处理语言。
+- 使用`babel`编译es6代码。
 - 图片进行压缩处理，对`8kb`以下的图片进行`base64`处理。
-- 样式与脚本均使用`sourcemap`。
-- 使用`rem`布局方式。
-- 集成`reset.css`。
 
 ### 注意事项
 
