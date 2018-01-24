@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -10,7 +11,7 @@ const config = {
   // 入口
   entry: path.join(__dirname, 'src/app.js'),
   output: {
-    filename: 'scripts/[name][hash].js',
+    filename: 'assets/scripts/[name][hash].js',
     path: path.resolve(__dirname, 'output')
   },
   // 配置loader
@@ -40,34 +41,30 @@ const config = {
       // 编译jade
       {
         test: /\.(jade|pug)$/,
-        use: [
-          {
-            loader: 'pug-loader',
-            options: {
-              pretty: isDev
-            }
+        use: [{
+          loader: 'pug-loader',
+          options: {
+            pretty: isDev
           }
-        ]
+        }]
       },
       // 图片处理
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
-        use: [
-          { 
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'images/[name][hash].[ext]'
-            }
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            name: 'assets/images/[name][hash].[ext]'
           }
-        ]
+        }]
       }
     ]
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV : isDev ? '"development' : '"production'
+        NODE_ENV: isDev ? '"development' : '"production'
       }
     }),
     // 清理dist目录
@@ -80,7 +77,7 @@ const config = {
 }
 
 // 开发模式
-if(isDev) {
+if (isDev) {
   config.devtool = '#cheap-module-eval-source-map'
   config.devServer = {
     port: '3000',
@@ -97,7 +94,7 @@ if(isDev) {
 }
 
 // 生产模式
-if(!isDev) {
+if (!isDev) {
   config.plugins.push(
     new UglifyJsPlugin()
   )
