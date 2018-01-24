@@ -68,7 +68,12 @@ if (isDev) {
       test: /\.styl$/,
       use: [
         'style-loader',
-        'css-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        },
         {
           loader: 'postcss-loader',
           options: {
@@ -100,7 +105,7 @@ if (!isDev) {
     app: path.join(__dirname, 'src/app.js'),
     // vendor: ['loadsh']
   },
-  config.output.filename = 'assets/scripts/[name][chunkhash:8].js',
+  config.output.filename = 'assets/scripts/[name].[chunkhash:8].js',
   config.module.rules.push(
     {
       test: /\.styl$/,
