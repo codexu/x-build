@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 const isDev = process.env.NODE_ENV === 'development'
 
