@@ -96,6 +96,10 @@ if (isDev) {
 
 // 生产模式
 if (!isDev) {
+  config.entry = {
+    app: path.join(__dirname, 'src/app.js'),
+    // vendor: ['loadsh']
+  },
   config.output.filename = 'assets/scripts/[name][chunkhash:8].js',
   config.module.rules.push(
     {
@@ -117,7 +121,13 @@ if (!isDev) {
   )
   config.plugins.push(
     new UglifyJsPlugin(),
-    new ExtractTextPlugin('./assets/style/style.[contentHash:8].css')
+    new ExtractTextPlugin('./assets/style/style.[contentHash:8].css'),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor'
+    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    })
   )
 }
 

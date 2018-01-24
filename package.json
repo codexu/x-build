@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
