@@ -120,13 +120,14 @@ if (!isDev) {
             }
           },
           'stylus-loader'
-        ]
+        ],
+        publicPath: '../../'
       })
     }
   )
   config.plugins.push(
     new UglifyJsPlugin(),
-    new ExtractTextPlugin('./assets/style/style.[contentHash:8].css'),
+    new ExtractTextPlugin('assets/style/style.[contentHash:8].css'),
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'vendor'
     // }),
