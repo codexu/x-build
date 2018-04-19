@@ -80,6 +80,13 @@ if (isDev) {
             sourceMap: true
           }
         },
+        {
+          loader: 'px2rem-loader',
+          options: {
+            remUnit: 40,
+            remPrecision: 8
+          }
+        },
         'stylus-loader'
       ]
     }
@@ -117,6 +124,13 @@ if (!isDev) {
             loader: 'postcss-loader',
             options: {
               sourceMap: true
+            }
+          },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 40,
+              remPrecision: 8
             }
           },
           'stylus-loader'

@@ -26,6 +26,7 @@
     "postcss-loader": "^2.0.10",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
+    "px2rem-loader": "^0.1.9",
     "style-loader": "^0.19.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
