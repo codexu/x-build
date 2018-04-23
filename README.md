@@ -1,4 +1,4 @@
-# x-build 4.0.1
+# x-build 4.0
 
 ### 开发模式
 通过命令：`npm run dev`启动本地`Web Server(http://localhost:3000/)`，默认监听端口 3000，并实时监听文件，发生改动时，浏览器会自动热更新。
