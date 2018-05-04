@@ -80,6 +80,13 @@ if (isDev) {
             sourceMap: true
           }
         },
+        {
+          loader: 'px2rem-loader',
+          options: {
+            remUnit: 40,
+            remPrecision: 8
+          }
+        },
         'stylus-loader'
       ]
     }
@@ -119,14 +126,22 @@ if (!isDev) {
               sourceMap: true
             }
           },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 40,
+              remPrecision: 8
+            }
+          },
           'stylus-loader'
-        ]
+        ],
+        publicPath: '../../'
       })
     }
   )
   config.plugins.push(
     new UglifyJsPlugin(),
-    new ExtractTextPlugin('./assets/style/style.[contentHash:8].css'),
+    new ExtractTextPlugin('assets/style/style.[contentHash:8].css'),
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'vendor'
     // }),

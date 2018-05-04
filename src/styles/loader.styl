@@ -1,0 +1,93 @@
+.transition-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.transition-loader-inner {
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+  width: calc(100% - 200px);
+  color: #FFF;
+  padding: 0 100px;
+  text-align: center;
+}
+.transition-loader-inner i {
+  width 20px
+  height 20px
+  background #fff
+  border-radius 50%
+  display inline-block
+  margin 0 15px
+}
+
+.transition-loader-inner i:nth-child(1) {
+  -webkit-animation: loader 3s 600ms infinite ease-in-out;
+  animation: loader 3s 600ms infinite ease-in-out;
+}
+
+.transition-loader-inner i:nth-child(2) {
+  -webkit-animation: loader 3s 500ms infinite ease-in-out;
+  animation: loader 3s 500ms infinite ease-in-out;
+}
+
+.transition-loader-inner i:nth-child(3) {
+  -webkit-animation: loader 3s 400ms infinite ease-in-out;
+  animation: loader 3s 400ms infinite ease-in-out;
+}
+
+.transition-loader-inner i:nth-child(4) {
+  -webkit-animation: loader 3s 300ms infinite ease-in-out;
+  animation: loader 3s 300ms infinite ease-in-out;
+}
+
+.transition-loader-inner i:nth-child(5) {
+  -webkit-animation: loader 3s 200ms infinite ease-in-out;
+  animation: loader 3s 200ms infinite ease-in-out;
+}
+
+.transition-loader-inner i:nth-child(6) {
+  -webkit-animation: loader 3s 100ms infinite ease-in-out;
+  animation: loader 3s 100ms infinite ease-in-out;
+}
+
+@keyframes loader {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px) scale(1);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0px) scale(1.5);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px) scale(1.5);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+  }
+}
+
