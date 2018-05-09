@@ -91,6 +91,34 @@ if (isDev) {
       ]
     }
   )
+  config.module.rules.push(
+    {
+      test: /\.less$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'px2rem-loader',
+          options: {
+            remUnit: 40,
+            remPrecision: 8
+          }
+        },
+        'less-loader'
+      ]
+    }
+  )
   config.devtool = '#cheap-module-eval-source-map'
   config.devServer = {
     port: '3000',
@@ -139,12 +167,33 @@ if (!isDev) {
       })
     }
   )
+  config.module.rules.push({
+    test: /\.less$/,
+    use: ExtractTextPlugin.extract({
+      fallback: "style-loader",
+      use: [
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'px2rem-loader',
+          options: {
+            remUnit: 40,
+            remPrecision: 8
+          }
+        },
+        'less-loader'
+      ],
+      publicPath: '../../'
+    })
+  })
   config.plugins.push(
     new UglifyJsPlugin(),
     new ExtractTextPlugin('assets/style/style.[contentHash:8].css'),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor'
-    // }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime'
     })
