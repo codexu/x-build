@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const config = {
   // 入口
-  entry: path.join(__dirname, 'src/app.js'),
+  entry: path.join(__dirname, 'src/index.js'),
   output: {
     filename: 'bundle.[hash:8].js',
     path: path.resolve(__dirname, 'output')
@@ -26,12 +26,7 @@ const config = {
       // 编译jade
       {
         test: /\.(jade|pug)$/,
-        use: [{
-          loader: 'pug-loader',
-          options: {
-            pretty: isDev
-          }
-        }]
+        use: ['html-loader', 'pug-html-loader']
       },
       // 图片处理
       {
@@ -137,7 +132,7 @@ if (isDev) {
 // 生产模式
 if (!isDev) {
   config.entry = {
-    app: path.join(__dirname, 'src/app.js'),
+    index: path.join(__dirname, 'src/index.js'),
     // vendor: ['loadsh']
   },
   config.output.filename = 'assets/scripts/[name].[chunkhash:8].js',
