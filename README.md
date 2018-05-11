@@ -3,32 +3,34 @@
 <p align="center">
   <img src="https://img.shields.io/badge/x--build-4.2.0-brightgreen.svg">
   <img src="https://img.shields.io/badge/webpack-4.8.1-brightgreen.svg">
-  <img src="https://img.shields.io/badge/npm-2.5.16-blue.svg">
+  <img src="https://img.shields.io/badge/node->=6.11.5-blue.svg">
 </p>
 
-<h2 align="center">x-build<span style="font-size: 12px; color: #666; margin-left: 12px">v4.2.0</span></h2>
+<h1 align="center">x-build<span>&nbsp;v4.2.1</span></h1>
 
-### 前言
-x-build
-> `x-build`专注于移动端H5单个页面开发的前端自动化构建工具，v4.2.0已支持webpack4.8.1版本，拥有更快的编译和打包速度，采用`px2rem`+`hotcss`的自适应布局解决方案，使用`pug`模板引擎、`stylus`css预处理器，支持`es6`编译，还有许多适用于移动端开发的插件。
 
-### 起步
+<h2 align="center">前言</span></h2>
+
+> `x-build`专注于移动端H5单个页面开发的前端自动化构建工具，v4.2.1已支持webpack4.8.1版本，拥有更快的编译和打包速度，采用`px2rem`+`hotcss`的自适应布局解决方案，使用`pug`模板引擎、`stylus`css预处理器，支持`es6`编译，还有许多适用于移动端开发的插件。
+
+
+<h2 align="center">起步</span></h2>
+
 ```
   git clone https://github.com/codexu/x-build.git
   cd x-build
   npm install
-  /* 网速不好请使用cnpm(https://npm.taobao.org) */
-  npm run dev
-  /* webpack-dev-server监听3000端口(http://localhost:3000/)，支持HMR热更新 */
+  npm run dev  /* http://localhost:3000/ */
 ```
 
-### 生产模式
+<h2 align="center">生产模式</span></h2>
+ 
 ```
   npm run build
   /* js编译打包、css分离、第三方库抽离 */
 ```
 
-### 风格指南
+<h2 align="center">风格指南</span></h2>
 
 > html采用pug模板引擎（原名jade），使用缩进的代码风格。 >>> [参考文档](https://pug.bootcss.com/api/getting-started.html)
 
@@ -68,7 +70,7 @@ class xLoader {
 }
 ```
 
-### 功能模块
+<h2 align="center">功能</span></h2>
 
 > pug、stylus、es6编译压缩
 
@@ -86,6 +88,8 @@ class xLoader {
 
 > hash命名
 
-### 插件
+<h2 align="center">插件</span></h2>
 
 > [x-loader图片加载loading控制插件](https://github.com/codexu/Issues/issues/12)
+
+> [x-touch移动端滑动组件](https://github.com/codexu/x-touch)
