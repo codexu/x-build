@@ -1,9 +1,25 @@
-@import "./utils/reset.styl"
-@import "./utils/loader.styl"
+@import "../utils/reset.styl"
+@import "../utils/loader.styl"
 
+body,html
+  width 100%
+  height 100%
 body
-  background #2C3643
+  position relative
+  background url('../assets/images/bg.jpg')
+  background-size cover
   text-align center
   color #fff
   font-size 36px
-  padding-top 100px
+  .container
+    position absolute
+    left 50%
+    top 50%
+    width 300px
+    margin-top -150px
+    margin-left -150px
+    img
+      width 150px
+      height 150px
+    h1
+      margin-top 20px
