@@ -60,19 +60,19 @@ class xLoader {
 }
 ```
 
-### 功能模块
+### 功能模块
 
 > pug、stylus、es6编译压缩
 
 > css autoprefixer 前缀自动补全
 
-> [px2rem-loader + hotcss.js 自适应布局解决方案](https://github.com/codexu/Issues/issues/11)
+> [px2rem-loader + hotcss.js 自适应布局解决方案](https://github.com/codexu/Issues/issues/11)
 
-> css代码抽离、第三方库抽离
+> css代码抽离、第三方库抽离
 
 > webpack-dev-server 支持HMR热更新
 
-> source-map更快定位源码
+> source-map更快定位源码
 
 > base64处理小于8kb图片
 
