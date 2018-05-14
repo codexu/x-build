@@ -2,6 +2,10 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
+const isDev = process.env.NODE_ENV === 'development' ? true : false
 
 const config = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -14,13 +18,8 @@ const config = {
         test: /\.styl$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          },
+          isDev ? 'style-loader?sourceMap' : MiniCssExtractPlugin.loader,
+          'css-loader?sourceMap',
           {
             loader: 'px2rem-loader',
             options: {
@@ -48,7 +47,8 @@ const config = {
           loader: 'url-loader',
           options: {
             limit: 8192,
-            name: 'assets/images/[name][hash].[ext]'
+            name: '[name][hash].[ext]',
+            outputPath: 'static/images/'
           }
         }]
       }
@@ -61,7 +61,7 @@ const config = {
   ]
 }
 
-if (process.env.NODE_ENV === 'development') {
+if (isDev) {
   // 开发模式
   config.devServer = {
     port: '3000',
@@ -71,15 +71,13 @@ if (process.env.NODE_ENV === 'development') {
     },
     hot: true
   }
-  config.devtool = '#cheap-module-eval-source-map'
+  config.devtool = 'cheap-module-eval-source-map'
   config.plugins.push(
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   )
 } else {
   // 生产模式
-  /* 此项是为css单独打包，将MiniCssExtractPlugin.loader按数组位置插入 */
-  config.module.rules[0].use.splice(1, 0, MiniCssExtractPlugin.loader)
   config.plugins.push(
     new MiniCssExtractPlugin({
       filename: 'style.[chunkhash:8].css',
@@ -95,7 +93,15 @@ if (process.env.NODE_ENV === 'development') {
           priority: 10
         }
       }
-    }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
   }
 }
 
