@@ -2,8 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false
 
@@ -18,7 +18,7 @@ const config = {
         test: /\.styl$/,
         exclude: /node_modules/,
         use: [
-          isDev ? 'style-loader?sourceMap' : MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader?sourceMap',
           {
             loader: 'px2rem-loader',
@@ -33,13 +33,13 @@ const config = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
       },
       {
         test: /\.(jade|pug)$/,
         exclude: /node_modules/,
-        use: ['html-loader', 'pug-html-loader']
+        use: 'pug-loader'
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,

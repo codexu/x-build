@@ -4,5 +4,17 @@ html(lang="en")
     meta(charset="UTF-8")
     title x-build
   body
-    include ./components/x-build.pug
+    #xl-loader.transition-loader
+      .transition-loader-inner
+        i
+        i
+        i
+        i
+        i
+        i
+    #xl-wrapper.container
+      img.bg(data-src=require("./assets/images/bg.jpg") prior)
+      img.logo(data-src=require("./assets/images/logo.png"))
+      h1.title x-build
+        span v4.2.3
     

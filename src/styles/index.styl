@@ -1,24 +1,38 @@
 @import "../utils/reset.styl"
 @import "../utils/x-loader.styl"
 
+center(w, h, t)
+  position absolute
+  left 50%
+  top 50%
+  margin-left (w / -2)
+  margin-top (h / -2 + t)
+
 body,html
   width 100%
   height 100%
 body
-  position relative
-  background url('../assets/images/bg.jpg')
-  background-size cover
-  text-align center
-  color #fff
-  font-size 36px
+  background #2C3643
   .container
-    position absolute
-    left 50%
-    top 50%
-    width 300px
-    margin-top -150px
-    margin-left -150px
-    img
-      width 260px
-    h1
-      margin-top 20px
+    position relative
+    width 100%
+    height 100%
+    .logo
+      center(260px, 130px, -150)
+    .title
+      position absolute
+      top 50%
+      width 100%
+      text-align center
+      color #fff
+      text-shadow 3px 3px 2px #75A7BB
+      & span
+        margin-left 12px
+        font-size 24px
+    .bg
+      position absolute
+      z-index -1
+      width 100%
+      height 100%
+      left 0
+      top 0
