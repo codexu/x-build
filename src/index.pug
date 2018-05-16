@@ -6,12 +6,8 @@ html(lang="en")
   body
     #xl-loader.transition-loader
       .transition-loader-inner
-        i
-        i
-        i
-        i
-        i
-        i
+        - for (var i = 0; i < 5; i++)
+          i
     #xl-wrapper.container
       img.bg(data-src=require("./assets/images/bg.jpg") prior)
       img.logo(data-src=require("./assets/images/logo.png"))
