@@ -1,3 +1,3 @@
-import xLoader from '../utils/x-loader'
+import xLoad from 'x-load'
 
-new xLoader()
+new xLoad()
