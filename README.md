@@ -14,6 +14,12 @@
 ## 起步
 
 ```
+  /* npm 安装 */
+  npm i x-build
+```
+
+```
+  /* git安装 */
   git clone https://github.com/codexu/x-build.git
   cd x-build
   npm install
