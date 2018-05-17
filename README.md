@@ -14,23 +14,26 @@
 ## 起步
 
 ```
-  /* npm 安装 */
-  npm i x-build
+  /* x-build-cli安装(推荐) */
+  npm install x-build-cli -g
+  x-build init [项目名]
 ```
 
 ```
   /* git安装 */
   git clone https://github.com/codexu/x-build.git
-  cd x-build
-  npm install
-  npm run dev  /* http://localhost:3000/ */
+  
 ```
 
-## 生产模式
- 
 ```
+  /* 依赖安装 */
+  npm install
+
+  /* 开发模式 */
+  npm run dev
+  
+  /* 生产模式 */
   npm run build
-  /* js编译打包、css分离、第三方库抽离 */
 ```
 
 ## 功能
