@@ -1,11 +1,11 @@
 {
   "name": "x-build",
-  "version": "4.2.4",
+  "version": "4.2.7",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rimraf dist && NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js",
-    "build": "rimraf dist && NODE_ENV=production webpack --mode=production --config webpack.config.js"
+    "dev": "rimraf dist & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode=production --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
