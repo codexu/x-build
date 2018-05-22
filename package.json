@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "jquery": "^3.3.1",
     "underscore": "^1.9.0",
-    "x-load": "^1.1.5"
+    "x-load": "^1.1.6"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
