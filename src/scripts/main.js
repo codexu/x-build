@@ -1,3 +1,5 @@
-import xLoad from 'x-load'
+import XLoad from 'x-load';
 
-new xLoad()
+let xload = new XLoad({
+  loadImg: require('../assets/images/oval.svg')
+});

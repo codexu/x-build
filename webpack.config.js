@@ -1,11 +1,11 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development' ? true : false
+const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
 const config = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -34,7 +34,7 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.(jade|pug)$/,
@@ -59,7 +59,7 @@ const config = {
       template: './src/index.pug'
     })
   ]
-}
+};
 
 if (isDev) {
   // 开发模式
@@ -70,19 +70,19 @@ if (isDev) {
       errors: true
     },
     hot: true
-  }
-  config.devtool = 'cheap-module-eval-source-map'
+  };
+  config.devtool = 'cheap-module-eval-source-map';
   config.plugins.push(
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
-  )
+  );
 } else {
   // 生产模式
   config.plugins.push(
     new MiniCssExtractPlugin({
       filename: 'style.[chunkhash:8].css',
     })
-  )
+  );
   config.optimization = {
     splitChunks: {
       cacheGroups: {
@@ -102,7 +102,7 @@ if (isDev) {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
-  }
+  };
 }
 
-module.exports = config
+module.exports = config;
