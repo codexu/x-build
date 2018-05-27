@@ -8,7 +8,7 @@
 
 <h1 align="center">x-build</h1>
 
-`x-build`专注于移动端H5单个页面开发的前端自动化构建工具，现已升级到webpack4.8.1版本，拥有更快的编译和打包速度，采用`px2rem`+`hotcss`的自适应布局解决方案，使用`pug`模板引擎、`stylus`css预处理器，支持`es6`编译，ESlint规范代码，还有许多适用于移动端开发的插件。
+`x-build`专注于移动端H5单个页面开发的webpack模板，现已升级到webpack4.8.1版本，拥有更快的编译和打包速度，采用`px2rem`+`hotcss`的自适应布局解决方案，使用`pug`模板引擎、`stylus`css预处理器，支持`es6`编译，ESlint规范代码，还有许多适用于移动端开发的插件。
 
 
 ## 起步
