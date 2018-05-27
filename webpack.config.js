@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const package = require('./package.json')
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
@@ -64,8 +65,7 @@ const config = {
 if (isDev) {
   // 开发模式
   config.devServer = {
-    port: '3000',
-    host: '0.0.0.0',
+    port: package.port,
     overlay: {
       errors: true
     },

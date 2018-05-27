@@ -1,7 +1,7 @@
 <p align="center"><img width="160" src="https://github.com/codexu/x-build/blob/x-build4.1/src/assets/images/logo.png?raw=true" alt="x-build"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-4.3.1-blue.svg">
+  <img src="https://img.shields.io/badge/version-4.3.2-blue.svg">
   <img src="https://img.shields.io/badge/webpack-4.8.1-brightgreen.svg">
   <img src="https://img.shields.io/badge/node->=6.11.5-brightgreen.svg">
 </p>
@@ -16,7 +16,7 @@
 ```
   /* x-build-cli安装(推荐) */
   npm install x-build-cli -g
-  x-build init [项目名]
+  x-build init
 ```
 
 ```
@@ -30,7 +30,8 @@
   npm install
 
   /* 开发模式 */
-  npm run dev
+  npm start
+  // 或 npm run dev
   
   /* 生产模式 */
   npm run build

@@ -1,10 +1,12 @@
 {
   "name": "x-build",
-  "version": "4.3.1",
+  "version": "4.3.2",
+  "port": "3000",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rimraf dist & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js",
+    "start": "rimraf dist & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js --open",
+    "dev": "rimraf dist & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js --open",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode=production --config webpack.config.js"
   },
   "author": "",
