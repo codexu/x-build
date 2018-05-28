@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const package = require('./package.json')
+const Package = require('./package.json');
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
@@ -30,6 +30,23 @@ const config = {
           },
           'postcss-loader',
           'stylus-loader',
+        ]
+      },
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader?sourceMap',
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 40,
+              remPrecision: 8
+            }
+          },
+          'postcss-loader',
+          'less-loader',
         ]
       },
       {
@@ -65,7 +82,7 @@ const config = {
 if (isDev) {
   // 开发模式
   config.devServer = {
-    port: package.port,
+    port: Package.port,
     overlay: {
       errors: true
     },
