@@ -18,8 +18,6 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "jquery": "^3.3.1",
-    "underscore": "^1.9.0",
     "x-load": "^1.1.6"
   },
   "devDependencies": {
