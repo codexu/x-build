@@ -37,6 +37,12 @@
   npm run build
 ```
 
+## 目录结构
+
+<p align="center">
+  <img width="300" src="https://github.com/codexu/_images/blob/master/x-bulid/directory.png?raw=true">
+</p>
+
 ## 功能
 
 > pug、stylus、es6编译压缩
