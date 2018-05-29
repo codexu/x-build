@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "port": "3000",
   "description": "",
   "main": "index.js",
@@ -17,9 +17,6 @@
     "Firefox > 20",
     "last 2 versions"
   ],
-  "dependencies": {
-    "x-load": "^1.1.6"
-  },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",

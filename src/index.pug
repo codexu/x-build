@@ -4,13 +4,7 @@ html(lang="en")
     meta(charset="UTF-8")
     title x-build
   body
-    #xl-load.transition-loader
-      .transition-loader-inner
-        - for (var i = 0; i < 5; i++)
-          i
-    #xl-wrapper.container
-      img.bg(data-src=require("./assets/images/bg.jpg") prior)
-      img.logo(data-src=require("./assets/images/logo.png"))
-      h1.title x-build
-        span v4.2.3
-    
+    .x-build
+      img(src=require('./assets/images/logo.png'), alt="logo")
+      h1 Hello, x-build!
+      h3 Version 4.3.3
