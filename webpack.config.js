@@ -7,11 +7,27 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Package = require('./package.json');
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
+const isRem = Package.rem;
+const rem = () => {
+  if (isRem) {
+    return {
+      loader: 'px2rem-loader',
+      options: {
+        remUnit: 40,
+        remPrecision: 8
+      }
+    };
+  } else {
+    return 'postcss-loader';
+  }
+};
 
 const config = {
-  entry: path.join(__dirname, 'src/index.js'),
+  entry: {
+    index: './src/index.js'
+  },
   output: {
-    filename: 'bundle.[hash:8].js',
+    filename: '[name].[hash:8].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -21,13 +37,7 @@ const config = {
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader?sourceMap',
-          {
-            loader: 'px2rem-loader',
-            options: {
-              remUnit: 40,
-              remPrecision: 8
-            }
-          },
+          rem(),
           'postcss-loader',
           'stylus-loader',
         ]
@@ -38,13 +48,7 @@ const config = {
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader?sourceMap',
-          {
-            loader: 'px2rem-loader',
-            options: {
-              remUnit: 40,
-              remPrecision: 8
-            }
-          },
+          rem(),
           'postcss-loader',
           'less-loader',
         ]
@@ -87,6 +91,10 @@ const config = {
     })
   ]
 };
+
+if (isRem) {
+  config.entry.hotcss = './src/utils/hotcss.js';
+}
 
 if (isDev) {
   // 开发模式

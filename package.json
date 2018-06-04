@@ -3,6 +3,7 @@
   "version": "4.3.4",
   "port": "3000",
   "template": "pug",
+  "rem": true,
   "description": "",
   "main": "index.js",
   "scripts": {
