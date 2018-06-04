@@ -69,6 +69,15 @@ const config = {
             outputPath: 'static/images/'
           }
         }]
+      },
+      {
+        test: /\.html$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          }
+        }],
       }
     ]
   },
