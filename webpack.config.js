@@ -8,12 +8,13 @@ const Package = require('./package.json');
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 const isRem = Package.rem;
+
 const rem = () => {
   if (isRem) {
     return {
       loader: 'px2rem-loader',
       options: {
-        remUnit: 40,
+        remUnit: 46.875,
         remPrecision: 8
       }
     };
