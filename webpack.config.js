@@ -55,6 +55,15 @@ const config = {
         ]
       },
       {
+        test: /\.css$/,
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader?sourceMap',
+          rem(),
+          'postcss-loader',
+        ]
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader']
