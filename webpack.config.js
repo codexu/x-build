@@ -74,7 +74,7 @@ const config = {
         use: 'pug-loader'
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
         use: [{
           loader: 'url-loader',
           options: {
