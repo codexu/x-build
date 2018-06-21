@@ -1,4 +1,4 @@
-<p align="center"><img width="160" src="https://github.com/codexu/x-build/blob/x-build4.1/src/assets/images/logo.png?raw=true" alt="x-build"></p>
+<p align="center"><img width="180" style="border-radius: 10px;" src="https://github.com/codexu/_images/blob/master/x-logo/logo-180-180.jpg?raw=true" alt="x-build"></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-4.3.6-blue.svg">
