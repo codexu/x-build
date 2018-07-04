@@ -31,6 +31,11 @@ const config = {
     filename: '[name].[hash:8].js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.js'
+    }
+  },
   module: {
     rules: [{
         test: /\.styl$/,
