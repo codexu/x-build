@@ -1,7 +1,7 @@
 {
   "name": "x-build",
-  "version": "4.3.8",
-  "port": "3000",
+  "version": "4.3.9",
+  "port": "8080",
   "template": "pug",
   "rem": true,
   "description": "",
