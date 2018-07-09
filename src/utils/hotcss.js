@@ -1,7 +1,5 @@
 (function (window, document) {
 
-  'use strict';
-
   // 给hotcss开辟个命名空间，别问我为什么，我要给你准备你会用到的方法，免得用到的时候还要自己写。
   let hotcss = {};
 
@@ -20,15 +18,15 @@
     if (hotcssEl) {
       let hotcssCon = hotcssEl.getAttribute('content');
       if (hotcssCon) {
-        let initialDprMatch = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+        let initialDprMatch = hotcssCon.match(/initial\=-dpr=([\d\.]+)/); // eslint-disable-line
         if (initialDprMatch) {
           dpr = parseFloat(initialDprMatch[1]);
         }
-        let maxWidthMatch = hotcssCon.match(/max\-width=([\d\.]+)/);
+        let maxWidthMatch = hotcssCon.match(/max\-width=([\d\.]+)/); // eslint-disable-line
         if (maxWidthMatch) {
           maxWidth = parseFloat(maxWidthMatch[1]);
         }
-        let designWidthMatch = hotcssCon.match(/design\-width=([\d\.]+)/);
+        let designWidthMatch = hotcssCon.match(/design\-width=([\d\.]+)/); // eslint-disable-line
         if (designWidthMatch) {
           designWidth = parseFloat(designWidthMatch[1]);
         }
@@ -65,7 +63,7 @@
     if (!designWidth) {
       // 如果你在JS中大量用到此方法，建议直接定义 hotcss.designWidth 来定义设计图尺寸;
       // 否则可以在第二个参数告诉我你的设计图是多大。
-      designWidth = parseInt(hotcss.designWidth, 10);
+      designWidth = parseInt(hotcss.designWidth, 10); // eslint-disable-line
     }
 
     return parseInt(px, 10) * 320 / designWidth / 20;
@@ -74,7 +72,7 @@
   hotcss.rem2px = function (rem, designWidth) {
     // 新增一个rem2px的方法。用法和px2rem一致。
     if (!designWidth) {
-      designWidth = parseInt(hotcss.designWidth, 10);
+      designWidth = parseInt(hotcss.designWidth, 10); // eslint-disable-line
     }
     // rem可能为小数，这里不再做处理了
     return rem * 20 * designWidth / 320;
