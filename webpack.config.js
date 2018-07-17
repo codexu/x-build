@@ -110,15 +110,6 @@ const config = {
             outputPath: 'static/media/'
           }
         }]
-      },
-      {
-        test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            minimize: true
-          }
-        }],
       }
     ]
   },
