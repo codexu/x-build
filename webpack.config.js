@@ -25,7 +25,8 @@ const rem = () => {
 
 const config = {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    style: './src/index.styl'
   },
   output: {
     filename: '[name].[hash:8].js',
@@ -33,7 +34,9 @@ const config = {
   },
   resolve: {
     alias: {
-      'vue': 'vue/dist/vue.js'
+      'src': path.resolve('src'),
+      'vue': 'vue/dist/vue.js',
+      '@': path.resolve('src')
     }
   },
   module: {

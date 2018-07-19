@@ -1,7 +1,7 @@
 <p align="center" style="border-radius: 10px;"><img width="180" src="https://github.com/codexu/_images/blob/master/x-logo/logo-180-180.jpg?raw=true" alt="x-build"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-4.3.10-blue.svg">
+  <img src="https://img.shields.io/badge/version-4.3.12-blue.svg">
   <img src="https://img.shields.io/badge/webpack-4.8.1-brightgreen.svg">
   <img src="https://img.shields.io/badge/node->=6.11.5-brightgreen.svg">
 </p>
