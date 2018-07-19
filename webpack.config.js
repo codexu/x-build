@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Package = require('./package.json');
 
-const isDev = process.env.NODE_ENV === 'development' ? true : false;
+const isDev = process.env.NODE_ENV === 'development' ? true : false; // eslint-disable-line
 const isRem = Package.rem;
 
 const rem = () => {
@@ -115,7 +115,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./src/index.${Package.template}`
+      template: Package.template === 'pug' ? `./index.pug` : `./src/index.html`
     })
   ]
 };
