@@ -1,13 +1,19 @@
 @import "~@/utils/reset.styl"
+@import "~@/utils/config.styl"
+@import "~@/utils/mixin.styl"
 
+html, body
+  padding 50px
+  background $BACKGROUND
+  font-size $FONT_DEFAULT_SIZE
+  line-height $FONT_DEFAULT_LINEHEIGHT
+  color $FONT_DEFAULT_COLOR
+  
 .x-build
-  line-height 2
-  text-align center
-  img
-    width 120px
-    margin 48px auto 0 auto
-    display block
-  h1
-    font-size 32px
+  h2
+    font-size $FONT_H2_SIZE
   h3
-    font-size 18px
+    font-size $FONT_H3_SIZE
+  a
+    margin-right 20px
+    color $MAIN_COLOR
