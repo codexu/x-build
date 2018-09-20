@@ -1,5 +1,15 @@
 @import "~@/utils/config.styl"
 
+loader(width = 30px, height = 30px)
+  background #000
+  width 100vw
+  height 100vh
+  img
+    width width
+    height height
+    transform translate(50vw, 50vh)
+    margin (width / -2) 0 0 (height / -2)
+
 Wrapper()
   position relative
   width 100%
