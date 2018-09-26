@@ -4,7 +4,6 @@
   .
   ├── .babelrc
   ├── .eslintrc.js # eslint配置，当程序报错时，可以参考注释
-  ├── .gitignore
   ├── index.pug
   ├── package.json
   ├── postcss.config.js
