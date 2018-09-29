@@ -16,13 +16,13 @@
 
 * [自适应布局方案](docs/basics/px2rem.md)
 
-* [Mixins](docs/basics/structure.md)
+* [Mixins](docs/basics/mixins.md)
 
 ## 代码风格
 
-* [pug模板引擎](docs/root/README.md)
+* [pug模板引擎](docs/style/pug.md)
 
-* [stylus](docs/root/README.md)
+* [css预处理Stylus](docs/style/stylus.md)
 
 ## 插件
 

@@ -23,12 +23,22 @@ Wrapper-background(width = 1920px)
   margin-left (width / -2)
   z-index 0
 
-Title(size = 1, width = 500px, align = left, color = $FONT_DEFAULT_COLOR)
+Item-position(width = 500px, height = 100px, y = 0, x = 0, z-index = 10)
+  display block
+  width width
+  height height
+  position absolute
+  top y
+  left 50%
+  margin-left (width / -2) + x
+  z-index z-index
+
+Text(size = 1, width = 500px, align = left, color = $FONT_DEFAULT_COLOR)
   if width == auto
     width auto
   else
     width width
-  font-size $FONT_H + size + _SIZE
+  font-size $FONT_ + size + _SIZE
   text-align align
   color color
   display block
@@ -38,24 +48,13 @@ Title(size = 1, width = 500px, align = left, color = $FONT_DEFAULT_COLOR)
   else if align = right
     margin 0 0 0 auto
 
-Item-centered(width = 1200px, height = 100px, y = 0, x = 0, z-index = 10)
-  display block
-  width width
-  height height
-  position absolute
-  top y
-  left 50%
-  margin-left (width / -2)
-  transform translateX(x)
-  z-index z-index
-
-Pseudo(align = left, align_num = 0, top = 0)
+Pseudo(align = left, x = 0, y = 0)
   content ''
   display block
   position absolute
-  top top
+  top y
   z-index 10
   if align == left
-    left align_num
+    left x
   else if align == right
-    right align_num  
+    right x  

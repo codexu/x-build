@@ -4,7 +4,6 @@
 
 ```
   npm install -g x-build-cli
-  # OR
   yarn global add x-build-cli
 ```
 
