@@ -311,80 +311,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="x-build">x-build</h1>
-<p><code>x-build</code>&#x4E13;&#x6CE8;&#x4E8E;&#x79FB;&#x52A8;&#x7AEF;H5&#x5355;&#x4E2A;&#x9875;&#x9762;&#x5F00;&#x53D1;&#x7684;webpack&#x6A21;&#x677F;&#xFF0C;&#x73B0;&#x5DF2;&#x5347;&#x7EA7;&#x5230;webpack4.8.1&#x7248;&#x672C;&#xFF0C;&#x62E5;&#x6709;&#x66F4;&#x5FEB;&#x7684;&#x7F16;&#x8BD1;&#x548C;&#x6253;&#x5305;&#x901F;&#x5EA6;&#xFF0C;&#x91C7;&#x7528;<code>px2rem</code>+<code>hotcss</code>&#x7684;&#x81EA;&#x9002;&#x5E94;&#x5E03;&#x5C40;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4F7F;&#x7528;<code>pug</code>&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3001;<code>stylus</code>&amp;<code>less</code>css&#x9884;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x652F;&#x6301;<code>es6</code>&#x7F16;&#x8BD1;&#xFF0C;ESlint&#x89C4;&#x8303;&#x4EE3;&#x7801;&#xFF0C;&#x8FD8;&#x6709;&#x8BB8;&#x591A;&#x9002;&#x7528;&#x4E8E;&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x7684;&#x63D2;&#x4EF6;&#x3002;</p>
-<h2 id="&#x8D77;&#x6B65;">&#x8D77;&#x6B65;</h2>
-<pre><code>  /* x-build-cli&#x5B89;&#x88C5;(&#x63A8;&#x8350;) */
-  npm install x-build-cli -g
-  x-build init
-</code></pre><pre><code>  /* git&#x5B89;&#x88C5; */
-  git clone https://github.com/codexu/x-build.git
-</code></pre><pre><code>  /* &#x4F9D;&#x8D56;&#x5B89;&#x88C5; */
-  npm install
-
-  /* &#x5F00;&#x53D1;&#x6A21;&#x5F0F; */
-  npm start
-  // &#x6216; npm run dev
-
-  /* &#x751F;&#x4EA7;&#x6A21;&#x5F0F; */
-  npm run build
-</code></pre><h2 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
-<p align="center">
-  <img width="300" src="https://github.com/codexu/_images/blob/master/x-bulid/directory.png?raw=true">
-</p>
-
-<h2 id="&#x529F;&#x80FD;">&#x529F;&#x80FD;</h2>
-<blockquote>
-<p>pug&#x3001;stylus&#x3001;es6&#x7F16;&#x8BD1;&#x538B;&#x7F29;</p>
-<p>css autoprefixer &#x524D;&#x7F00;&#x81EA;&#x52A8;&#x8865;&#x5168;</p>
-<p><a href="https://github.com/codexu/Issues/issues/11" target="_blank">px2rem-loader + hotcss.js &#x81EA;&#x9002;&#x5E94;&#x5E03;&#x5C40;&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></p>
-<p>css&#x4EE3;&#x7801;&#x62BD;&#x79BB;&#x3001;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x62BD;&#x79BB;</p>
-<p>webpack-dev-server &#x652F;&#x6301;HMR&#x70ED;&#x66F4;&#x65B0;</p>
-<p>source-map&#x66F4;&#x5FEB;&#x5B9A;&#x4F4D;&#x6E90;&#x7801;</p>
-<p>base64&#x5904;&#x7406;&#x5C0F;&#x4E8E;8kb&#x56FE;&#x7247;</p>
-<p>hash&#x547D;&#x540D;</p>
-</blockquote>
-<h2 id="&#x98CE;&#x683C;&#x6307;&#x5357;">&#x98CE;&#x683C;&#x6307;&#x5357;</h2>
+                                <h1 id="&#x4EC0;&#x4E48;&#x662F;x-build">&#x4EC0;&#x4E48;&#x662F;x-build</h1>
+<p><code>x-build</code>&#x662F;&#x4E00;&#x5957;&#x4E13;&#x6CE8;&#x4E8E;H5&#x5F00;&#x53D1;&#x7684;&#x811A;&#x624B;&#x67B6;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x5F00;&#x53D1;&#x6A21;&#x677F;&#xFF0C;&#x514D;&#x53BB;&#x9879;&#x76EE;&#x642D;&#x5EFA;&#x7684;&#x70E6;&#x607C;&#x3002;</p>
+<h2 id="&#x4F18;&#x52BF;">&#x4F18;&#x52BF;</h2>
 <ul>
-<li>html&#x91C7;&#x7528;pug&#x6A21;&#x677F;&#x5F15;&#x64CE;&#xFF08;&#x539F;&#x540D;jade&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x7F29;&#x8FDB;&#x7684;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x3002; &gt;&gt;&gt; <a href="https://pug.bootcss.com/api/getting-started.html" target="_blank">&#x53C2;&#x8003;&#x6587;&#x6863;</a></li>
+<li><p>&#x96C6;&#x6210;&#x79FB;&#x52A8;&#x7AEF;&#x81EA;&#x9002;&#x5E94;&#x89E3;&#x51B3;&#x65B9;&#x6848;(&#x4E00;&#x5957;&#x4EE3;&#x7801;&#x3001;&#x591A;&#x7AEF;&#x9002;&#x5E94;)</p>
+</li>
+<li><p>Mixins&#x5FEB;&#x901F;&#x5E03;&#x5C40;</p>
+</li>
+<li><p>&#x66F4;&#x591A;&#x63D2;&#x4EF6;&#x6EE1;&#x8DB3;H5&#x5F00;&#x53D1;&#x9700;&#x6C42;&#x3001;&#x52A8;&#x753B;&#x3001;&#x4F18;&#x5316;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3001;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#x3002;</p>
+</li>
 </ul>
-<pre><code class="lang-pug">  //- pug&#x6A21;&#x7248;&#x5F15;&#x64CE;
-  html(lang=&quot;en&quot;)
-  head
-    meta(charset=&quot;UTF-8&quot;)
-    title x-build
-  body
-    include ./components/x-build.pug
-</code></pre>
+<h2 id="&#x57FA;&#x7840;&#x529F;&#x80FD;">&#x57FA;&#x7840;&#x529F;&#x80FD;</h2>
 <ul>
-<li>css&#x9884;&#x5904;&#x7406;&#x5668;&#x91C7;&#x7528;stylus &amp; less&#x3002; &gt;&gt;&gt; <a href="http://stylus-lang.com/" target="_blank">&#x53C2;&#x8003;&#x6587;&#x6863;</a></li>
+<li><p>&#x4F7F;&#x7528;pug&#x6A21;&#x7248;&#x5F15;&#x64CE;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;css&#x9884;&#x5904;&#x7406;&#x8BED;&#x8A00;stylus</p>
+</li>
+<li><p>&#x652F;&#x6301;ES6&#x7F16;&#x8BD1;</p>
+</li>
+<li><p>es-lint&#x4EE3;&#x7801;&#x89C4;&#x8303;</p>
+</li>
+<li><p>devServer</p>
+</li>
 </ul>
-<pre><code class="lang-stylus">@import <span class="hljs-string">&quot;../utils/reset.styl&quot;</span>
-<span class="hljs-selector-class">.container</span>
-  <span class="hljs-attribute">width</span> <span class="hljs-number">300px</span>
-  <span class="hljs-selector-tag">img</span>
-    <span class="hljs-attribute">width</span> <span class="hljs-number">150px</span>
-    <span class="hljs-attribute">height</span> <span class="hljs-number">150px</span>
-  <span class="hljs-selector-tag">h1</span>
-    <span class="hljs-attribute">margin-top</span> <span class="hljs-number">20px</span>
-</code></pre>
-<ul>
-<li>&#x652F;&#x6301;bable&#x7F16;&#x8BD1;ES6</li>
-</ul>
-<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">xLoader</span> </span>{
-  <span class="hljs-keyword">constructor</span>(opts) {
-    <span class="hljs-keyword">this</span>.wrapper = opts.wrapper
-  }
-  init() {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;do something...&apos;</span>)
-  }
-}
-</code></pre>
-<h2 id="&#x63D2;&#x4EF6;">&#x63D2;&#x4EF6;</h2>
-<blockquote>
-<p><a href="https://github.com/codexu/Issues/issues/12" target="_blank">x-loader&#x56FE;&#x7247;&#x52A0;&#x8F7D;loading&#x63A7;&#x5236;&#x63D2;&#x4EF6;</a></p>
-<p><a href="https://github.com/codexu/x-touch" target="_blank">x-touch&#x79FB;&#x52A8;&#x7AEF;&#x6ED1;&#x52A8;&#x7EC4;&#x4EF6;</a></p>
-</blockquote>
 
                                 
                                 </section>
@@ -424,7 +374,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"什么是x-build","level":"1.1","depth":1,"next":{"title":"安装","level":"1.2","depth":1,"path":"docs/getting-start/install.md","ref":"docs/getting-start/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-09-26T03:27:54.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-29T05:57:45.790Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"什么是x-build","level":"1.1","depth":1,"next":{"title":"安装","level":"1.2","depth":1,"path":"docs/getting-start/install.md","ref":"docs/getting-start/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-09-30T02:54:19.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-30T02:55:30.706Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -432,10 +382,6 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>

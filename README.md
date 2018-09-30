@@ -1,100 +1,23 @@
-# x-build
+# 什么是x-build
 
-`x-build`专注于移动端H5单个页面开发的webpack模板，现已升级到webpack4.8.1版本，拥有更快的编译和打包速度，采用`px2rem`+`hotcss`的自适应布局解决方案，使用`pug`模板引擎、`stylus`&`less`css预处理器，支持`es6`编译，ESlint规范代码，还有许多适用于移动端开发的插件。
+`x-build`是一套专注于H5开发的脚手架工具，可以快速生成开发模板，免去项目搭建的烦恼。
 
+## 优势
 
-## 起步
+- 集成移动端自适应解决方案(一套代码、多端适应)
 
-```
-  /* x-build-cli安装(推荐) */
-  npm install x-build-cli -g
-  x-build init
-```
+- Mixins快速布局
 
-```
-  /* git安装 */
-  git clone https://github.com/codexu/x-build.git
-  
-```
+- 更多插件满足H5开发需求、动画、优化用户体验、加载速度。
 
-```
-  /* 依赖安装 */
-  npm install
+## 基础功能
 
-  /* 开发模式 */
-  npm start
-  // 或 npm run dev
-  
-  /* 生产模式 */
-  npm run build
-```
+- 使用pug模版引擎
 
-## 目录结构
+- 使用css预处理语言stylus
 
-<p align="center">
-  <img width="300" src="https://github.com/codexu/_images/blob/master/x-bulid/directory.png?raw=true">
-</p>
+- 支持ES6编译
 
-## 功能
+- es-lint代码规范
 
-> pug、stylus、es6编译压缩
-
-> css autoprefixer 前缀自动补全
-
-> [px2rem-loader + hotcss.js 自适应布局解决方案](https://github.com/codexu/Issues/issues/11)
-
-> css代码抽离、第三方库抽离
-
-> webpack-dev-server 支持HMR热更新
-
-> source-map更快定位源码
-
-> base64处理小于8kb图片
-
-> hash命名
-
-## 风格指南
-
-- html采用pug模板引擎（原名jade），使用缩进的代码风格。 >>> [参考文档](https://pug.bootcss.com/api/getting-started.html)
-
-```pug
-  //- pug模版引擎
-  html(lang="en")
-  head
-    meta(charset="UTF-8")
-    title x-build
-  body
-    include ./components/x-build.pug
-```
-
-- css预处理器采用stylus & less。 >>> [参考文档](http://stylus-lang.com/)
-
-```stylus
-@import "../utils/reset.styl"
-.container
-  width 300px
-  img
-    width 150px
-    height 150px
-  h1
-    margin-top 20px
-```
-
-- 支持bable编译ES6
-
-```javascript
-class xLoader {
-  constructor(opts) {
-    this.wrapper = opts.wrapper
-  }
-  init() {
-    console.log('do something...')
-  }
-}
-```
-
-## 插件
-
-> [x-loader图片加载loading控制插件](https://github.com/codexu/Issues/issues/12)
-
-> [x-touch移动端滑动组件](https://github.com/codexu/x-touch)
+- devServer
