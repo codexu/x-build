@@ -3,7 +3,7 @@
 通过以下指令创建一个新项目：
 
 ```
-  x-build init
+  $ x-build init
 ```
 
 &emsp;
@@ -26,8 +26,8 @@
 
 ```
   # 进入项目目录
-  cd [项目名称]
+  $ cd [项目名称]
 
   # 安装依赖
-  npm install
+  $ npm install
 ```

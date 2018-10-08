@@ -20,14 +20,16 @@
 
 ## 代码风格
 
-* [pug模板引擎](docs/style/pug.md)
+* [特殊语法](docs/style/special.md)
 
-* [css预处理Stylus](docs/style/stylus.md)
+* [Pug](docs/style/pug.md)
+
+* [Stylus](docs/style/stylus.md)
 
 ## 插件
 
-* [x-load](docs/root/README.md)
+* [x-load](docs/plugin/x-load.md)
 
-* [x-animate](docs/root/README.md)
+* [x-animate](docs/plugin/x-animate.md)
 
-* [x-touch](docs/root/README.md)
+* [x-touch](docs/plugin/x-touch.md)
