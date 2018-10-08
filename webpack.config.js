@@ -118,7 +118,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: Package.template === 'pug' ? `./index.pug` : `./src/index.html`
+      template: `./index.pug`
     })
   ]
 };
