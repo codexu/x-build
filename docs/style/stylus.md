@@ -1,4 +1,4 @@
-# css预处理Stylus
+# Stylus（css预处理）
 
 此处仅列举一部分常用语法，深入了解请查看：[参考文档](https://www.zhangxinxu.com/jq/stylus/)
 

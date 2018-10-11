@@ -1,4 +1,4 @@
-# pug模板引擎
+# pug（模板引擎）
 
 此处仅列举一部分常用语法，深入了解请查看：[参考文档](https://pug.bootcss.com/api/getting-started.html)
 
