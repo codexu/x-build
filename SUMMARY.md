@@ -4,7 +4,7 @@
 
 * [什么是x-build](README.md)
 
-* [安装](docs/getting-start/install.md)
+* [安装（CLI）](docs/getting-start/install.md)
 
 * [创建一个新项目](docs/getting-start/init.md)
 
@@ -22,9 +22,9 @@
 
 * [特殊语法](docs/style/special.md)
 
-* [Pug](docs/style/pug.md)
+* [HTML相关](docs/style/pug.md)
 
-* [Stylus](docs/style/stylus.md)
+* [CSS相关](docs/style/stylus.md)
 
 ## 插件
 
