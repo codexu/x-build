@@ -14,17 +14,13 @@
 
 * [目录结构](docs/basics/structure.md)
 
-* [自适应布局方案](docs/basics/px2rem.md)
+* [特殊语法](docs/basics/special.md)
+
+* [HTML -> Pug](docs/basics/pug.md)
+
+* [CSS -> Stylus](docs/basics/stylus.md)
 
 * [Mixins](docs/basics/mixins.md)
-
-## 代码风格
-
-* [特殊语法](docs/style/special.md)
-
-* [HTML相关](docs/style/pug.md)
-
-* [CSS相关](docs/style/stylus.md)
 
 ## 插件
 
@@ -33,3 +29,7 @@
 * [x-animate](docs/plugin/x-animate.md)
 
 * [x-touch](docs/plugin/x-touch.md)
+
+## 其他
+
+* [自适应布局方案](docs/others/px2rem.md)
