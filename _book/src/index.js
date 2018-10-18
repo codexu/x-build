@@ -1,1 +1,0 @@
-console.log('Documentation: https://codexu.github.io/'); // eslint-disable-line
