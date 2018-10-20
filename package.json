@@ -2,14 +2,12 @@
   "name": "x-build",
   "version": "4.3.17",
   "port": "8080",
-  "template": "pug",
   "rem": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rimraf dist & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js --open",
-    "dev": "rimraf dist & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js --open",
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode=production --config webpack.config.js"
+    "dev": "rimraf build & cross-env NODE_ENV=development webpack-dev-server --mode=development --config webpack.config.js --open",
+    "build": "rimraf build && cross-env NODE_ENV=production webpack --mode=production --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,12 +18,11 @@
     "last 2 versions"
   ],
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^8.4.1",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
@@ -33,8 +30,6 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "less": "^3.0.4",
-    "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.0",
     "optimize-css-assets-webpack-plugin": "^4.0.1",
     "postcss-loader": "^2.1.5",
@@ -48,8 +43,16 @@
     "stylus-loader": "^3.0.2",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
-    "webpack": "^4.8.1",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "babel-runtime": "^6.26.0",
+    "hotcss": "^2.2.1",
+    "normalize.css": "^8.0.0",
+    "x-animate": "^0.0.16",
+    "x-load": "^1.2.0"
   }
 }

@@ -6,7 +6,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Package = require('./package.json');
 
-const isDev = process.env.NODE_ENV === 'development' ? true : false; // eslint-disable-line
 const isRem = Package.rem;
 
 const rem = () => {
@@ -25,12 +24,11 @@ const rem = () => {
 
 const config = {
   entry: {
-    index: './src/index.js',
-    style: './src/index.styl'
+    bundle: ['./src/script/index.js', 'normalize.css', './src/style/index.styl']
   },
   output: {
     filename: '[name].[hash:8].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'build')
   },
   resolve: {
     alias: {
@@ -44,7 +42,7 @@ const config = {
         test: /\.styl$/,
         exclude: /node_modules/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader?sourceMap',
           rem(),
           'postcss-loader',
@@ -52,20 +50,9 @@ const config = {
         ]
       },
       {
-        test: /\.less$/,
-        exclude: /node_modules/,
-        use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader?sourceMap',
-          rem(),
-          'postcss-loader',
-          'less-loader',
-        ]
-      },
-      {
         test: /\.css$/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader?sourceMap',
           rem(),
           'postcss-loader',
@@ -118,16 +105,16 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./index.pug`
+      template: `./app.pug`
     })
   ]
 };
 
 if (isRem) {
-  config.entry.hotcss = './src/utils/hotcss.js';
+  config.entry.bundle.push('hotcss');
 }
 
-if (isDev) {
+if (process.env.NODE_ENV === 'development') {
   // 开发模式
   config.devServer = {
     port: Package.port,
@@ -141,24 +128,16 @@ if (isDev) {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   );
-} else {
-  // 生产模式
+}
+
+// 生产模式
+if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new MiniCssExtractPlugin({
-      filename: 'style.[chunkhash:8].css',
+      filename: 'bundle.[chunkhash:8].css',
     })
   );
   config.optimization = {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /node_modules/,
-          chunks: 'initial',
-          name: 'vendor',
-          priority: 10
-        }
-      }
-    },
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
