@@ -110,10 +110,7 @@ const config = {
   ]
 };
 
-if (isRem) {
-  config.entry.bundle.push('hotcss');
-}
-
+// 加载依赖
 for (let key in Package.dependencies) {
   if (Package.dependencies.hasOwnProperty(key)) {
     config.entry.bundle.push(key);
