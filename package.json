@@ -23,6 +23,7 @@
     "autoprefixer": "^8.4.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
@@ -46,13 +47,5 @@
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
-  },
-  "dependencies": {
-    "animate.css": "^3.7.0",
-    "babel-runtime": "^6.26.0",
-    "hotcss": "^2.2.1",
-    "normalize.css": "^8.0.0",
-    "x-animate": "^0.0.16",
-    "x-load": "^1.2.0"
   }
 }
