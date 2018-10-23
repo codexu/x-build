@@ -121,7 +121,13 @@ if (process.env.NODE_ENV === 'development') {
     overlay: {
       errors: true
     },
-    hot: true
+    hot: true,
+    stats:{
+      modules: false,
+      children: false,
+      chunks: false,
+      chunkModules: false
+    }
   };
   config.devtool = 'cheap-module-eval-source-map';
   config.plugins.push(
