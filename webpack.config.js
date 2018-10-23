@@ -24,7 +24,7 @@ const rem = () => {
 
 const config = {
   entry: {
-    bundle: ['./src/script/index.js', 'normalize.css', './src/style/index.styl']
+    bundle: ['./src/script/index.js', './src/style/index.styl']
   },
   output: {
     filename: '[name].[hash:8].js',
@@ -112,6 +112,12 @@ const config = {
 
 if (isRem) {
   config.entry.bundle.push('hotcss');
+}
+
+for (let key in Package.dependencies) {
+  if (Package.dependencies.hasOwnProperty(key)) {
+    config.entry.bundle.push(key);
+  }
 }
 
 if (process.env.NODE_ENV === 'development') {
