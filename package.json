@@ -1,6 +1,6 @@
 {
     "name": "x-build",
-    "version": "0.0.0",
+    "version": "4.4.1",
     "port": "8080",
     "rem": true,
     "description": "",
@@ -47,9 +47,5 @@
         "webpack": "^4.21.0",
         "webpack-cli": "^3.1.2",
         "webpack-dev-server": "^3.1.9"
-    },
-    "dependencies": {
-        "hotcss": "^2.2.1",
-        "normalize.css": "^8.0.0"
     }
 }
