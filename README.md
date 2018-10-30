@@ -1,4 +1,10 @@
-<p align="center"><img src="https://github.com/codexu/_images/blob/master/x-logo/logo.png?raw=true" width="150px"></p>
+<p align="center"><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwq1pr7r3sj308w06xmzr.jpg" width="150px"></p>
+
+<p align="center">
+  <img src="https://img.shields.io/jenkins/s/https/jenkins.qa.ubuntu.com/view/Precise/view/All%20Precise/job/precise-desktop-amd64_default.svg">
+  <img src="https://img.shields.io/badge/npm-v4.4.1-blue.svg">
+  <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
+</p>
 
 x-build是一套基于Webpack、快速搭建H5场景开发环境的脚手架，只需要几分钟的时间就可以运行起来并带有热重载、ES-lint代码规范校验、ES6语法编译、以及生产环境构建。
 

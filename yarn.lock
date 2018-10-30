@@ -748,10 +748,6 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-animate.css@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
-
 ansi-colors@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.1.0.tgz#dcfaacc90ef9187de413ec3ef8d5eb981a98808f"
@@ -2686,6 +2682,10 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hotcss@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/hotcss/-/hotcss-2.2.1.tgz#264bebe1df547015a5cdaeb2e6062bf9316f59cf"
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -5791,14 +5791,6 @@ write@^0.2.1:
   resolved "https://registry.yarnpkg.com/write/-/write-0.2.1.tgz#5fc03828e264cea3fe91455476f7a3c566cb0757"
   dependencies:
     mkdirp "^0.5.1"
-
-x-animate@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/x-animate/-/x-animate-0.0.16.tgz#533b3e2285ca312319b093d1062089d93fe70c52"
-
-x-load@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/x-load/-/x-load-1.2.0.tgz#5e6e2b1db966af2a764dad94c876fd4d60bb3edc"
 
 xregexp@4.0.0:
   version "4.0.0"
