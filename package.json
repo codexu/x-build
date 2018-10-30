@@ -1,6 +1,6 @@
 {
     "name": "x-build",
-    "version": "4.4.1",
+    "version": "4.4.2",
     "port": "8080",
     "rem": true,
     "description": "",
@@ -19,6 +19,7 @@
     ],
     "devDependencies": {
         "@babel/core": "^7.1.2",
+        "@babel/plugin-transform-runtime": "^7.1.0",
         "@babel/preset-env": "^7.1.0",
         "autoprefixer": "^8.4.1",
         "babel-eslint": "^10.0.1",
