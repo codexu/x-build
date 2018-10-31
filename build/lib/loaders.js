@@ -18,7 +18,7 @@ module.exports = (mode) => {
     {
       test: /\.css$/,
       use: [
-        mode === 'dev' ? 'style-loader' : MiniCssExtractPlugin.loader,
+        mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
         'css-loader?sourceMap',
         isRem(Package.rem),
         'postcss-loader',
