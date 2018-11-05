@@ -8,7 +8,7 @@ const config = {
   },
   output: {
     filename: '[name].[hash:8].js',
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve('./dist')
   },
   resolve: {
     alias: {
@@ -18,7 +18,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./app.pug`
+      template: `./index.pug`
     })
   ]
 };

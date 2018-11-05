@@ -1,13 +1,14 @@
 {
     "name": "x-build",
-    "version": "4.4.3",
+    "version": "4.4.4",
     "port": "8080",
     "rem": true,
     "description": "",
     "main": "index.js",
     "scripts": {
         "dev": "rimraf dist & webpack-dev-server --config build/webpack.dev.js",
-        "build": "rimraf dist && webpack --config build/webpack.build.js"
+        "serve": "rimraf dist & webpack-dev-server --config build/webpack.dev.js",
+        "build": "rimraf dist && webpack --config build/webpack.prod.js"
     },
     "author": "",
     "license": "ISC",

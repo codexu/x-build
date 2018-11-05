@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const config = require('./webpack.config');
+const config = require('./webpack.base');
 const Package = require('../package.json');
 const loaders = require('./lib/loaders');
 
