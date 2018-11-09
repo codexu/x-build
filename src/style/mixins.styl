@@ -57,4 +57,34 @@ Pseudo(align = left, x = 0, y = 0)
   if align == left
     left x
   else if align == right
-    right x  
+    right x
+
+List(type = 'circle', radius = 10px, paddingLeft = 20px, fontSize = 24px, lineHeight = 2, backgroundColor = #333)
+  padding 0
+  margin 0
+  font-size fontSize
+  line-height lineHeight
+  li, ol
+    position relative
+    list-style none
+    padding-left paddingLeft + radius
+    &:before
+      content ''
+      position absolute
+      display block
+      width radius
+      height radius
+      left 0
+      top (((fontSize * lineHeight) - radius) / 2)
+      if type == 'circle'
+        border-radius 50%
+        background-color backgroundColor
+      if type == 'hollow-circle'
+        border-radius 50%
+        border solid 2px backgroundColor
+        box-sizing border-box
+      if type == 'square'
+        background-color backgroundColor
+      if type == 'hollow-square'
+        border solid 2px backgroundColor
+        box-sizing border-box
