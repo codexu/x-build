@@ -1,15 +1,15 @@
 const webpack = require('webpack');
-const config = require('./webpack.base');
-const Package = require('../package.json');
+const base = require('./webpack.base');
+const config = require('./config');
 const loaders = require('./lib/loaders');
 
 // 开发模式
-config.mode = 'development';
-config.module = {rules: loaders('development')};
-config.devtool = 'cheap-module-eval-source-map';
+base.mode = 'development';
+base.module = {rules: loaders('development')};
+base.devtool = 'cheap-module-eval-source-map';
 
-config.devServer = {
-  port: Package.port,
+base.devServer = {
+  port: config.port,
   overlay: {
     errors: true
   },
@@ -22,9 +22,9 @@ config.devServer = {
   }
 };
 
-config.plugins.push(
+base.plugins.push(
   new webpack.NamedModulesPlugin(),
   new webpack.HotModuleReplacementPlugin()
 );
 
-module.exports = config;
+module.exports = base;

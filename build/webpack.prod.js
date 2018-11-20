@@ -1,20 +1,20 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const config = require('./webpack.base');
+const base = require('./webpack.base');
 const loaders = require('./lib/loaders');
 
 // 生产模式
-config.mode = 'production';
-config.module = {rules: loaders('production')};
+base.mode = 'production';
+base.module = {rules: loaders('production')};
 
-config.plugins.push(
+base.plugins.push(
   new MiniCssExtractPlugin({
     filename: 'bundle.[chunkhash:8].css',
   })
 );
 
-config.optimization = {
+base.optimization = {
   minimizer: [
     new UglifyJsPlugin({
       cache: true,
@@ -25,4 +25,4 @@ config.optimization = {
   ]
 };
 
-module.exports = config;
+module.exports = base;

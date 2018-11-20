@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Package = require('../package.json');
+const config = require('./config');
 
-const config = {
+const _config = {
   entry: {
     bundle: ['./src/script/index.js', './src/style/index.styl']
   },
@@ -24,10 +24,8 @@ const config = {
 };
 
 // 遍历dependencies并添加在entry
-for (let key in Package.dependencies) {
-  if (Package.dependencies.hasOwnProperty(key)) {
-    config.entry.bundle.push(key);
-  }
-}
+config.plugins.forEach(item => {
+  _config.entry.bundle.push(item);
+});
 
-module.exports = config;
+module.exports = _config;
