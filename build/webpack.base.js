@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const config = require('./config');
+const config = require('./config.json');
 
 const _config = {
   entry: {
@@ -27,5 +27,5 @@ const _config = {
 config.plugins.forEach(item => {
   _config.entry.bundle.push(item);
 });
-
+console.log(_config.entry);
 module.exports = _config;

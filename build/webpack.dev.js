@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const base = require('./webpack.base');
-const config = require('./config');
+const config = require('./config.json');
 const loaders = require('./lib/loaders');
 
 // 开发模式
