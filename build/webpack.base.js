@@ -27,5 +27,5 @@ const _config = {
 config.plugins.forEach(item => {
   _config.entry.bundle.push(item);
 });
-console.log(_config.entry);
+
 module.exports = _config;
