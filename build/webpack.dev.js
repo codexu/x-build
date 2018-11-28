@@ -13,6 +13,7 @@ base.devServer = {
   overlay: {
     errors: true
   },
+  open: true,
   hot: true,
   stats:{
     modules: false,
