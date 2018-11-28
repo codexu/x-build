@@ -1,5 +1,5 @@
 const isRem = require('./isRem');
-const Package = require('../../package.json');
+const config = require('../config.json');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (mode) => {
@@ -10,7 +10,7 @@ module.exports = (mode) => {
       use: [
         mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
         'css-loader?sourceMap',
-        isRem(Package.rem),
+        isRem(config.isRem),
         'postcss-loader',
         'stylus-loader',
       ]
@@ -20,7 +20,7 @@ module.exports = (mode) => {
       use: [
         mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
         'css-loader?sourceMap',
-        isRem(Package.rem),
+        isRem(config.isRem),
         'postcss-loader',
       ]
     },

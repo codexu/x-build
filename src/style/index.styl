@@ -1,13 +1,39 @@
 .x-build
-  font-size 28px
-  margin-top 40px
+  display flex
+  height 100vh
+  justify-content center
+  align-items center
   text-align center
-  box-sizing border-box
-  color #282c34
-  a
-    text-decoration none
+  flex-direction: column
+  color #fff
+  background: #272C35
+  .logo
+    width 180px
+    img
+      width 100%
+  h1
+    font-size 36px
+  ul
+    flex-direction column
+    text-align center
+    font-size 24px
+    padding 0
+    margin 0
+    line-height 2
+    display none
 
 @media screen and (min-device-width: 1000px)
   .x-build
-    font-size 16px
-    margin-top 20px
+    .logo
+      width 120px; /*px*/
+    h1
+      font-size 22px; /*px*/
+    ul
+      display flex
+      flex-direction row
+      li
+        margin 0 10px; /*px*/
+        list-style none
+        a
+          font-size 14px; /*px*/
+          color #fff
