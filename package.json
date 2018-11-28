@@ -1,14 +1,14 @@
 {
     "name": "x-build",
     "version": "4.4.6",
-    "description": "",
+    "description": "X-BUILD一套基于Webpack(v4.21.0)快速搭建H5场景开发环境的脚手架，只需要几分钟的时间就可以运行起来。",
     "main": "index.js",
     "scripts": {
         "dev": "rimraf dist & webpack-dev-server --config build/webpack.dev.js",
         "serve": "rimraf dist & webpack-dev-server --config build/webpack.dev.js",
         "build": "rimraf dist && webpack --config build/webpack.prod.js"
     },
-    "author": "",
+    "author": "codexu",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.1.2",
