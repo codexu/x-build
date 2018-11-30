@@ -1,6 +1,7 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const base = require('./webpack.base');
 const loaders = require('./lib/loaders');
 
@@ -11,6 +12,14 @@ base.module = {rules: loaders('production')};
 base.plugins.push(
   new MiniCssExtractPlugin({
     filename: 'bundle.[chunkhash:8].css',
+  })
+);
+
+base.plugins.push(
+  new ImageminPlugin({
+    pngquant: {
+      quality: '95-100'
+    }
   })
 );
 
