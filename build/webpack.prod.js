@@ -8,6 +8,13 @@ const loaders = require('./lib/loaders');
 // 生产模式
 base.mode = 'production';
 base.module = {rules: loaders('production')};
+base.stats = {
+  modules: false,
+  children: false,
+  chunks: false,
+  chunkModules: false,
+  warnings: false
+};
 
 base.plugins.push(
   new MiniCssExtractPlugin({
