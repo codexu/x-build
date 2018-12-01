@@ -35,8 +35,6 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.21.0",
