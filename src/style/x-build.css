@@ -1,0 +1,41 @@
+.x-build {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    background: #272C35;
+}
+.x-build .logo {
+    width: 20vmin;
+}
+    
+.x-build .logo img{
+    width: 100%;
+}
+.x-build h1 {
+    font-size: 3vmin;
+}
+    
+.x-build ul {
+    display: none;
+}
+      
+@media screen and (min-device-width: 1200px) {
+    .x-build ul {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5vmin;
+        padding: 0;
+        margin: 2vmin 0 0 0;
+    }
+    .x-build ul li {
+        margin: 0 1vmin;
+        list-style: none;
+    }
+    .x-build ul li a {
+        color: #fff;
+    }  
+}
+  
