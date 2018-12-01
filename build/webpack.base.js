@@ -4,7 +4,7 @@ const config = require('./config.json');
 
 const _config = {
   entry: {
-    bundle: ['./src/script/index.js', './src/style/index.styl']
+    bundle: config.files
   },
   output: {
     filename: '[name].[hash:8].js',

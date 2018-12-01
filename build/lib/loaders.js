@@ -16,6 +16,27 @@ module.exports = (mode) => {
       ]
     },
     {
+      test: /\.less$/,
+      exclude: /node_modules/,
+      use: [
+        mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+        'css-loader?sourceMap',
+        isRem(config.isRem),
+        'postcss-loader',
+        'less-loader',
+      ]
+    },{
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      use: [
+        mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+        'css-loader?sourceMap',
+        isRem(config.isRem),
+        'postcss-loader',
+        'sass-loader',
+      ]
+    },
+    {
       test: /\.css$/,
       use: [
         mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,

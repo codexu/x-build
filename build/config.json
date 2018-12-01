@@ -3,5 +3,8 @@
   "isRem": false,
   "plugins": [
     "normalize.css"
+  ],
+  "files": [
+    "./src/script/index.js"
   ]
 }
