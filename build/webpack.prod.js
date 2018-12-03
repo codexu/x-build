@@ -1,7 +1,6 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const base = require('./webpack.base');
 const loaders = require('./lib/loaders');
 const config = require('./config.json');
@@ -23,7 +22,8 @@ base.plugins.push(
   })
 );
 
-if(config.imagemin) {
+if (config.imagemin) {
+  const ImageminPlugin = require('imagemin-webpack-plugin').default;
   base.plugins.push(
     new ImageminPlugin({
       pngquant: {
