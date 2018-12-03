@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const base = require('./webpack.base');
 const loaders = require('./lib/loaders');
+const config = require('./config.json');
 
 // 生产模式
 base.mode = 'production';
@@ -22,13 +23,15 @@ base.plugins.push(
   })
 );
 
-base.plugins.push(
-  new ImageminPlugin({
-    pngquant: {
-      quality: '95-100'
-    }
-  })
-);
+if(config.imagemin) {
+  base.plugins.push(
+    new ImageminPlugin({
+      pngquant: {
+        quality: '95-100'
+      }
+    })
+  );
+}
 
 base.optimization = {
   minimizer: [
