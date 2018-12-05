@@ -1,4 +1,5 @@
 const isRem = require('./isRem');
+const isEslint = require('./isEslint');
 const config = require('../config.json');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -48,7 +49,7 @@ module.exports = (mode) => {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: ['babel-loader', 'eslint-loader']
+      use: isEslint(config.eslint)
     },
     {
       test: /\.(jade|pug)$/,
