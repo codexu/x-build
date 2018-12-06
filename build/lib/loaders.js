@@ -57,6 +57,10 @@ module.exports = (mode) => {
       use: 'pug-loader'
     },
     {
+      test: /\.html$/,
+      use: 'html-loader'
+    },
+    {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       use: [{
         loader: 'url-loader',
