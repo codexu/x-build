@@ -18,7 +18,7 @@ const _config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./index.pug`
+      template: config.template
     })
   ]
 };

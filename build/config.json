@@ -3,6 +3,7 @@
   "isRem": false,
   "imagemin": false,
   "eslint": false,
+  "template": "./src/index.html",
   "plugins": [
     "normalize.css"
   ],
