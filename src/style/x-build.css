@@ -1,23 +1,44 @@
+@font-face {
+    font-family: 'ARCADE';
+    src:url('../assets//font/ARCADE.ttf')
+}
+
+@keyframes font-shadow{
+    0% {
+        text-shadow: #63A3A8 0 0 0;
+    }
+    5% {
+        text-shadow: #63A3A8 0 0 3vmin;
+    }
+    10% {
+        text-shadow: #63A3A8 0 0 0;
+    }
+}
 .x-build {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #fff;
-    background: #272C35;
-}
-.x-build .logo {
-    width: 20vmin;
-}
-    
-.x-build .logo img{
-    width: 100%;
+    color: #63A3A8;
+    background: #061A1D;
+    font-family: 'ARCADE';
+    background-image: url(../assets/images/bg.png);
+    background-size: 150vmin 100vmin;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .x-build h1 {
-    font-size: 3vmin;
+    font-size: 18vmin;
+    animation: font-shadow 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin: 0;
 }
-    
+.x-build p {
+    font-size: 4vmin;
+    color: #fff;
+}    
 .x-build ul {
     display: none;
 }
@@ -26,7 +47,7 @@
     .x-build ul {
         display: flex;
         flex-direction: row;
-        font-size: 1.5vmin;
+        font-size: 2vmin;
         padding: 0;
         margin: 2vmin 0 0 0;
     }
@@ -36,6 +57,12 @@
     }
     .x-build ul li a {
         color: #fff;
+        text-decoration: none;
+    }  
+    .x-build ul li a:hover {
+        text-shadow: #63A3A8 0 0 2vmin;
+        color: #63A3A8;
+        text-decoration: underline;
     }  
 }
   
