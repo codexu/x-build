@@ -7,10 +7,17 @@
     0% {
         text-shadow: #63A3A8 0 0 0;
     }
-    5% {
-        text-shadow: #63A3A8 0 0 3vmin;
+    2.6% {
+        transform:skew(0);
     }
-    10% {
+    3% {
+        text-shadow: #63A3A8 0 0 3vmin;
+        transform:skew(55deg);
+    }
+    3.4% {
+        transform:skew(0);
+    }
+    6% {
         text-shadow: #63A3A8 0 0 0;
     }
 }
