@@ -4,20 +4,20 @@
 }
 
 @keyframes font-shadow{
-    0% {
+    50% {
         text-shadow: #63A3A8 0 0 0;
     }
-    2.6% {
+    52.6% {
         transform:skew(0);
     }
-    3% {
+    53% {
         text-shadow: #63A3A8 0 0 3vmin;
         transform:skew(55deg);
     }
-    3.4% {
+    53.4% {
         transform:skew(0);
     }
-    6% {
+    56% {
         text-shadow: #63A3A8 0 0 0;
     }
 }
