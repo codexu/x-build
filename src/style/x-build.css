@@ -35,7 +35,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.x-build h1 {
+.x-build .logo {
     font-size: 18vmin;
     animation: font-shadow 7s;
     animation-timing-function: linear;
