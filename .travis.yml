@@ -10,5 +10,4 @@ install:
 script:
     - npm link
     - npm run test
-    - npm run cover
     - codecov
