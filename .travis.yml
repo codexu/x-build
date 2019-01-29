@@ -9,6 +9,6 @@ install:
     - npm install -g codecov
 script:
     - npm link
-    - x-build create demo -q
+    - npm run test
     - npm run cover
     - codecov
