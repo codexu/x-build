@@ -28,6 +28,7 @@ const final = require('./final');
  */
 
 this.commander = commander;
+this.version_url = `https://registry.npmjs.org/x-build/latest`;
 this.spinner = new Ora();
 this.progress = 1;
 this.progressCurrent = 0;

@@ -1,32 +1,35 @@
 const expect = require('chai').expect;
 
-const getVersion = require('../lib/getVersion');
-const hasYarn = require('../lib/hasYarn');
-const checkOS = require('../lib/checkOS');
 
 /* eslint-disable */
+const getVersion = require('../lib/getVersion');
 describe('#getVersion', () => {
-  it('should return Promise & latest version', () => {
-    const url = 'https://registry.npmjs.org/x-build/latest';
+  const url = 'https://registry.npmjs.org/x-build/latest';
+  const packageVersion = require('../package.json').version;
+
+  it('使用正确的 url 返回 Promise', () => {
     expect(getVersion(url)).to.be.a('Promise');
-    let version = null;
+  })
+  it('使用正确的 url 返回 版本号与 package 版本号一致', () => {
     getVersion(url).then(res => {
-      version = res;
-      const packageVersion = require('../package.json').version;
-      expect(version).to.equal(packageVersion);
+      expect(res).to.equal(packageVersion);
     })
   })
 });
 
-describe('#hasYarn', () => {
-  it('should return package name', () => {
-    expect(hasYarn()).to.be.a('String');
-  })
-});
-
+const checkOS = require('../lib/checkOS');
 describe('#checkOS', () => {
-  it('should return cmd string', () => {
-    expect(checkOS(['cd demo', 'npm install'], 'Windows_NT')).to.equal('cd demo & npm install');
-    expect(checkOS(['cd demo', 'npm install'], 'other')).to.equal('cd demo\nnpm install');
+  const OS_TYPE_WINDOWS = 'Windows_NT';
+  const OS_TYPE_DARWIN = 'Darwin';
+  const OS_TYPE_LINUX = 'Linux';
+  const array = ['cd test', 'npm install']
+  it('OS_TYPE_WINDOWS 返回 使用 & 链接的字符串', () => {
+    expect(checkOS(array, OS_TYPE_WINDOWS)).to.equal('cd test & npm install');
+  })
+  it('OS_TYPE_DARWIN 返回 使用 \\n 链接的字符串', () => {
+    expect(checkOS(array, OS_TYPE_DARWIN)).to.equal('cd test\nnpm install');
+  })
+  it('OS_TYPE_LINUX 返回 使用 \\n 链接的字符串', () => {
+    expect(checkOS(array, OS_TYPE_LINUX)).to.equal('cd test\nnpm install');
   })
 });

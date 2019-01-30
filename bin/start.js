@@ -17,7 +17,7 @@ function start() {
       resolve();
     } else {
       this.spinner.start('正在查询x-build最新版本');
-      checkVersion().then(() => {
+      checkVersion.call(this).then(() => {
         this.spinner.stop();
         resolve();
       }, version => {
