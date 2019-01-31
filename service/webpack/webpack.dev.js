@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const base = require('./webpack.base');
-const config = require('./config.json');
+const path = require('path');
+const config = require(path.resolve(`${process.cwd()}/config.json`));
 const loaders = require('./lib/loaders');
 
 // 开发模式

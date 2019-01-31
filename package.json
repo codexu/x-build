@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.5.4",
+  "version": "4.6.0",
   "description": "X-BUILD 是一套基于 Webpack4 快速搭建H5场景开发环境的脚手架，只需要几分钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
@@ -13,7 +13,9 @@
   },
   "bin": {
     "x-build": "./bin/x-build.js",
-    "x": "./bin/x-build.js"
+    "x": "./bin/x-build.js",
+    "x-service-serve": "./service/bin/serve.js",
+    "x-service-build": "./service/bin/build.js"
   },
   "scripts": {
     "test": "npm run lint:bin && npm run lint:lib && x create test -q && npm run cover",

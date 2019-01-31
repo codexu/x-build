@@ -43,7 +43,7 @@ function revisePackage(url) {
  */
 function reviseConfig(url) {
   return new Promise((resolve, reject) => {
-    let _url = url + '/build/config.json';
+    let _url = url + '/config.json';
     fs.readFile(_url, (err, data) => {
       if (err) reject(err);
       let _data = JSON.parse(data.toString());

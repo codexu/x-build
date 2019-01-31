@@ -3,7 +3,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const base = require('./webpack.base');
 const loaders = require('./lib/loaders');
-const config = require('./config.json');
+const path = require('path');
+const config = require(path.resolve(`${process.cwd()}/config.json`));
 
 // 生产模式
 base.mode = 'production';
