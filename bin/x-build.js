@@ -50,6 +50,12 @@ this.commander
 
 // 异步函数安装流程
 (async function() {
+
+  var lines = process.stdout.getWindowSize()[1];
+  for(var i = 0; i < lines; i++) {
+      console.log('\r\n');
+  }
+
   // 清空控制台，查询CLI版本
   await start.call(this);
   // 输入问题列表
