@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.6.4",
+  "version": "4.6.5",
   "description": "X-BUILD 是一套基于 Webpack4 快速搭建H5场景开发环境的脚手架，只需要几分钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
