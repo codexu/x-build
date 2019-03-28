@@ -1,5 +1,6 @@
 const isRem = require('./isRem');
 const isEslint = require('./isEslint');
+const path = require('path');
 const config = require(path.resolve(`${process.cwd()}/config.json`));
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
