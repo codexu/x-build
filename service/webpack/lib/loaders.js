@@ -1,6 +1,6 @@
 const isRem = require('./isRem');
 const isEslint = require('./isEslint');
-const config = require('../config.json');
+const config = require(path.resolve(`${process.cwd()}/config.json`));
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (mode) => {
