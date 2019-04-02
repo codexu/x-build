@@ -9,20 +9,6 @@ base.mode = 'development';
 base.module = {rules: loaders('development')};
 base.devtool = 'cheap-module-eval-source-map';
 
-function getIPAdress (){
-  let interfaces = require('os').networkInterfaces();
-    // eslint-disable-next-line guard-for-in
-    for (let devName in interfaces) {
-        let iface = interfaces[devName];
-        for (let i = 0; i < iface.length; i++){
-            let alias = iface[i];
-            if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){
-                return alias.address;
-            }
-        }
-    }
-}
-
 base.devServer = {
   port: config.port,
   overlay: {
@@ -30,7 +16,7 @@ base.devServer = {
   },
   open: true,
   hot: true,
-  host: getIPAdress(),
+  host: '0.0.0.0',
   stats:{
     modules: false,
     children: false,
