@@ -9,5 +9,6 @@
   ],
   "files": [
     "./src/script/index.js"
-  ]
+  ],
+  "proxy": {}
 }

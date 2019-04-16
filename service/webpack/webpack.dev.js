@@ -22,7 +22,8 @@ base.devServer = {
     children: false,
     chunks: false,
     chunkModules: false
-  }
+  },
+  proxy: config.proxy
 };
 
 base.plugins.push(
