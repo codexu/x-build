@@ -59,7 +59,12 @@ module.exports = (mode) => {
     },
     {
       test: /\.html$/,
-      use: 'html-loader'
+      use: {
+          loader: 'html-loader',
+          options: {
+              attrs: ['img:src', 'img:data-src']
+          }
+      }
     },
     {
       test: /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/,
