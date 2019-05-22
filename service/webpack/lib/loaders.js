@@ -71,7 +71,7 @@ module.exports = (mode) => {
       use: [{
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: config.base64Size,
           name: '[name][hash:7].[ext]',
           outputPath: 'static/images/'
         }
@@ -82,7 +82,7 @@ module.exports = (mode) => {
       use: [{
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: config.base64Size,
           name: '[name][hash:7].[ext]',
           outputPath: 'static/font/'
         }
@@ -93,7 +93,7 @@ module.exports = (mode) => {
       use: [{
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: config.base64Size,
           name: '[name][hash:7].[ext]',
           outputPath: 'static/media/'
         }

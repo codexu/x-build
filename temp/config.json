@@ -10,5 +10,15 @@
   "files": [
     "./src/script/index.js"
   ],
-  "proxy": {}
+  "base64Size": 10000,
+  "proxy": {
+    "/api": {
+        "target": "#",
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "changeOrigin": true,
+        "secure": false
+    }
+  }
 }
