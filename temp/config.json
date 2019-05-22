@@ -10,6 +10,7 @@
   "files": [
     "./src/script/index.js"
   ],
+  "remUnit": 46.875,
   "base64Size": 10000,
   "proxy": {
     "/api": {
