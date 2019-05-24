@@ -1,3 +1,4 @@
+const path = require('path');
 const config = require(path.resolve(`${process.cwd()}/config.json`));
 
 const rem = (isRem) => {

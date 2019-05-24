@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.6.15",
+  "version": "4.6.16",
   "description": "X-BUILD是一套基于Node环境的前端脚手架，最快只需几秒钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
