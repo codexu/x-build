@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "4.6.17",
+  "version": "5.0.0",
   "description": "X-BUILD是一套基于Node环境的前端脚手架，最快只需几秒钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
@@ -13,38 +13,26 @@
   },
   "bin": {
     "x-build": "./bin/x-build.js",
-    "x": "./bin/x-build.js",
-    "x-service-serve": "./service/bin/serve.js",
-    "x-service-build": "./service/bin/build.js"
-  },
-  "scripts": {
-    "test": "npm run lint:bin && npm run lint:lib && x create test -q && npm run cover",
-    "lint:bin": "eslint bin/*.js",
-    "lint:lib": "eslint lib/*.js",
-    "cover": " istanbul cover _mocha test/test.js --reporter"
+    "x": "./bin/x-build.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codexu/x-build-cli.git"
+    "url": "https://github.com/codexu/x-build.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "chalk": "^2.4.1",
-    "commander": "^2.15.1",
-    "fs-extra": "^7.0.1",
-    "inquirer": "^5.2.0",
-    "node-cmd": "^3.0.0",
-    "ora": "^2.1.0",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.5",
-    "semver": "^5.6.0"
+  "engines": {
+    "node": ">=8.9"
   },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.2.0",
-    "eslint": "^5.9.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0"
-  }
+  "dependencies": {
+    "@vue/cli": "^3.8.2",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "global": "^4.3.2",
+    "inquirer": "^6.3.1",
+    "node-cmd": "^3.0.0",
+    "request": "^2.88.0",
+    "semver": "^6.1.1"
+  },
+  "devDependencies": {}
 }

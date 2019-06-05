@@ -293,7 +293,7 @@ module.exports = {
       'no-confusing-arrow': [2, { 'allowParens': true }],
 
       // 禁止使用 console，提醒开发者，上线时要去掉
-      'no-console': 1,
+      'no-console': 0,
 
       // 禁止使用常量作为判断条件
       'no-constant-condition': [2, { 'checkLoops': false }],

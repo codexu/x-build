@@ -1,0 +1,12 @@
+{
+    "name": "x-build",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "serve": "x-service-serve",
+        "build": "x-service-build"
+    },
+    "author": "codexu",
+    "license": "MIT"
+}
