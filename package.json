@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "5.0.15",
+  "version": "5.0.16",
   "description": "X-BUILD是一套基于 Node 环境的前端脚手架，适用于小型项目开发，只需几分钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
@@ -14,7 +14,8 @@
   "bin": {
     "x-build": "./bin/x-build.js",
     "x": "./bin/x-build.js",
-    "x-service": "./service/index.js"
+    "x-service": "./service/index.js",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,12 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "git-cz": "^3.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   }
 }
