@@ -1,11 +1,11 @@
 {
-    "name": "x-build",
+    "name": "x-build-template",
     "version": "0.1.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "serve": "x-service-serve",
-        "build": "x-service-build"
+        "serve": "cross-env NODE_ENV=serve x-service",
+        "build": "cross-env NODE_ENV=build x-service"
     },
     "author": "codexu",
     "license": "MIT"

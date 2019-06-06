@@ -1,7 +1,7 @@
 {
   "name": "x-build",
-  "version": "5.0.0",
-  "description": "X-BUILD是一套基于Node环境的前端脚手架，最快只需几秒钟的时间就可以运行起来。",
+  "version": "5.0.15",
+  "description": "X-BUILD是一套基于 Node 环境的前端脚手架，适用于小型项目开发，只需几分钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
     "html5",
@@ -13,7 +13,8 @@
   },
   "bin": {
     "x-build": "./bin/x-build.js",
-    "x": "./bin/x-build.js"
+    "x": "./bin/x-build.js",
+    "x-service": "./service/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,14 +26,15 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "@vue/cli": "^3.8.2",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
-    "global": "^4.3.2",
     "inquirer": "^6.3.1",
     "node-cmd": "^3.0.0",
     "request": "^2.88.0",
     "semver": "^6.1.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0"
+  }
 }
