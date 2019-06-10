@@ -11,7 +11,7 @@ install:
     - npm install -g yarn
     - npm install -g x-build@beta
 script:
-    - sudo x create test -q
+    - x create test -q
     - cd test && ls -l
     - cd test/src && ls -l
     - cat test/package.json
