@@ -10,4 +10,8 @@ install:
     - npm install -g x-build@beta
 script:
     - x create test -q
-    - cd test && npm run serve
+    - cd test
+    - ls -l
+    - cd src && ls -l
+    - cat package.json
+    - cat xbuild-config.js
