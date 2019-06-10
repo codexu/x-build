@@ -1,0 +1,9 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "scripts": {
+      "serve": "cross-env NODE_ENV=serve x-service",
+      "build": "cross-env NODE_ENV=build x-service"
+  },
+  "license": "ISC"
+}
