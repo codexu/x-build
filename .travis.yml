@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-    - 8
+    - 10
 cache: npm
 install:
     - npm install -g npm@latest
@@ -11,8 +11,7 @@ install:
     - npm install -g x-build@beta
 script:
     - x create test -q
-    - cd test
-    - ls -l
-    - cd src && ls -l
-    - cat package.json
-    - cat xbuild-config.js
+    - cd test && ls -l
+    - cd test/src && ls -l
+    - cat test/package.json
+    - cat test/xbuild-config.js
