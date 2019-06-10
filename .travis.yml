@@ -13,6 +13,7 @@ script:
     - npm link
     - x create test -q
     - cd test && ls -l
-    - cd test/src && ls -l
-    - cat test/package.json
-    - cat test/xbuild-config.js
+    - cat package.json
+    - cat xbuild-config.js
+    - cd src && ls -l
+
