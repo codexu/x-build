@@ -7,6 +7,7 @@ install:
     - npm --version
     - npm install --registry http://registry.npmjs.org
     - npm install -g codecov
+    - npm install -g yarn
     - npm install -g x-build@beta
 script:
     - x create test -q
