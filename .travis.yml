@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+    - 8
+cache: npm
+install:
+    - npm install -g npm@latest
+    - npm --version
+    - npm install --registry http://registry.npmjs.org
+    - npm install -g codecov
+    - npm install -g x-build@beta
+script:
+    - x create test -q
+    - cd test && npm run serve

@@ -12,7 +12,9 @@ module.exports = merge(common, {
   devServer: {
     port: config.port,
     hot: true,
+    open: config.open,
     proxy: config.proxy,
+    host: '0.0.0.0',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
@@ -27,10 +29,10 @@ compiler.watch({
   ignored: /node_modules/,
   poll: 1000
 }, () => {
-  clearConsole('magenta', `X-BUILD v${require('../../package.json').version}`);
-  console.log(chalk.green(`- Local: http://localhost:${config.port}/`));
-  console.log(chalk.green(`- Network: http://${getIPAdress()}:${config.port}/`));
-  console.log(chalk.green(`- Documentation: https://codexu.github.io/`));
+  clearConsole('cyan', `X-BUILD v${require('../../package.json').version}`);
+  console.log(chalk.cyan(`- Local: http://localhost:${config.port}/`));
+  console.log(chalk.cyan(`- Network: http://${getIPAdress()}:${config.port}/`));
+  console.log(chalk.cyan(`- Documentation: https://codexu.github.io/`));
   console.log('');
 });
 

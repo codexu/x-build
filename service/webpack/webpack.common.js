@@ -7,9 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const basePath = path.resolve(process.cwd());
 
 module.exports = {
-  entry: {
-    bundle: `${basePath}/src/scripts/index.js`
-  },
+  entry: config.entry,
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -74,7 +72,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: isEslint()
+        use: jsLoader()
       },
       {
         test: /\.(jade|pug)$/,
@@ -128,10 +126,11 @@ module.exports = {
 };
 
 
-function isEslint() {
+function jsLoader() {
   const arr = [];
   if (config.babel) arr.push('babel-loader');
   if (config.eslint) arr.push('eslint-loader');
+  return arr;
 }
 
 function isRem() {
