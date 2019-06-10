@@ -8,5 +8,4 @@ require('../lib/initialization')();
  * [create] 初始化选项
  * ->
  * [creator] 拷贝模板，安装依赖
- * 
  */
