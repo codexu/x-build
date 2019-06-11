@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "5.0.33",
+  "version": "5.0.35",
   "description": "X-BUILD 是一套基于 Node 环境的前端脚手架，适用于小型项目开发，只需几分钟的时间就可以运行起来。",
   "main": "index.js",
   "keywords": [
