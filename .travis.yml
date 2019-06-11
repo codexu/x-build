@@ -1,14 +1,16 @@
 language: node_js
 sudo: required
 node_js:
+    - 8
     - 10
 cache: yarn  
 install:
     - yarn
 script:
     - npm link
-    - x create test -q
-    - cd test && ls -l
-    - cat package.json
-    - cat xbuild.config.js
-    - cd src && ls -l
+    - x create test1 -t1
+    - x create test2 -t2
+    - x create test3 -t3
+    - x create test4 -t4
+    - x create test5 -t5
+    - x create test6 -t6
