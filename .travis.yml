@@ -8,9 +8,9 @@ install:
     - yarn
 script:
     - npm link
-    - mkdir bs && x create bs
-    - mkdir pug && x create pug
-    - mkdir mobileLayout && x create mobileLayout
-    - mkdir sass && x create sass
-    - mkdir less && x create less
-    - mkdir stylus && x create stylus
+    - mkdir bs && x test bs
+    - mkdir pug && x test pug
+    - mkdir mobileLayout && x test mobileLayout
+    - mkdir sass && x test sass
+    - mkdir less && x test less
+    - mkdir stylus && x test stylus
