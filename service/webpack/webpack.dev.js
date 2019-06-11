@@ -15,25 +15,24 @@ module.exports = merge(common, {
     open: config.open,
     proxy: config.proxy,
     host: '0.0.0.0',
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    stats:'minimal'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProgressPlugin(function(percentage) {
+      if (percentage === 1) {
+        clearConsole('cyan', `X-BUILD v${require('../../package.json').version}`);
+        console.log(chalk.cyan(`- Local: http://localhost:${config.port}/`));
+        console.log(chalk.cyan(`- Network: http://${getIPAdress()}:${config.port}/`));
+        console.log(chalk.cyan(`- Documentation: https://codexu.github.io/`));
+        console.log('');
+      }
+    })
   ]
-});
-
-const compiler = webpack({});
-
-compiler.watch({
-  // watchOptions 示例
-  aggregateTimeout: 300,
-  ignored: /node_modules/,
-  poll: 1000
-}, () => {
-  clearConsole('cyan', `X-BUILD v${require('../../package.json').version}`);
-  console.log(chalk.cyan(`- Local: http://localhost:${config.port}/`));
-  console.log(chalk.cyan(`- Network: http://${getIPAdress()}:${config.port}/`));
-  console.log(chalk.cyan(`- Documentation: https://codexu.github.io/`));
-  console.log('');
 });
 
 function getIPAdress() {
