@@ -3,11 +3,15 @@ sudo: required
 node_js:
     - 8
     - 10
-cache: yarn  
+cache: npm
 install:
-    - yarn
+    - npm install
 script:
     - npm link
+    - x create quick -q -n
+    - cd quick
+    - npm run build
+    - cd ..
     - mkdir bs
     - cd bs
     - x test bs
