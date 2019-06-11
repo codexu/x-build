@@ -8,9 +8,32 @@ install:
     - yarn
 script:
     - npm link
-    - mkdir bs && cd bs && x test bs
-    - mkdir pug && cd pug  && x test pug
-    - mkdir mobileLayout && cd mobileLayout  && x test mobileLayout
-    - mkdir sass && cd sass  && x test sass
-    - mkdir less && cd less  && x test less
-    - mkdir stylus && cd stylus  && x test stylus
+    - mkdir bs
+    - cd bs
+    - x test bs
+    - npm run build
+    - cd ..
+    - mkdir pug
+    - cd pug 
+    - x test pug
+    - npm run build
+    - cd ..
+    - mkdir mobileLayout
+    - cd mobileLayout 
+    - x test mobileLayout
+    - npm run build
+    - cd ..
+    - mkdir sass
+    - cd sass 
+    - x test sass
+    - npm run build
+    - cd ..
+    - mkdir less
+    - cd less 
+    - x test less
+    - npm run build
+    - cd ..
+    - mkdir stylus
+    - cd stylus 
+    - x test stylus
+    - npm run build
