@@ -138,7 +138,7 @@ function isRem() {
     return {
       loader: 'px2rem-loader',
       options: {
-        remUnit: config.remUnit,
+        remUnit: config.designWidth * 20 / 320,
         remPrecision: 8
       }
     };
