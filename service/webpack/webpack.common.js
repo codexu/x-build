@@ -26,6 +26,9 @@ module.exports = {
     version: false,
     chunkModules: false
   },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
   module: {
     rules: [
       {
@@ -73,6 +76,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoader()
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.(jade|pug)$/,
