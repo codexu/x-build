@@ -101,7 +101,7 @@ module.exports = {
         use: [{
           loader: 'url-loader',
           options: {
-            limit: config.base64,
+            limit: config.base64 || 8 * 1024,
             name: '[name][hash:7].[ext]',
             outputPath: 'static/'
           }
@@ -112,7 +112,7 @@ module.exports = {
         use: [{
           loader: 'url-loader',
           options: {
-            limit: config.base64,
+            limit: config.base64 || 8 * 1024,
             name: '[name][hash:7].[ext]',
             outputPath: 'static/'
           }
@@ -123,7 +123,7 @@ module.exports = {
         use: [{
           loader: 'url-loader',
           options: {
-            limit: config.base64,
+            limit: config.base64 || 8 * 1024,
             name: '[name][hash:7].[ext]',
             outputPath: 'static/'
           }
@@ -142,7 +142,7 @@ function jsLoader() {
 }
 
 function isRem() {
-  if (config.mobileLayout) {
+  if (config.designWidth) {
     return {
       loader: 'px2rem-loader',
       options: {

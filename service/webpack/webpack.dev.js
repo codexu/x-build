@@ -6,14 +6,18 @@ const common = require('./webpack.common.js');
 const webpack = require('webpack');
 const clearConsole = require('../../lib/utils/clearConsole');
 
+const port = config.port || 8080;
+const open = config.open || false;
+const proxy = config.proxy || {};
+
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    port: config.port,
+    port,
     hot: true,
-    open: config.open,
-    proxy: config.proxy,
+    open,
+    proxy,
     host: '0.0.0.0',
     overlay: {
       warnings: true,
@@ -26,8 +30,8 @@ module.exports = merge(common, {
     new webpack.ProgressPlugin(function(percentage) {
       if (percentage === 1) {
         clearConsole('cyan', `X-BUILD v${require('../../package.json').version}`);
-        console.log(chalk.cyan(`- Local: http://localhost:${config.port}/`));
-        console.log(chalk.cyan(`- Network: http://${getIPAdress()}:${config.port}/`));
+        console.log(chalk.cyan(`- Local: http://localhost:${port}/`));
+        console.log(chalk.cyan(`- Network: http://${getIPAdress()}:${port}/`));
         console.log(chalk.cyan(`- Documentation: https://codexu.github.io/`));
         console.log('');
       }
