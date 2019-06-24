@@ -90,10 +90,10 @@ module.exports = {
       {
         test: /\.html$/,
         use: {
-            loader: 'html-loader',
-            options: {
-                attrs: [':src', ':data-src']
-            }
+          loader: 'html-loader',
+          options: {
+            attrs: [':src', ':data-src', ':poster']
+          }
         }
       },
       {
