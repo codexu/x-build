@@ -4,7 +4,7 @@
 [![](https://img.shields.io/npm/dm/x-build.svg)](https://www.npmjs.com/package/x-build)
 [![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/codexu/x-build/blob/master/LICENSE)
 
-> X-BUILD is a scaffolding tool for small projects. It can quickly initialize the project directory in a few seconds through terminal commands, and solve the problems of automation, performance, modularity, specification, adaptive layout, etc. in development, and help you generate better code. It consists of two parts: a project generator based on the Node.js environment, which is an NPM package installed in the global environment, and a webpack-based development and production environment that configures various requirements.
+X-BUILD is a scaffolding tool for small projects. It can quickly initialize the project directory in a few seconds through terminal commands, and solve the problems of automation, performance, modularity, specification, adaptive layout, etc. in development, and help you generate better code. It consists of two parts: a project generator based on the Node.js environment, which is an NPM package installed in the global environment, and a webpack-based development and production environment that configures various requirements.
 
 ## 📚 Documentation
 
