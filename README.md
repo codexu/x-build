@@ -1,5 +1,6 @@
 # X-BUILD
 [![Build Status](https://travis-ci.org/codexu/x-build.svg?branch=master)](https://travis-ci.org/codexu/x-build)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcodexu%2Fx-build.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcodexu%2Fx-build?ref=badge_shield)
 [![](https://img.shields.io/npm/v/x-build.svg)](https://www.npmjs.com/package/x-build)
 [![](https://img.shields.io/npm/dm/x-build.svg)](https://www.npmjs.com/package/x-build)
 [![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/codexu/x-build/blob/master/LICENSE)
@@ -56,3 +57,6 @@ npm run serve
 ## License
 
 [MIT](https://github.com/codexu/x-build/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcodexu%2Fx-build.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcodexu%2Fx-build?ref=badge_large)
