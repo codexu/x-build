@@ -3,7 +3,7 @@ module.exports = {
   'parser': 'babel-eslint',
   'parserOptions': {
       // 启用ES8语法支持
-      'ecmaVersion': 2017,    
+      'ecmaVersion': 2017,
       // module表示ECMAScript模块
       'sourceType': 'module',
       // 使用额外的语言特性

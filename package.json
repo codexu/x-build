@@ -1,8 +1,14 @@
 {
   "name": "x-build",
-  "version": "5.1.3",
+  "version": "5.2.0",
   "description": "Quickly generate front-end engineering scaffolding",
-  "keywords": ["webpack", "template", "scaffold", "builder", "generator"],
+  "keywords": [
+    "webpack",
+    "template",
+    "scaffold",
+    "builder",
+    "generator"
+  ],
   "homepage": "https://codexu.github.io/",
   "main": "index.js",
   "directories": {
