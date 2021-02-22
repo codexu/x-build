@@ -1,12 +1,22 @@
 #! /usr/bin/env node
-require('../lib/initialization')();
+const program = require('commander');
+const requiredPackageVersion = require('../package.json').version;
+const hasDir = require('./utils/hasDir');
 
-/**
- * 初始化项目顺序
- * [initialization]
- * ->
- * [create] 初始化选项
- * ->
- * [creator] 拷贝模板，安装依赖
- * 
- */
+
+let cmd, dirname;
+
+program.version(requiredPackageVersion)
+  .usage('<command> [options]');
+
+program.command('create <app-name>')
+  .description('create a new project powered by x-build')
+  .action(async(name, cmd) => {
+    // 判断是否存在创建的目录
+    await hasDir(name);
+    cmd = 'create';
+    dirname = name;
+    require('./creator')(name);
+  });
+
+program.parse(process.argv);

@@ -1,23 +1,24 @@
-# X-BUILD
+# x-build
 
 ## Project setup
-
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
-
 ```
-npm run build
+yarn build
 ```
 
-### Documents
+### Lints and fixes files
+```
+yarn lint
+```
 
-See [Documents](https://codexu.github.io/).
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

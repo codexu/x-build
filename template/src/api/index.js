@@ -1,12 +1,5 @@
-const files = require.context('./', true, /\.js$/);
-const modules = {};
+import request from '@/libs/request';
 
-function checkIndex(name) {
-  return name !== './index.js';
+export default function () {
+  return request();
 }
-
-files.keys().filter(checkIndex).forEach(key => {
-  modules[key.replace(/(.*\/)*([^.]+).js/ig, '$2')] = files(key).default;
-});
-
-export default modules;

@@ -1,43 +1,27 @@
 {
   "name": "x-build",
-  "version": "5.0.28",
-  "description": "X-BUILD是一套基于 Node 环境的前端脚手架，适用于小型项目开发，只需几分钟的时间就可以运行起来。",
-  "main": "index.js",
-  "keywords": [
-    "html5",
-    "webpack",
-    "template"
-  ],
-  "directories": {
-    "lib": "lib"
-  },
+  "version": "6.0.0-alpha",
+  "description": "",
+  "main": "bin/x-build.js",
   "bin": {
     "x-build": "./bin/x-build.js",
-    "x": "./bin/x-build.js",
-    "x-service": "./service/index.js"
+    "x": "./bin/x-build.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codexu/x-build.git"
+    "url": "git+https://github.com/codexu/x-build.git"
   },
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": ">=8.9"
+  "bugs": {
+    "url": "https://github.com/codexu/x-build/issues"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.20.0",
-    "fs-extra": "^8.0.1",
-    "inquirer": "^6.3.1",
-    "node-cmd": "^3.0.0",
-    "ora": "^3.4.0",
-    "request": "^2.88.0",
-    "semver": "^6.1.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "git-cz": "^3.0.1"
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "fs-extra": "^9.0.1"
   }
 }
