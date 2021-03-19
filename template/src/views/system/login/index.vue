@@ -14,9 +14,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.page-login{
-  position: relative;
-}
-</style>
