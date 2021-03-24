@@ -10,7 +10,7 @@ const request = axios.create({
 
 // 异常拦截处理器
 const errorHandler = (error: AxiosError) => {
-  const status = get(error, 'response.status');
+  const status = error.response?.status;
   switch (status) {
     case 400: error.message = '请求错误'; break;
     case 401: error.message = '未授权，请登录'; break;
