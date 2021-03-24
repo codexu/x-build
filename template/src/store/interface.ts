@@ -1,4 +1,4 @@
-import { UserState } from './user';
+import { UserState } from './modules/user';
 
 interface RootStateTypes {
   name: string;
