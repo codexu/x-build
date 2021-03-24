@@ -10,8 +10,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "element-plus": "^1.0.2-beta.35",
+    "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "nprogress": "^0.2.0",
     "store": "^2.0.12",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.168",
     "@types/md5": "^2.3.0",
     "@types/nprogress": "^0.2.0",
     "@types/store": "^2.0.2",
