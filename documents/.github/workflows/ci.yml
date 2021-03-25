@@ -1,0 +1,23 @@
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - next
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@next
+      with:
+        persist-credentials: false
+    - name: Install and Build
+      run: |
+        npm install
+        npm run-script build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.XBUILD }}
+        BRANCH: gh-pages
+        FOLDER: documents/docs/.vuepress/dist
