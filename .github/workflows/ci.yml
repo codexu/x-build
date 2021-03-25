@@ -7,6 +7,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Enter File
+      run:
+        cd documents
+    - name: Install and Build
     - name: Checkout
       uses: actions/checkout@master
       with:
@@ -20,4 +24,4 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.XBUILD }}
         BRANCH: gh-pages
-        FOLDER: documents/docs/.vuepress/dist
+        FOLDER: docs/.vuepress/dist
