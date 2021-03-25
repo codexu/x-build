@@ -10,7 +10,6 @@ jobs:
     - name: Enter File
       run:
         cd documents
-    - name: Install and Build
     - name: Checkout
       uses: actions/checkout@master
       with:
