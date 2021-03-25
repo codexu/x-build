@@ -1,4 +1,4 @@
-import XSvg from '@/components/System/SvgIcon/index.vue';
+import SvgIcon from '@/components/System/SvgIcon/index.vue';
 import '@/components/System/SvgIcon';
 
 import {
@@ -12,7 +12,7 @@ import lang from 'element-plus/lib/locale/lang/zh-cn';
 locale.use(lang);
 
 export const components = [
-  XSvg,
+  SvgIcon,
   ElButton,
 ];
 
