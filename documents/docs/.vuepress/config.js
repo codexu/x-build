@@ -7,8 +7,8 @@ module.exports = {
   ],
 
   themeConfig: {
-    repo: 'LOUSANPANG/x-build',
-    docsRepo: 'LOUSANPANG/x-build',
+    repo: 'code-device/x-build',
+    docsRepo: 'code-device/x-build',
     docsDir: 'docs',
     docsBranch: 'next',
     editLinks: true,
