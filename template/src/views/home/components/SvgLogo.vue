@@ -1,5 +1,5 @@
 <template>
-  <x-svg name="logo" :fill="iconColorString" />
+  <SvgIcon name="logo" :fill="iconColorString" />
 </template>
 
 <script lang="ts">
@@ -7,7 +7,7 @@ import { defineComponent, ref, computed } from 'vue';
 import { random } from 'lodash';
 
 export default defineComponent({
-  name: 'XLogo',
+  name: 'SvgLogo',
   setup() {
     const iconColor = ref([0, 0, 0]);
     function colorStep() {

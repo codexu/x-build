@@ -1,7 +1,7 @@
 <template>
   <div class="page-home">
     <h1 align="center">
-      <x-logo />
+      <svg-logo />
       <i>BUILD FOR VUE3.0</i>
     </h1>
   </div>
@@ -9,10 +9,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import XLogo from './components/XLogo.vue';
+import SvgLogo from './components/SvgLogo.vue';
 
 export default defineComponent({
   name: 'PageHome',
-  components: { XLogo },
+  components: { SvgLogo },
 });
 </script>

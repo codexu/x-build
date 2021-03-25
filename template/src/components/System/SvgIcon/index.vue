@@ -11,7 +11,7 @@
 import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
-  name: 'XSvg',
+  name: 'SvgIcon',
   props: {
     name: { type: String, default: '' },
     fill: { type: String, default: '#000' },
