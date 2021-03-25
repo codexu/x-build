@@ -1,0 +1,91 @@
+// 水平居中
+@mixin horizontal-center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 文字一行超出显示省略号
+@mixin ellipsis () {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文字超出显示省略号
+@mixin ellipsis-multiline($number: 4) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $number;
+}
+
+// 美化文本的选中
+@mixin beauty-select($color, $bgcolor) {
+  &::selection {
+    color: $color;
+    background-color: $bgcolor;
+  }
+}
+
+// 毛玻璃效果
+@mixin blur($blur: 10px) {
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='${blur}');
+  filter: blur($blur);
+  *zoom: 1;
+}
+
+// 滤镜: 将彩色照片显示为黑白照片、保留图片层次
+@mixin grayscale() {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+// 修改背景色
+@mixin background($border-radius:5px, $bg-color:#eee, $color:#fff, $font-weight:400) {
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  color: $color;
+  font-weight: $font-weight;
+}
+
+// 三角形
+@mixin triangle($size: 5px, $color: rgba(0, 0, 0, 0.6), $dir: bottom) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if (bottom==$dir) {
+    border-width: $size $size 0 $size;
+    border-color: $color transparent transparent transparent;
+  }
+
+  @else if (top==$dir) {
+    border-width: 0 $size $size $size;
+    border-color: transparent transparent $color transparent;
+  }
+
+  @else if (right==$dir) {
+    border-width: $size 0 $size $size;
+    border-color: transparent transparent transparent $color;
+  }
+
+  @else if (left==$dir) {
+    border-width: $size $size $size 0;
+    border-color: transparent $color transparent transparent;
+  }
+}
+
+// 移动端解决 100vh 的问题
+@mixin vh($height: 100vh) {
+  height: $height;
+  height: calc(#{$height} - var(--browser-address-bar, 0px));
+}

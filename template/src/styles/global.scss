@@ -1,0 +1,74 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  letter-spacing: $letter-space-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $title-color;
+}
+
+h1 {
+  font-size: $heading-1-size;
+}
+
+h2 {
+  font-size: $heading-2-size;
+}
+
+h3 {
+  font-size: $heading-3-size;
+}
+
+h4 {
+  font-size: $heading-4-size;
+}
+
+h5 {
+  font-size: $heading-5-size;
+}
+
+h6 {
+  font-size: $heading-6-size;
+}
+
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  width: 6px;
+  background: rgba(#101F1C, 0.1);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(#101F1C, 0.5);
+  background-clip: padding-box;
+  min-height: 28px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(#101F1C, 1);
+}

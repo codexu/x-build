@@ -5,6 +5,10 @@ import store, { key } from './store';
 import router from './router';
 import '@/router/permission';
 
+// css
+import 'normalize.css';
+import '@/styles/global.scss';
+
 const app = createApp(App);
 app.use(store, key);
 app.use(router);

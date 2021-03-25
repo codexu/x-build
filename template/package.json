@@ -15,8 +15,10 @@
     "element-plus": "^1.0.2-beta.35",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
+    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "store": "^2.0.12",
+    "vh-check": "^2.0.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
