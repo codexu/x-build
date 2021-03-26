@@ -1,5 +1,4 @@
 import axios, { AxiosError } from 'axios';
-import { get } from 'lodash';
 import storage from 'store';
 
 const request = axios.create({
