@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const pkg = require('./package.json');
 
 const resolve = (dir) => path.join(__dirname, dir);
@@ -18,6 +19,9 @@ module.exports = {
     },
   },
   chainWebpack: (config) => {
+    config.plugins.push(new MonacoWebpackPlugin({
+      languages: ['javascript', 'json', 'html', 'typescript', 'java', 'go', 'python', 'xml'],
+    }));
     config.module
       .rule('svg')
       .exclude.add(resolve('src/assets/icons'))
