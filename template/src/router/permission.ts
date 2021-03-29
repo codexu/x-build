@@ -1,7 +1,7 @@
 import router from '@/router';
 import store from '@/store';
 import storage from 'store';
-import title from '@/libs/utils/title';
+import { setTitle } from '@/libs/utils';
 
 // 进度条
 import NProgress from 'nprogress';
@@ -53,5 +53,5 @@ router.beforeEach(async (to, from, next) => {
 router.afterEach((to) => {
   // 进度条
   NProgress.done();
-  title(to.meta.title as string);
+  setTitle(to.meta.title as string);
 });

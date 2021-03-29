@@ -1,3 +1,4 @@
+import StaticFile from '@/components/System/StaticFile/index.vue';
 import SvgIcon from '@/components/System/SvgIcon/index.vue';
 import '@/components/System/SvgIcon';
 
@@ -12,6 +13,7 @@ import lang from 'element-plus/lib/locale/lang/zh-cn';
 locale.use(lang);
 
 export const components = [
+  StaticFile,
   SvgIcon,
   ElButton,
 ];

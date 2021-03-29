@@ -3,7 +3,7 @@ import { Mutation, Action, Store } from 'vuex';
 import router from '@/router';
 import storage from 'store';
 import md5 from 'md5';
-import { StoreModuleType } from '@/libs/utils/store';
+import { StoreModuleType } from '@/libs/utils/importAllStore';
 
 export interface UserInfo {
   id: number;

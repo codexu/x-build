@@ -1,6 +1,6 @@
 <template>
-  <div class="page-home">
-    <h1 align="center"><i>X-BUILD FOR VUE3.0</i></h1>
+  <div class="page-test">
+    <h1 align="center"><i>X-BUILD FOR VUE3.0 TEST PAGE</i></h1>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 import { InjectionKey } from 'vue';
 import { createStore, Store, useStore as baseUseStore } from 'vuex';
-import { importAllStore } from '@/libs/utils/store';
+import { importAllStore } from '@/libs/utils/importAllStore';
 import RootStateTypes, { AllStateTypes } from './interface';
 
 export default createStore({

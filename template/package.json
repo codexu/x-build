@@ -12,6 +12,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "current-device": "^0.10.2",
+    "dayjs": "^1.10.4",
     "element-plus": "^1.0.2-beta.35",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",

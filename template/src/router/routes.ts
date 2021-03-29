@@ -16,6 +16,14 @@ export const frameIn: Array<RouteRecordRaw> = [
           title: '首页',
         },
       },
+      {
+        path: 'test',
+        name: 'Test',
+        component: () => import(/* webpackChunkName: "test" */ '@/views/test/index.vue'),
+        meta: {
+          title: '测试',
+        },
+      },
     ],
   },
 ];

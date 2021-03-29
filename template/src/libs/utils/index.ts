@@ -1,7 +1,3 @@
-import title from './title';
-import baseUrl from './baseUrl';
-
-export default {
-  title,
-  baseUrl,
-};
+export { default as baseUrl } from './baseUrl';
+export { default as setTitle } from './setTitle';
+export { default as checkDevice } from './checkDevice';
