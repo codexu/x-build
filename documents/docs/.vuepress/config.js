@@ -21,6 +21,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/overview/features',
+            '/overview/quickstart',
           ]
         },
       ],
