@@ -22,7 +22,7 @@ export function importAllStore<S>(): ModuleTree<S> {
     });
 
     // 导入 @/store 下文件
-    const requireContext: __WebpackModuleApi.RequireContext = require.context('@/store', false, /\.ts$/);
+    const requireContext: __WebpackModuleApi.RequireContext = require.context('@/store/modules', false, /\.ts$/);
     requireContext.keys().forEach((fileName) => {
       const modulesConent = requireContext(fileName);
       if (modulesConent.default) {
