@@ -3,8 +3,9 @@ import SvgIcon from '@/components/System/SvgIcon/index.vue';
 import '@/components/System/SvgIcon';
 
 import {
+  ElIcon,
   ElButton,
-  ElMessage,
+  ElNotification,
 } from 'element-plus';
 
 import locale from 'element-plus/lib/locale';
@@ -15,9 +16,10 @@ locale.use(lang);
 export const components = [
   StaticFile,
   SvgIcon,
+  ElIcon,
   ElButton,
 ];
 
 export const plugins = [
-  ElMessage,
+  ElNotification,
 ];
