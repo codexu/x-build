@@ -3,6 +3,7 @@ import { createStore, Store, useStore as baseUseStore } from 'vuex';
 import { importAllStore } from '@/libs/utils/importAllStore';
 import { HomeState } from '@/views/home/store';
 import { UserState } from './modules/user';
+import { LogsState } from './modules/logs';
 import { ScreenfullState } from './modules/screenfull';
 
 export interface RootStateTypes {
@@ -13,6 +14,7 @@ export interface RootStateTypes {
 export interface AllStateTypes extends RootStateTypes {
   home: HomeState;
   user: UserState;
+  logs: LogsState;
   screenfull: ScreenfullState;
 }
 
