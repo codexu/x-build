@@ -1,5 +1,6 @@
 <template>
   <div class="page-test">
+    <h1 align="center"><i>X-BUILD FOR VUE3.0 TEST PAGE</i></h1>
     <el-button @click="setScreenfull">全屏</el-button>
     <el-button @click="setScreenfullClose">关闭全屏</el-button>
   </div>
