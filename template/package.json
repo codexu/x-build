@@ -10,6 +10,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@types/ua-parser-js": "^0.7.35",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "current-device": "^0.10.2",
@@ -21,6 +22,7 @@
     "nprogress": "^0.2.0",
     "screenfull": "^5.1.0",
     "store": "^2.0.12",
+    "ua-parser-js": "^0.7.26",
     "vh-check": "^2.0.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",

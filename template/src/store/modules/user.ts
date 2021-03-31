@@ -4,6 +4,7 @@ import router from '@/router';
 import storage from 'store';
 import md5 from 'md5';
 import { StoreModuleType } from '@/libs/utils/importAllStore';
+import UaParser, { IResult as UaResult } from 'ua-parser-js';
 
 export interface UserInfo {
   id: number;
@@ -15,6 +16,7 @@ export interface UserInfo {
 
 export interface UserState {
   userInfo: UserInfo;
+  ua: UaResult;
 }
 
 export const userKey: InjectionKey<Store<UserState>> = Symbol('userKey');
@@ -41,6 +43,7 @@ const initState: UserState = {
     avatar: '',
     roles: [],
   },
+  ua: new UaParser().getResult(),
 };
 
 const StoreModel: ModuleType = {
