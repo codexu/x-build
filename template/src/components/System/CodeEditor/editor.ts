@@ -13,7 +13,8 @@ const Editor = defineComponent({
     theme: { type: String, default: 'vs-dark' },
   },
   setup(props, context) {
-    let editor: any;
+    // eslint-disable-next-line
+        let editor: any;
     const options = { // default setting
       language: props.language,
       theme: props.theme,
@@ -32,10 +33,10 @@ const Editor = defineComponent({
       return '';
     };
     // set code
-    const setCode = (code: string) => {
-      if (judgeEditor()) return editor.setValue(code);
-      return '';
-    };
+    // const setCode = (code: string) => {
+    //   if (judgeEditor()) return editor.setValue(code);
+    //   return '';
+    // };
     // set language
     const setLanguage = (lang: string) => {
       if (judgeEditor()) {
@@ -48,7 +49,7 @@ const Editor = defineComponent({
 
     onMounted(() => {
       init();
-      editor.onDidChangeModelContent((event: any) => {
+      editor.onDidChangeModelContent((event: unknown) => {
         context.emit('update:value', getCode());
         context.emit('change', getCode(), event);
       });

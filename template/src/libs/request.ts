@@ -43,19 +43,18 @@ request.interceptors.response.use((response) => {
   if (code === undefined) {
     // 如果没有 code 代表这不是项目后端开发的接口
     return dataAxios;
-  } else {
-    // 有 code 代表这是一个后端接口 可以进行进一步的判断
-    switch (code) {
-      case 0:
-        // [ 示例 ] code === 0 代表没有错误
-        return dataAxios.data;
-      case 'xxx':
-        // [ 示例 ] 其它和后台约定的 code
-        return 'xxx';
-      default:
-        // 不是正确的 code
-        return '不是正确的code';
-    }
+  }
+  // 有 code 代表这是一个后端接口 可以进行进一步的判断
+  switch (code) {
+    case 0:
+      // [ 示例 ] code === 0 代表没有错误
+      return dataAxios.data;
+    case 'xxx':
+      // [ 示例 ] 其它和后台约定的 code
+      return 'xxx';
+    default:
+      // 不是正确的 code
+      return '不是正确的code';
   }
 }, errorHandler);
 

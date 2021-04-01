@@ -19,9 +19,9 @@ module.exports = {
     },
   },
   chainWebpack: (config) => {
-    config.plugins.push(new MonacoWebpackPlugin({
-      languages: ['javascript', 'json', 'html', 'typescript', 'java', 'go', 'python', 'xml'],
-    }));
+    config.plugin('monaco-editor').use(MonacoWebpackPlugin, [{
+      languages: ['javascript', 'css', 'html', 'typescript', 'json', 'cpp', 'java', 'go', 'python'],
+    }]);
     config.module
       .rule('svg')
       .exclude.add(resolve('src/assets/icons'))
