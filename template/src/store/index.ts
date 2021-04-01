@@ -4,6 +4,7 @@ import { importAllStore } from '@/libs/utils/importAllStore';
 import { HomeState } from '@/views/home/store';
 import { UserState } from './modules/user';
 import { LogsState } from './modules/logs';
+import { MenusState } from './modules/menus';
 import { ScreenfullState } from './modules/screenfull';
 
 export interface RootStateTypes {
@@ -15,6 +16,7 @@ export interface AllStateTypes extends RootStateTypes {
   home: HomeState;
   user: UserState;
   logs: LogsState;
+  menus: MenusState;
   screenfull: ScreenfullState;
 }
 

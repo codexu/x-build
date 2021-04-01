@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useStore } from '@/store';
 
 export default defineComponent({
@@ -21,11 +21,15 @@ export default defineComponent({
 
     const setScreenfullClose = () => {
       store.commit('screenfull/SET_ACTIVE', false);
+      store.commit('menus/SET_SEARCH_KEYWORD', '首页');
     };
+
+    const routesPool = computed(() => store.getters['menus/search']);
 
     return {
       setScreenfull,
       setScreenfullClose,
+      routesPool,
     };
   },
 });
