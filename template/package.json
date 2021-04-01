@@ -16,6 +16,7 @@
     "current-device": "^0.10.2",
     "dayjs": "^1.10.4",
     "element-plus": "^1.0.2-beta.35",
+    "fuse.js": "^6.4.6",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "normalize.css": "^8.0.1",
