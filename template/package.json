@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "build:test": "vue-cli-service build --mode test",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/ua-parser-js": "^0.7.35",
@@ -30,6 +31,8 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "@types/jest": "^24.0.19",
     "@types/lodash": "^4.14.168",
     "@types/md5": "^2.3.0",
@@ -52,6 +55,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "svg-sprite-loader": "^6.0.2",
