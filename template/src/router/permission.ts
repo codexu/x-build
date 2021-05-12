@@ -1,5 +1,5 @@
 import router from '@/router';
-import store from '@/store';
+import { store } from '@/store';
 import storage from 'store';
 import { setTitle } from '@/libs/utils';
 
