@@ -7,16 +7,14 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import { useStore } from '@/store';
+import { MutationTypes } from './store';
 
 export default defineComponent({
   name: 'PageHome',
   setup() {
     const store = useStore();
     const title = computed(() => store.state.home.title);
-
-    setTimeout(() => {
-      store.commit('home/SET_TITLE', 'Welcome to use X-BUILD!');
-    }, 2000);
+    store.commit(MutationTypes.setTitle, 'Welcome to use X-BUILD!');
 
     return {
       title,

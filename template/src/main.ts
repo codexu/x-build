@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { components, plugins } from '@/components';
 import App from './App.vue';
-import store, { key } from './store';
+import { store } from './store';
 import router from './router';
 import '@/router/permission';
 
@@ -10,7 +10,7 @@ import 'normalize.css';
 import '@/styles/global.scss';
 
 const app = createApp(App);
-app.use(store, key);
+app.use(store);
 app.use(router);
 app.mount('#app');
 
