@@ -1,4 +1,4 @@
 enum MutationTypes {
-  setTitle = 'SET_TITLE',
+  setTitle = 'SET_EXAMPLE_TITLE',
 }
 export default MutationTypes;

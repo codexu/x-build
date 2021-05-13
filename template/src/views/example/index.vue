@@ -1,6 +1,6 @@
 <template>
   <div class="page-home">
-    <h1 align="center"><i>{{ title }}</i></h1>
+    <p align="center">{{ title }}</p>
   </div>
 </template>
 
@@ -13,12 +13,10 @@ export default defineComponent({
   name: 'PageHome',
   setup() {
     const store = useStore();
-    const title = computed(() => store.state.home.title);
+    const title = computed(() => store.state.example.title);
     store.commit(MutationTypes.setTitle, 'Welcome to use X-BUILD!');
 
-    return {
-      title,
-    };
+    return { title };
   },
 });
 </script>

@@ -5,15 +5,15 @@ import BasicLayout from '@/layouts/BasicLayout/index.vue';
 export const frameIn: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/example',
     component: BasicLayout,
     children: [
       {
-        path: 'home',
-        name: 'Home',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/home/index.vue'),
+        path: 'example',
+        name: 'Example',
+        component: () => import(/* webpackChunkName: "example" */ '@/views/example/index.vue'),
         meta: {
-          title: '首页',
+          title: '示例',
         },
       },
     ],
