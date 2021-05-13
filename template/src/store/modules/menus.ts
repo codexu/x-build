@@ -1,11 +1,8 @@
-import { InjectionKey } from 'vue';
 import { RouteRecordRaw, _RouteRecordBase } from 'vue-router';
-import { Mutation, Store, Getter } from 'vuex';
+import { Mutation, Getter } from 'vuex';
 import Fuse from 'fuse.js';
 import { StoreModuleType } from '@/libs/utils/importAllStore';
 import { frameIn } from '@/router/routes';
-
-export const logsKey: InjectionKey<Store<MenusState>> = Symbol('menusKey');
 
 export interface MenusState {
   menu: Array<RouteRecordRaw>;

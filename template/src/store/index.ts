@@ -5,8 +5,9 @@ import {
 import { importAllStore } from '@/libs/utils/importAllStore';
 import { Store as ExampleStore } from '@/views/example/store';
 import { StateType as ExampleState } from '@/views/example/store/state';
+import { Store as LogsStore } from './modules/logs';
+import { StateType as LogsState } from './modules/logs/state';
 import { UserState } from './modules/user';
-import { LogsState } from './modules/logs';
 import { MenusState } from './modules/menus';
 import { ScreenfullState } from './modules/screenfull';
 
@@ -24,6 +25,7 @@ export interface AllStateTypes extends RootState {
 }
 
 export type Store = ExampleStore<Pick<AllStateTypes, 'example'>>
+  & LogsStore<Pick<AllStateTypes, 'logs'>>
 
 const debug = process.env.NODE_ENV !== 'production';
 const plugins = debug ? [createLogger({})] : [];

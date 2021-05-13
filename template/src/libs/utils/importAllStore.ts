@@ -24,12 +24,14 @@ export function importAllStore<S>(): ModuleTree<S> {
     });
 
     // 导入 @/store 下文件
-    const requireContext: __WebpackModuleApi.RequireContext = require.context('@/store/modules', false, /\.ts$/);
+    const requireContext: __WebpackModuleApi.RequireContext = require.context('@/store/modules', true, /[/\\]index\.ts$/);
     requireContext.keys().forEach((fileName) => {
       const modulesConent = requireContext(fileName);
       if (modulesConent.default) {
         const { name, ...module } = modulesConent.default;
-        const modulesName = name || fileName.replace(/^\.\/(.*)\.\w+$/, '$1');
+        const modulesName = name || fileName
+          .replace(/^\.\/(.*)\.\w+$/, '$1')
+          .replace(/\/index/, '');
         modules[modulesName] = { ...module };
       }
     });

@@ -1,5 +1,4 @@
-import { InjectionKey } from 'vue';
-import { Mutation, Action, Store } from 'vuex';
+import { Mutation, Action } from 'vuex';
 import router from '@/router';
 import storage from 'store';
 import md5 from 'md5';
@@ -18,8 +17,6 @@ export interface UserState {
   userInfo: UserInfo;
   ua: UaResult;
 }
-
-export const userKey: InjectionKey<Store<UserState>> = Symbol('userKey');
 
 export interface ModuleType extends StoreModuleType<UserState> {
   state: UserState;

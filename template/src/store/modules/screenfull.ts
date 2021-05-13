@@ -1,13 +1,10 @@
-import { InjectionKey } from 'vue';
-import { Mutation, Action, Store } from 'vuex';
+import { Mutation, Action } from 'vuex';
 import { StoreModuleType } from '@/libs/utils/importAllStore';
 import screenfull from 'screenfull';
 
 export interface ScreenfullState {
   active: boolean;
 }
-
-export const screenfullKey: InjectionKey<Store<ScreenfullState>> = Symbol('screenfullKey');
 
 export interface ModuleType extends StoreModuleType<ScreenfullState> {
   state: ScreenfullState;
