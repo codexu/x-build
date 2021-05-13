@@ -13,7 +13,7 @@ export default defineComponent({
   name: 'PageHome',
   setup() {
     const store = useStore();
-    const title = computed(() => store.state.example.title);
+    const title = computed(() => store.state.user);
     store.commit(MutationTypes.setTitle, 'Welcome to use X-BUILD!');
     return { title };
   },
