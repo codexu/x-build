@@ -9,7 +9,7 @@ import { Store as LogsStore } from './modules/logs';
 import { StateType as LogsState } from './modules/logs/state';
 import { UserState } from './modules/user';
 import { MenusState } from './modules/menus';
-import { ScreenfullState } from './modules/screenfull';
+import { StateType as ScreenfullState } from './modules/screenfull/state';
 
 export interface RootState {
   name: string;
