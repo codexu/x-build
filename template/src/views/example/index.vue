@@ -15,7 +15,6 @@ export default defineComponent({
     const store = useStore();
     const title = computed(() => store.state.example.title);
     store.commit(MutationTypes.setTitle, 'Welcome to use X-BUILD!');
-
     return { title };
   },
 });

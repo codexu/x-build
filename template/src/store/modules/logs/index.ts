@@ -4,7 +4,7 @@ import state, { StateType } from './state';
 
 export { default as MutationTypes } from './mutation-types';
 
-export type Store<S = PermissionState> = Omit<VuexStore<S>, 'commit'>
+export type Store<S = StateType> = Omit<VuexStore<S>, 'commit'>
   & {
     commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
       key: K,
