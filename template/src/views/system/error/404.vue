@@ -28,7 +28,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.page-error-404{
+.page-error-404 {
   position: relative;
 }
 </style>

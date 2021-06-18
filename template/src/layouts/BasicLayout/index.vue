@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.basic-layout{
+.basic-layout {
   position: relative;
 }
 </style>

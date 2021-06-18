@@ -8,6 +8,7 @@
     "build:test": "vue-cli-service build --mode test",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
+    "stylelint": "stylelint **/*.{html,vue,css,sass,scss,less}",
     "prepare": "husky install",
     "analyzer": "cross-env use_analyzer=true npm run build"
   },
@@ -62,6 +63,9 @@
     "lint-staged": "^10.5.4",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.19.0",
     "svg-sprite-loader": "^6.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0",

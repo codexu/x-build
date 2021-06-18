@@ -35,7 +35,7 @@
   -moz-filter: blur($blur);
   -o-filter: blur($blur);
   -ms-filter: blur($blur);
-  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='${blur}');
+  filter: progid:dximagetransform.microsoft.blur(pixelradius='${blur}');
   filter: blur($blur);
   *zoom: 1;
 }

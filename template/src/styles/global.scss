@@ -1,10 +1,24 @@
-html, body, h1, h2, h3, h4, h5, h6, p,label {
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
   font-family: $font-family-base;
   line-height: $line-height-base;
   letter-spacing: $letter-space-base;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $title-color;
 }
 
@@ -40,14 +54,14 @@ h6 {
 
 ::-webkit-scrollbar-track {
   width: 6px;
-  background: rgba(#101F1C, 0.1);
+  background: rgba(#101f1c, 0.1);
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
   border-radius: 2em;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(#101F1C, 0.5);
+  background-color: rgba(#101f1c, 0.5);
   background-clip: padding-box;
   min-height: 28px;
   -webkit-border-radius: 2em;
@@ -56,5 +70,5 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(#101F1C, 1);
+  background-color: rgba(#101f1c, 1);
 }
