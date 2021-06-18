@@ -8,7 +8,8 @@
     "build:test": "vue-cli-service build --mode test",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "analyzer": "cross-env use_analyzer=true npm run build"
   },
   "dependencies": {
     "@types/ua-parser-js": "^0.7.35",
@@ -53,6 +54,8 @@
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^2.0.0-0",
     "babel-plugin-import": "^1.13.3",
+    "compression-webpack-plugin": "^5.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0-0",
@@ -62,6 +65,7 @@
     "sass-loader": "^8.0.2",
     "svg-sprite-loader": "^6.0.2",
     "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "webpack-bundle-analyzer": "^4.4.2"
   }
 }
