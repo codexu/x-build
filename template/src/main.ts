@@ -8,6 +8,7 @@ import '@/router/permission';
 // css
 import 'normalize.css';
 import '@/styles/global.scss';
+import '@/styles/element-variables.scss';
 
 const app = createApp(App);
 app.use(store);
