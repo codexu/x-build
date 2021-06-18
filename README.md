@@ -10,6 +10,7 @@
 
 首先欢迎加入 [CodeDevice](https://github.com/code-device)，协助我们将 X-BUILD 开发的更加优秀。
 
+- 了解项目，提交 PR，等待合并结果。
 - 添加微信 `xu461229187`，附带留言 `加入 CodeDevice，参与 X-BUILD 建设`。
 - 添加成功后会将你拉入微信开发交流群。
 - 进群后请更改备注为你的 GitHub 账户名称。
