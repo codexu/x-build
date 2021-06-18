@@ -1,5 +1,5 @@
 import router from '@/router';
-import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/store/sys/user';
 import storage from 'store';
 import { setTitle } from '@/libs/utils';
 
