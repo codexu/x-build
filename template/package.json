@@ -29,8 +29,7 @@
     "ua-parser-js": "^0.7.26",
     "vh-check": "^2.0.5",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
