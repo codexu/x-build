@@ -1,5 +1,5 @@
 import router from '@/router';
-import { store } from '@/store';
+import { useUserStore } from '@/store/user';
 import storage from 'store';
 import { setTitle } from '@/libs/utils';
 
@@ -16,13 +16,14 @@ const token = storage.get('ACCESS_TOKEN');
  */
 
 router.beforeEach(async (to, from, next) => {
+  const userStore = useUserStore();
   // 进度条
   NProgress.start();
   // 验证当前路由所有的匹配中是否需要有登录验证的
   if (to.matched.some((r) => r.meta.auth)) {
     // 是否存有token作为验证是否登录的条件
     if (token && token !== 'undefined') {
-      store.dispatch('user/verification', token).then(() => {
+      userStore.verification(token).then(() => {
         // 是否处于登录页面
         if (to.path === loginRoutePath) {
           next({ path: defaultRoutePath });

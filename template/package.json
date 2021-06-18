@@ -22,6 +22,7 @@
     "md5": "^2.3.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
+    "pinia": "^2.0.0-beta.2",
     "screenfull": "^5.1.0",
     "store": "^2.0.12",
     "ua-parser-js": "^0.7.26",

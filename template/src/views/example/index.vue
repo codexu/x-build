@@ -1,21 +1,12 @@
 <template>
-  <div class="page-home">
-    <p align="center">{{ title }}</p>
+  <div class="page-example">
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { useStore } from '@/store';
-import { MutationTypes } from './store';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'PageHome',
-  setup() {
-    const store = useStore();
-    const title = computed(() => store.state.user);
-    store.commit(MutationTypes.setTitle, 'Welcome to use X-BUILD!');
-    return { title };
-  },
+  name: 'PageExample',
 });
 </script>
