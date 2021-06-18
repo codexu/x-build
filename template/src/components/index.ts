@@ -1,6 +1,6 @@
-import StaticFile from '@/components/System/StaticFile/index.vue';
-import SvgIcon from '@/components/System/SvgIcon/index.vue';
-import '@/components/System/SvgIcon';
+import StaticFile from '@/components/sys/StaticFile/index.vue';
+import SvgIcon from '@/components/sys/SvgIcon/index.vue';
+import '@/components/sys/SvgIcon';
 
 import {
   ElIcon,
