@@ -14,7 +14,7 @@ import {
   defineComponent, computed, ref, Ref, watch, onMounted,
 } from 'vue';
 import { url as filterUrl } from '@/libs/filters';
-import { checkDevice } from '@/libs/utils';
+import useDevice from '@/hooks/device';
 
 export default defineComponent({
   name: 'StaticFile',
@@ -28,7 +28,8 @@ export default defineComponent({
     const envSrc = computed(() => filterUrl(props.src));
 
     // 处理视频自动播放（解决 chrome 无法自动播放的问题）
-    const poster = computed(() => (checkDevice.type === 'desktop' ? '' : filterUrl(props.src)));
+    const { deviceType } = useDevice();
+    const poster = computed(() => (deviceType.value === 'desktop' ? '' : filterUrl(props.src)));
     const videoRef: Ref<HTMLVideoElement | null> = ref(null);
 
     function videoAutoPlay() {
