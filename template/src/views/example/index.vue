@@ -1,26 +1,27 @@
 <template>
   <div class="page-example">
-    {{ listen }}
-    <button @click="screen">{{ activeText }}</button>
+    <button @click="succeed">成功</button>
+     <button @click="errors">失败</button>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
-import { useFullscreenStore } from '@/store/sys/fullscreen';
+import { defineComponent } from 'vue';
+import { useLogStore } from '@/store/sys/log';
 
 export default defineComponent({
   name: 'PageExample',
   setup() {
-    const fullscreenStore = useFullscreenStore();
-    const active = computed(() => (fullscreenStore.active));
-    const activeText = computed(() => (active.value ? '收起' : '展开'));
-    function screen() {
-      fullscreenStore.toggle();
+    const logStore = useLogStore();
+    function succeed() {
+      logStore.notification({ type: 'warning', message: 'aaa' });
+    }
+    function errors() {
+      logStore.notification(Error('失败了'));
     }
     return {
-      activeText,
-      screen,
+      succeed,
+      errors,
     };
   },
 });
