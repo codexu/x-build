@@ -1,4 +1,4 @@
-export default function (titleText: string) {
+export default function (title?: string) {
   const processTitle = process.env.VUE_APP_TITLE || 'X-BUILD';
-  window.document.title = `${titleText ? `${titleText} | ` : ''} ${processTitle}`;
+  window.document.title = `${title ? `${title} | ` : ''} ${processTitle}`;
 }
