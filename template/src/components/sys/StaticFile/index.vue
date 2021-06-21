@@ -14,7 +14,7 @@ import {
   defineComponent, computed, ref, Ref, watch, onMounted,
 } from 'vue';
 import { url as filterUrl } from '@/libs/filters';
-import useDevice from '@/hooks/device';
+import useDevice from '@/hooks/useDevice';
 
 export default defineComponent({
   name: 'StaticFile',
