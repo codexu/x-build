@@ -5,7 +5,7 @@
 </div>
 </template>
 <style lang="scss" scoped>
-#app{
+#app {
   overflow: hidden;
 }
 </style>
