@@ -22,6 +22,7 @@
     "fuse.js": "^6.4.6",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
+    "mitt": "^2.1.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.0-beta.2",
