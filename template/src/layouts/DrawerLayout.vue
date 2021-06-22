@@ -131,26 +131,31 @@ export default defineComponent({
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: #ffffff;
-  box-shadow: 0px 0px 10px 0px rgba(84, 107, 234, 0.1);
-  border-radius: 20px 20px 0px 0px;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(84, 107, 234, 0.1);
+  border-radius: 20px 20px 0 0;
   transition: transform 0.5s;
   z-index: 9999;
+
   .scroll-wrapper {
     width: 100%;
     height: 100%;
     overflow: hidden;
+
     .content-wrapper {
       width: 100%;
       padding: 0 20px 20px 20px;
     }
   }
+
   .toggle {
     display: inline-block;
     width: 100%;
     text-align: center;
+
     .icon {
       width: 36px;
+
       &.half {
         transform: rotate(180deg);
       }
