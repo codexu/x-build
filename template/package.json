@@ -13,6 +13,7 @@
     "analyzer": "cross-env use_analyzer=true npm run build"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.3.1",
     "@types/ua-parser-js": "^0.7.35",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
