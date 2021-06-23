@@ -8,6 +8,7 @@
     "vuepress": "^2.0.0-beta.19"
   },
   "dependencies": {
+    "vue": "^3.0.0",
     "element-plus": "^1.0.2-beta.48"
   }
 }

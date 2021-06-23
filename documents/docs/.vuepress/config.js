@@ -27,38 +27,30 @@ module.exports = {
         link: '/guide/overview/features.md',
       },
       { 
-        text: '样式',
+        text: '参考',
         children: [
-          { text: '内置变量', link: '' },
           { 
-            text: 'Mixins',
+            text: '样式(scss)',
             children: [
-              { text: '水平居中', link: '' },
-              { text: '文字单行溢出', link: '' },
-              { text: '多行文字溢出', link: '' },
-              { text: '美化文本选中', link: '' },
-              { text: '毛玻璃', link: '' },
-              { text: '滤镜', link: '' },
-              { text: '背景色', link: '' },
-              { text: '三角形', link: '' },
-              { text: '移动端vh', link: '' },
+              { text: '预设变量', link: '/reference/style/variable.md' },
+              { text: 'Mixins', link: '/reference/style/variable.md' },
             ]
           },
-        ]
-      },
-      { 
-        text: '全局组件',
-        children: [
-          { text: '静态资源', link: ''},
-          { text: 'SVG 图标', link: ''}
-        ]
-      },
-      { 
-        text: '全局状态管理',
-        children: [
-          { text: '用户登录', link: ''},
-          { text: '菜单管理', link: ''},
-          { text: '日志管理', link: ''},
+          { 
+            text: '全局组件',
+            children: [
+              { text: '静态资源', link: '/reference/components/staticFile.md'},
+              { text: 'SVG 图标', link: '/reference/components/svgIcon.md'}
+            ]
+          },
+          { 
+            text: '全局状态管理',
+            children: [
+              { text: '用户登录', link: '/reference/store/user.md'},
+              { text: '菜单管理', link: '/reference/store/menu.md'},
+              { text: '日志管理', link: '/reference/store/log.md'},
+            ]
+          },
         ]
       },
       { 
@@ -70,8 +62,8 @@ module.exports = {
               '/hooks/state/useDevice.md',
               '/hooks/state/useBoolean.md',
               '/hooks/state/useToggle.md',
-              '/hooks/state/useLocalStorageState.md',
-              '/hooks/state/useSessionStorageState.md',
+              '/hooks/state/useLocalStorage.md',
+              '/hooks/state/useSessionStorage.md',
             ]
           },
           { 
