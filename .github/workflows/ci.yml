@@ -13,7 +13,7 @@ jobs:
         persist-credentials: false
     - name: Template Install
       run: |
-        cd documents
+        cd template
         npm install
     - name: Install and Build
       run: |
