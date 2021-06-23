@@ -31,11 +31,11 @@ const { loading, loadingTarget, openLoading, closeLoading } = useLoading(
 
 ## Result
 
-**loadingTarget** 如果不赋值，则全屏显示 loading，请确保使用场景。
+**loadingTarget** 是一个 ref 对象，如果不赋值，则全屏显示 loading，请确保使用场景。
 
 | 参数          | 说明                         | 类型                 | 默认值 |
 | ------------- | ---------------------------- | -------------------- | ------ |
 | loading       | 加载中的状态                 | `boolean`            | false  |
-| loadingTarget | 需要触发 loading 的 Dom 节点 | `HTMLElement` `null` | -      |
+| loadingTarget | 指向需要展示 loading 的 ref 节点 | `Ref<HTMLElement>` | -      |
 | openLoading   | 开启 loading                 | `() => void`         | -      |
 | closeLoading  | 关闭 loading                 | `() => void`         | -      |
