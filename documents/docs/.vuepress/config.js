@@ -1,9 +1,16 @@
+const { path } = require('@vuepress/utils')
+
 module.exports = {
   title: 'X-BUILD FOR VUE3.0',
   base: '/x-build/',
   port: 3000,
   plugins: [
-    '@vuepress/plugin-search'
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
   ],
   themeConfig: {
     repo: 'code-device/x-build',
@@ -13,6 +20,7 @@ module.exports = {
     editLinks: true,
     lastUpdated: '上次更新',
     smoothScroll: true,
+    darkMode: false,
     navbar: [
       { 
         text: '指南',
@@ -110,9 +118,9 @@ module.exports = {
           text: '路由',
           collapsable: false,
           children: [
-            '/guide/router/router',
-            '/guide/router/keep-alive',
-            '/guide/router/menu',
+            '/guide/router/router.md',
+            '/guide/router/keep-alive.md',
+            '/guide/router/menu.md',
           ]
         },
         {
