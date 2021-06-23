@@ -1,7 +1,17 @@
+const { path } = require('@vuepress/utils')
+
 module.exports = {
   title: 'X-BUILD FOR VUE3.0',
   base: '/x-build/',
   port: 3000,
+  plugins: [
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
+  ],
   themeConfig: {
     repo: 'code-device/x-build',
     docsRepo: 'code-device/x-build',
@@ -10,6 +20,7 @@ module.exports = {
     editLinks: true,
     lastUpdated: '上次更新',
     smoothScroll: true,
+    darkMode: false,
     navbar: [
       { 
         text: '指南',
