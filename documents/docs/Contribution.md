@@ -43,6 +43,7 @@
 | 内置组件 | `/template/src/components` | [查看](https://github.com/code-device/x-build/projects/6) |
 | 全局状态管理 | `/template/src/store` | [查看](https://github.com/code-device/x-build/projects/8) |
 | 工具集 | `/template/src/libs` | [查看](https://github.com/code-device/x-build/projects/9) |
+| Hooks | `/template/src/hooks` | - |
 
 Projects 目前分为三个状态，对应三个看板：To do、In progress、Done，请认领 To do 看板下的任务。
 
@@ -62,7 +63,7 @@ Projects 目前分为三个状态，对应三个看板：To do、In progress、D
 - [Vuepress](https://vuepress.vuejs.org/zh/)
 - [Markdown 语法](https://www.runoob.com/markdown/md-tutorial.html)
 
-我们已经搭建好了 CI/CD，你只需要提交代码，在 Merge Request 之后会自动构建新的文档：
+我们已经搭建好了 CI/CD，你只需要提交代码，在 Pull Request 之后会自动构建新的文档：
 
 - 基于 **GitHub Actions** + **Github Pages** 生成文档。
 - 文档目录： `/documents/docs`。
