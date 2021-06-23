@@ -6,6 +6,8 @@
 
 <FullLoading />
 
+<PartLoading />
+
 ## API
 
 ```javascript
