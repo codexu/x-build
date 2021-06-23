@@ -13,8 +13,8 @@ jobs:
         persist-credentials: false
     - name: Template Install
       run: |
-        git init
         cd template
+        git init
         npm install
     - name: Install and Build
       run: |
