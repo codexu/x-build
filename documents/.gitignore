@@ -1,5 +1,7 @@
 # node modules
 node_modules
+.temp
+.cache
 
 # MacOS desktop services store
 .DS_Store
