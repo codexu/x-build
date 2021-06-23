@@ -1,9 +1,16 @@
+const { path } = require('@vuepress/utils')
+
 module.exports = {
   title: 'X-BUILD FOR VUE3.0',
   base: '/x-build/',
   port: 3000,
   plugins: [
-    '@vuepress/plugin-search'
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
   ],
   themeConfig: {
     repo: 'code-device/x-build',

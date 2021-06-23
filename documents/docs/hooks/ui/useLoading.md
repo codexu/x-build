@@ -2,6 +2,10 @@
 
 基于 element-plus Loading 的 Hook，可以方便控制页面中整体或局部的 loading 效果。
 
+## 示例
+
+<FullLoading />
+
 ## API
 
 ```javascript
