@@ -1,7 +1,12 @@
 <template>
   <div class="basic-layout">
     <basic-header />
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+      <keep-alive>
+        <component :is="Component" v-if="route.meta.keepAlive"></component>
+      </keep-alive>
+      <component :is="Component" v-if="!route.meta.keepAlive"></component>
+    </router-view>
     <basic-footer />
   </div>
 </template>
