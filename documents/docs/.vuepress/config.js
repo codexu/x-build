@@ -2,9 +2,6 @@ module.exports = {
   title: 'X-BUILD FOR VUE3.0',
   base: '/x-build/',
   port: 3000,
-  plugins: [
-    '@vuepress/plugin-search'
-  ],
   themeConfig: {
     repo: 'code-device/x-build',
     docsRepo: 'code-device/x-build',
@@ -110,9 +107,9 @@ module.exports = {
           text: '路由',
           collapsable: false,
           children: [
-            '/guide/router/router',
-            '/guide/router/keep-alive',
-            '/guide/router/menu',
+            '/guide/router/router.md',
+            '/guide/router/keep-alive.md',
+            '/guide/router/menu.md',
           ]
         },
         {
