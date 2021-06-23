@@ -13,7 +13,7 @@
 
 我们推荐使用 npm 的方式进行**全局**安装：
 
-```
+```sh
 npm install x-build -g
 ```
 
@@ -33,7 +33,7 @@ mac、linux 用户需要权限增加 sudo。
 
 通过以下指令创建一个新项目：
 
-```
+```sh
 x create [name]
 ```
 
@@ -61,18 +61,18 @@ x create [name]
 
 开发：
 
-```
+```sh
 npm run serve
 ```
 
 生产（测试环境）：
 
-```
+```sh
 npm run build:test
 ```
 
 生产（正式环境）：
 
-```
+```sh
 npm run build
 ```
