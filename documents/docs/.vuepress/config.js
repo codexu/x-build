@@ -2,6 +2,9 @@ module.exports = {
   title: 'X-BUILD FOR VUE3.0',
   base: '/x-build/',
   port: 3000,
+  plugins: [
+    '@vuepress/plugin-search'
+  ],
   themeConfig: {
     repo: 'code-device/x-build',
     docsRepo: 'code-device/x-build',
@@ -10,18 +13,18 @@ module.exports = {
     editLinks: true,
     lastUpdated: '上次更新',
     smoothScroll: true,
-    nav: [
+    navbar: [
       { 
         text: '指南',
-        link: '/guide/overview/features',
+        link: '/guide/overview/features.md',
       },
       { 
         text: '样式',
-        items: [
+        children: [
           { text: '内置变量', link: '' },
           { 
             text: 'Mixins',
-            items: [
+            children: [
               { text: '水平居中', link: '' },
               { text: '文字单行溢出', link: '' },
               { text: '多行文字溢出', link: '' },
@@ -37,14 +40,14 @@ module.exports = {
       },
       { 
         text: '全局组件',
-        items: [
+        children: [
           { text: '静态资源', link: ''},
           { text: 'SVG 图标', link: ''}
         ]
       },
       { 
         text: '全局状态管理',
-        items: [
+        children: [
           { text: '用户登录', link: ''},
           { text: '菜单管理', link: ''},
           { text: '日志管理', link: ''},
@@ -52,30 +55,29 @@ module.exports = {
       },
       { 
         text: 'Hooks',
-        items: [
+        children: [
           { 
             text: 'State',
-            items: [
-              { text: 'useDevice', link: '' },
-              { text: 'useBoolean', link: '' },
-              { text: 'useToggle', link: '' },
-              { text: 'useLocalStorageState', link: '' },
-              { text: 'useSessionStorageState', link: '' },
+            children: [
+              '/hooks/state/useDevice.md',
+              '/hooks/state/useBoolean.md',
+              '/hooks/state/useToggle.md',
+              '/hooks/state/useLocalStorageState.md',
+              '/hooks/state/useSessionStorageState.md',
             ]
           },
           { 
             text: 'UI',
-            items: [
-              { text: 'useLoading', link: '' },
-              { text: 'useClipboard', link: '' },
-              { text: 'useFullscreen', link: '' },
+            children: [
+              '/hooks/ui/useLoading.md',
+              '/hooks/ui/useClipboard.md'
             ]
           },
           { 
             text: 'SideEffect',
-            items: [
-              { text: 'useDebounce', link: '' },
-              { text: 'useDebounceFn', link: '' },
+            children: [
+              '/hooks/sideEffect/useDebounce.md',
+              '/hooks/sideEffect/useDebounceFn.md'
             ]
           },
         ]
@@ -85,27 +87,27 @@ module.exports = {
     sidebar: {
       '/guide/': [
         {
-          title: '指南',
+          text: '指南',
           collapsable: false,
           children: [
-            '/guide/overview/features',
-            '/guide/overview/quickstart',
-            '/guide/overview/build',
+            '/guide/overview/features.md',
+            '/guide/overview/quickstart.md',
+            '/guide/overview/build.md',
           ]
         },
         {
-          title: 'UI',
+          text: 'UI',
           collapsable: false,
           children: [
-            '/guide/ui/style',
-            '/guide/ui/icon',
-            '/guide/ui/theme',
-            '/guide/ui/i18n',
-            '/guide/ui/layout',
+            '/guide/ui/style.md',
+            '/guide/ui/icon.md',
+            '/guide/ui/theme.md',
+            '/guide/ui/i18n.md',
+            '/guide/ui/layout.md',
           ]
         },
         {
-          title: '路由',
+          text: '路由',
           collapsable: false,
           children: [
             '/guide/router/router',
@@ -114,39 +116,55 @@ module.exports = {
           ]
         },
         {
-          title: '功能',
+          text: '功能',
           collapsable: false,
           children: [
-            '/guide/core/env',
-            '/guide/core/pinia',
-            '/guide/core/hooks',
-            '/guide/core/emitter',
-            '/guide/core/permissions',
+            '/guide/core/env.md',
+            '/guide/core/pinia.md',
+            '/guide/core/hooks.md',
+            '/guide/core/emitter.md',
+            '/guide/core/permissions.md',
           ]
         },
         {
-          title: 'HTTP',
+          text: 'HTTP',
           collapsable: false,
           children: [
-            '/guide/http/request',
-            '/guide/http/mock',
-            '/guide/http/cros',
+            '/guide/http/request.md',
+            '/guide/http/mock.md',
+            '/guide/http/cros.md',
           ]
         },
         {
-          title: '规范',
+          text: '规范',
           collapsable: false,
           children: [
-            '/guide/standard/es-lint',
-            '/guide/standard/style-lint',
-            '/guide/standard/commit-lint',
-            '/guide/standard/git-hook',
+            '/guide/standard/es-lint.md',
+            '/guide/standard/style-lint.md',
+            '/guide/standard/commit-lint.md',
+            '/guide/standard/git-hook.md',
+          ]
+        },
+      ],
+      '/hooks/': [
+        {
+          text: 'State',
+          collapsable: false,
+          children: [
+            '/hooks/state/useDevice.md',
+          ]
+        },
+        {
+          text: 'UI',
+          collapsable: false,
+          children: [
+            '/hooks/ui/useLoading.md',
           ]
         },
       ],
       '/contribution/': [
         {
-          title: '介绍',
+          text: '介绍',
           collapsable: false,
           children: [
             '/contribution/',
@@ -155,8 +173,4 @@ module.exports = {
       ]
     },
   },
-  plugins: [
-    '@vuepress/active-header-links',
-    '@vuepress/back-to-top'
-  ]
 }
