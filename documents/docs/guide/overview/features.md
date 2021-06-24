@@ -39,6 +39,10 @@ X-BUILD 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的�
 
 生产环境：支持现代浏览器, **不支持 <Badge type="danger" text="IE" vertical="middle" />**。
 
+| IE          | Edge            | Firefox         | Chrome          | Safari          |
+| ----------- | --------------- | --------------- | --------------- | --------------- |
+| not support | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+
 ## 基础设施
 
 脚手架可以快速帮你创建一份空白模板，但这并不意味着脚手架什么也没做，下面从 5 个方面介绍脚手架为你做了哪些基础设施：
