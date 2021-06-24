@@ -13,29 +13,49 @@
 
 我们推荐使用 npm 的方式进行**全局**安装：
 
-```sh
+<CodeGroup>
+  <CodeGroupItem title="npm">
+
+```bash:no-line-numbers
 npm install x-build -g
 ```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="yarn">
+
+```bash:no-line-numbers
+yarn global add x-build
+```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 mac、linux 用户需要权限增加 sudo。
 
 使用方式类似于 @vue/cli，提供了终端里的 x-build 或 x（简写）命令。
 
-## 相关工具
-
-- [Vue Dev-Tools](https://github.com/vuejs/vue-devtools): Vue 在浏览器下的调试工具。
-
-- [Vetur](https://github.com/vuejs/vetur): VS Code 插件。
-
 ## 创建项目
 
-### 创建
+### 命令
 
 通过以下指令创建一个新项目：
 
-```sh
+<CodeGroup>
+  <CodeGroupItem title="命令">
+
+```bash:no-line-numbers
+x-build create [name]
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="缩写">
+
+```bash:no-line-numbers
 x create [name]
 ```
+
+  </CodeGroupItem>
+</CodeGroup>
 
 ### 安装依赖
 
@@ -45,34 +65,61 @@ x create [name]
 
 优先级：yarn > npm
 
-::: tip 提示
+::: warning 提示
 
 强烈建议不要用直接使用 cnpm 安装，会有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题。若还是不行，可使用 yarn 替代 npm。
 
 :::
 
-### 创建完成
+### NPM Script
 
-根据安装后的相关提示，输入相关命令以继续。
+根据安装后的相关提示，输入相关命令以继续：
 
-### 开发与生产
+<CodeGroup>
+  <CodeGroupItem title="开发环境">
 
-开发与生产环境与 @vue/cli 命令一致。
-
-开发：
-
-```sh
+```bash:no-line-numbers
 npm run serve
 ```
 
-生产（测试环境）：
+  </CodeGroupItem>
+  <CodeGroupItem title="测试环境">
 
-```sh
+```bash:no-line-numbers
 npm run build:test
 ```
 
-生产（正式环境）：
+  </CodeGroupItem>
+  <CodeGroupItem title="正式环境">
 
-```sh
+```bash:no-line-numbers
 npm run build
 ```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="包分析工具">
+
+```bash:no-line-numbers
+npm run analyzer
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="ESLint">
+
+```bash:no-line-numbers
+npm run lint
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="Stylelint">
+
+```bash:no-line-numbers
+npm run stylelint
+```
+
+  </CodeGroupItem>
+</CodeGroup>
+
+::: warning 提示
+通常情况下 ESLint 与 Stylelint 没必要单独执行，husky 提供的 git commit 钩子会在你提交代码时对你缓存区里的代码做校验，这会节省你很多的时间。
+:::
