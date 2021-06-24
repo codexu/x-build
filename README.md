@@ -1,5 +1,30 @@
 # X-BUILD FOR VUE3.0
 
+<a href="https://v3.cn.vuejs.org/" target="blank">
+  <img src="https://img.shields.io/badge/vue-3.0.0-brightgreen.svg" />
+</a>
+<a href="https://element-plus.gitee.io/#/zh-CN" target="blank">
+  <img src="https://img.shields.io/badge/element--plus-1.0.2-brightgreen.svg" />
+</a>
+<a href="https://pinia.esm.dev/" target="blank">
+  <img src="https://img.shields.io/badge/pinia-2.0.0-brightgreen.svg" />
+</a>
+<a href="https://github.com/code-device/x-build/actions" target="blank">
+  <img src="https://github.com/code-device/x-build/workflows/GitHub%20Actions/badge.svg" />
+</a>
+<a href="https://github.com/code-device/x-build/blob/next/LICENSE" target="blank">
+  <img src="https://img.shields.io/github/license/mashape/apistatus.svg" />
+</a>
+<a href="https://github.com/code-device/x-build" target="blank">
+  <img src="https://img.shields.io/github/stars/code-device/x-build.svg?style=social&label=Stars" />
+</a>
+
+X-BUILD 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的前端脚手架，不同于众多的中后台解决方案（[ant-design-pro](https://pro.ant.design/docs/getting-started-cn)、[vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/)、[d2-admin](https://d2.pub/zh/doc/d2-admin/) 等）。它的宗旨是快速创建一套**纯净**却具备强大基础功能的模板，协助开发者自由发挥快速搭建任何类型的项目。
+
+查看[文档](https://code-device.github.io/x-build/)。
+
+## 开发状态
+
 [X-BUILD](https://github.com/code-device/x-build) 目前还处于内测开发状态，我们会逐步总结出更多适合典型业务场景的业务开发需求。
 
 ## 提供建议与提交 BUG
@@ -10,7 +35,6 @@
 
 首先欢迎加入 [CodeDevice](https://github.com/code-device)，协助我们将 X-BUILD 开发的更加优秀。
 
-- 了解项目，提交 PR，等待合并结果。
 - 添加微信 `xu461229187`，附带留言 `加入 CodeDevice，参与 X-BUILD 建设`。
 - 添加成功后会将你拉入微信开发交流群。
 - 进群后请更改备注为你的 GitHub 账户名称。
@@ -44,6 +68,7 @@
 | 内置组件 | `/template/src/components` | [查看](https://github.com/code-device/x-build/projects/6) |
 | 全局状态管理 | `/template/src/store` | [查看](https://github.com/code-device/x-build/projects/8) |
 | 工具集 | `/template/src/libs` | [查看](https://github.com/code-device/x-build/projects/9) |
+| Hooks | `/template/src/hooks` | - |
 
 Projects 目前分为三个状态，对应三个看板：To do、In progress、Done，请认领 To do 看板下的任务。
 
@@ -63,7 +88,7 @@ Projects 目前分为三个状态，对应三个看板：To do、In progress、D
 - [Vuepress](https://vuepress.vuejs.org/zh/)
 - [Markdown 语法](https://www.runoob.com/markdown/md-tutorial.html)
 
-我们已经搭建好了 CI/CD，你只需要提交代码，在 Merge Request 之后会自动构建新的文档：
+我们已经搭建好了 CI/CD，你只需要提交代码，在 Pull Request 之后会自动构建新的文档：
 
 - 基于 **GitHub Actions** + **Github Pages** 生成文档。
 - 文档目录： `/documents/docs`。
