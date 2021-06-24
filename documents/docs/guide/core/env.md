@@ -51,3 +51,7 @@ const request = axios.create({
 ### VUE_APP_STATIC_URL
 
 静态资源路径前缀，区分开发环境和生产环境，具体用法参考 [静态资源加载组件](/Components/Static.md)。
+
+::: warning 注意
+环境变量必须以VUE_APP_为开头，例如：VUE_APP_API、VUE_APP_TITLE
+:::
