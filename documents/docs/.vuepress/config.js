@@ -11,6 +11,12 @@ module.exports = {
         componentsDir: path.resolve(__dirname, './components'),
       },
     ],
+    [
+      '@vuepress/plugin-nprogress'
+    ],
+    [
+      '@vuepress/plugin-search'
+    ],
   ],
   themeConfig: {
     repo: 'code-device/x-build',
@@ -70,14 +76,17 @@ module.exports = {
             text: 'UI',
             children: [
               '/hooks/ui/useLoading.md',
-              '/hooks/ui/useClipboard.md'
+              '/hooks/ui/useClipboard.md',
+              '/hooks/ui/useFullscreen.md',
             ]
           },
           { 
             text: 'SideEffect',
             children: [
               '/hooks/sideEffect/useDebounce.md',
-              '/hooks/sideEffect/useDebounceFn.md'
+              '/hooks/sideEffect/useDebounceFn.md',
+              '/hooks/sideEffect/useThrottle.md',
+              '/hooks/sideEffect/useThrottleFn.md',
             ]
           },
         ]
@@ -152,6 +161,10 @@ module.exports = {
           collapsable: false,
           children: [
             '/hooks/state/useDevice.md',
+            '/hooks/state/useBoolean.md',
+            '/hooks/state/useToggle.md',
+            '/hooks/state/useLocalStorage.md',
+            '/hooks/state/useSessionStorage.md',
           ]
         },
         {
@@ -159,6 +172,18 @@ module.exports = {
           collapsable: false,
           children: [
             '/hooks/ui/useLoading.md',
+            '/hooks/ui/useClipboard.md',
+            '/hooks/ui/useFullscreen.md',
+          ]
+        },
+        {
+          text: 'SideEffect',
+          collapsable: false,
+          children: [
+            '/hooks/sideEffect/useDebounce.md',
+            '/hooks/sideEffect/useDebounceFn.md',
+            '/hooks/sideEffect/useThrottle.md',
+            '/hooks/sideEffect/useThrottleFn.md',
           ]
         },
       ],
