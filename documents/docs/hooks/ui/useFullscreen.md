@@ -4,6 +4,19 @@
 
 <FullScreen />
 
+## API
+
+```typescript
+import useFullscreen from '@/hooks/useFullscreen';
+
+const { 
+  screenfullActive,
+  toggleScreenfull,
+  openScreenfull,
+  closeScreenfull
+  } = useFullscreen();
+```
+
 ## Result
 
 | 参数             | 说明           | 类型       | 默认值 |
