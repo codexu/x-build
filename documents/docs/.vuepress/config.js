@@ -122,6 +122,7 @@ module.exports = {
             '/guide/router/router.md',
             '/guide/router/keep-alive.md',
             '/guide/router/menu.md',
+            '/guide/router/permissions.md',
           ]
         },
         {
@@ -132,7 +133,6 @@ module.exports = {
             '/guide/core/pinia.md',
             '/guide/core/hooks.md',
             '/guide/core/emitter.md',
-            '/guide/core/permissions.md',
           ]
         },
         {
