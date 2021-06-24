@@ -2,18 +2,33 @@ import { ref } from 'vue';
 import screenfull from 'screenfull';
 
 export default function useFullscreen() {
-  const active = ref(false);
+  const screenfullActive = ref(false);
 
-  function toggle() {
+  function toggleScreenfull() {
     if (screenfull.isEnabled) {
       if (screenfull.isFullscreen) {
         screenfull.exit();
-        active.value = false;
+        screenfullActive.value = false;
       } else {
         screenfull.request();
-        active.value = true;
+        screenfullActive.value = true;
       }
     }
   }
-  return { active, toggle };
+
+  function openScreenfull() {
+    if (screenfull.isEnabled) {
+      screenfull.request();
+      screenfullActive.value = true;
+    }
+  }
+  function closeScreenfull() {
+    if (screenfull.isEnabled) {
+      screenfull.exit();
+      screenfullActive.value = false;
+    }
+  }
+  return {
+    screenfullActive, toggleScreenfull, openScreenfull, closeScreenfull,
+  };
 }
