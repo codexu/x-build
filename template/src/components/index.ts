@@ -6,6 +6,7 @@ import {
   ElIcon,
   ElButton,
   ElNotification,
+  ElSwitch,
 } from 'element-plus';
 
 import locale from 'element-plus/lib/locale';
@@ -18,6 +19,7 @@ export const components = [
   SvgIcon,
   ElIcon,
   ElButton,
+  ElSwitch,
 ];
 
 export const plugins = [
