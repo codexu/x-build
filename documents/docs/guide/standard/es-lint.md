@@ -12,7 +12,17 @@
 - Github 超过 100k star
 :::
 
-## 取消 ESLint 校验
+## 手动校验代码
+
+```bash:no-line-numbers
+npm run lint
+```
+
+## 配置
+
+项目的 eslint 配置位于根目录下 .eslintrc.js内，可以根据团队自行修改代码规范。
+
+## 跳过验证
 
 一般情况下，可以通过**注释**的方式取消校验。
 

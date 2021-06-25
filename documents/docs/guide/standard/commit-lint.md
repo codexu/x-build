@@ -1,6 +1,6 @@
 # CommitLint
 
-在多人协作的背景下，git 仓库和 workflow 的作用很重要。而对于 commit 提交的信息说明存在一定规范，现使用 commitlint + husky 规范 git commit -m "" 中的描述信息。我们都知道，在使用 git commit 时，git 会提示我们填入此次提交的信息。可不要小看了这些 commit，团队中规范了 commit 可以更清晰的查看每一次代码提交记录，还可以根据自定义的规则，自动生成 changeLog 文件。
+在多人协作的背景下，git 仓库和 workflow 的作用很重要。而对于 commit 提交的信息说明存在一定规范，现使用 `commitlint` + `husky` 规范 `git commit -m ""` 中的描述信息。我们都知道，在使用 git commit 时，git 会提示我们填入此次提交的信息。可不要小看了这些 commit，团队中规范了 commit 可以更清晰的查看每一次代码提交记录，还可以根据自定义的规则，自动生成 changeLog 文件。
 
 ## 格式
 
@@ -10,9 +10,9 @@
 <type>[optional scope]: <description>
 ```
 
-- type ：用于表明我们这次提交的改动类型
-- optional scope：可选，用于标识此次提交主要涉及到代码中哪个模块
-- description：一句话描述此次提交的主要内容，做到言简意赅。
+- **type** ：用于表明我们这次提交的改动类型。
+- **optional scope**：可选，用于标识此次提交主要涉及到代码中哪个模块。
+- **description**：一句话描述此次提交的主要内容，做到言简意赅。
 
 ## Type 类型
 
