@@ -5,7 +5,6 @@ import { frameIn } from '@/router/routes';
 
 export interface MenuState{
   menu: RouteRecordRaw[];
-  routes: RouteRecordRaw[];
   searchKeyword: string;
 }
 
@@ -17,8 +16,7 @@ interface PoolRouteRecordRow extends _RouteRecordBase {
 export const useMenuStore = defineStore({
   id: 'log',
   state: (): MenuState => ({
-    menu: [], // 菜单管理
-    routes: frameIn, // 具有权限的路由
+    menu: frameIn, // 菜单管理
     searchKeyword: '', // 搜索关键词
   }),
   actions: {
@@ -63,7 +61,7 @@ export const useMenuStore = defineStore({
           }
         });
       }
-      routesPool(this.routes);
+      routesPool(this.menu);
       return pool;
     },
     // 通过 setSearchKeyword 进行路由的模糊查询，查询基于 routesPool 的数据。
