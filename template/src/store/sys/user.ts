@@ -45,10 +45,10 @@ export const useUserStore = defineStore({
         // 异步调用查询用户信息接口
       }
     },
-    async login(payload: UserInfo) {
+    async login(username: string, password: string) {
       // 调用登陆接口
-      this.setUserInfo(payload);
-      router.push({ path: '/' });
+      // this.setUserInfo(payload);
+      // router.push({ path: '/' });
     },
     async logout() {
       // 调用退出登陆接口

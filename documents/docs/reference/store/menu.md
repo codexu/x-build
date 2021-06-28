@@ -2,7 +2,15 @@
 
 `@/store/sys/menu.ts`
 
-用于管理菜单的 sotre。
+用于管理菜单的 store。
+
+## API
+
+```javascript
+import useMenuStore from '@/store/sys/menu';
+
+const menuStore = useMenuStore();
+```
 
 ## State
 
@@ -13,10 +21,21 @@
 
 ## Actions
 
-| 方法             | 说明               | 参数             |
-| ---------------- | ------------------ | ---------------- |
-| setMenu          | 设置菜单           | RouteRecordRaw[] |
-| setSearchKeyword | 设置模糊搜索关键词 | string           |
+### setMenu
+
+设置菜单。
+
+```typescript
+menuStore.setMenu(menus: RouteRecordRaw[]);
+```
+
+### setSearchKeyword
+
+设置模糊搜索关键词。
+
+```typescript
+menuStore.setSearchKeyword(key: string);
+```
 
 ## Getters
 
