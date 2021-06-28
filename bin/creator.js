@@ -14,18 +14,12 @@ module.exports = async function (name) {
   const src = path.resolve(__dirname, '../template');
   // 目标路径
   const dest = path.resolve(process.cwd(), name);
-  // copy .gitignore
-  const gitignore = path.resolve(process.cwd(), name, 'gitignore.md');
-  const gitignoreDest = path.resolve(process.cwd(), name, '.gitignore');
-
-  console.log(gitignore, gitignoreDest);
 
   startTime = new Date().getTime()
   clearConsole('cyan', `X-BUILD v${require('../package').version}`);
   console.log(`> 项目模板生成于目录： ${chalk.yellow(dest)}`);
   // 拷贝模板文件
   await fs.copy(src, dest);
-  await fs.move(gitignore, gitignoreDest);
   await spawnCmd(dest, null, 'git', ['init'])
   await spawnCmd(dest, null, 'git', ['add .'])
   await spawnCmd(dest, null, 'git', ['commit -m "Initialize by X-BUILD"'])
