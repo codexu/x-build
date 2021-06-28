@@ -21,9 +21,9 @@
 
 X-BUILD 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的前端脚手架，不同于众多的中后台解决方案（[ant-design-pro](https://pro.ant.design/docs/getting-started-cn)、[vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/)、[d2-admin](https://d2.pub/zh/doc/d2-admin/) 等）。它的宗旨是快速创建一套**纯净**却具备强大基础功能的模板，协助开发者自由发挥快速搭建任何类型的项目。
 
-## State: Alpha
+## State: Beta
 
-目前仍处于开发状态，如果你对此项目兴趣，请阅读[贡献说明](https://code-device.github.io/x-build/guide/contribution.html)。
+目前仍处于不断完善的状态，如果你对此项目兴趣，请阅读[贡献说明](https://code-device.github.io/x-build/guide/contribution.html)。
 
 ## 文档
 
