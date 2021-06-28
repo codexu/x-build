@@ -116,6 +116,17 @@ module.exports = {
           ]
         },
         {
+          text: '功能',
+          collapsable: false,
+          children: [
+            '/guide/core/hooks.md',
+            '/guide/core/emitter.md',
+            '/guide/core/pinia.md',
+            '/guide/core/request.md',
+            '/guide/core/env.md',
+          ]
+        },
+        {
           text: '路由',
           collapsable: false,
           children: [
@@ -123,25 +134,6 @@ module.exports = {
             '/guide/router/keep-alive.md',
             '/guide/router/menu.md',
             '/guide/router/permissions.md',
-          ]
-        },
-        {
-          text: '功能',
-          collapsable: false,
-          children: [
-            '/guide/core/env.md',
-            '/guide/core/pinia.md',
-            '/guide/core/hooks.md',
-            '/guide/core/emitter.md',
-          ]
-        },
-        {
-          text: 'HTTP',
-          collapsable: false,
-          children: [
-            '/guide/http/request.md',
-            '/guide/http/mock.md',
-            '/guide/http/cros.md',
           ]
         },
         {
