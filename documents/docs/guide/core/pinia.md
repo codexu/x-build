@@ -1,5 +1,7 @@
 # 状态管理
 
+## 什么是 Pinia ？
+
 由于 `vuex 4` 对 typescript 的支持让人感到难过，所以状态管理弃用了 vuex 而采取了 [pinia](https://pinia.esm.dev/)。
 
 ::: tip 为什么采用 Pinia ?
@@ -14,6 +16,18 @@
 下面简单的介绍一下如何使用 Pinia，并对比 vuex 有哪些区别与注意事项，具体请参考[官方文档](https://pinia.esm.dev/)。
 
 ## Store
+
+在深入研究核心概念之前，我们需要知道脚手架内置了哪些 Store 和如何自定义创建 Store。
+
+### 内置 Store
+
+| Store        | 说明               | API                              |
+| ------------ | ------------------ | -------------------------------- |
+| useUserStore | 用户登录与信息管理 | [详情](/reference/store/user.md) |
+| useMenuStore | 路由&菜单管理      | [详情](/reference/store/menu.md) |
+| useLogStore  | 日志管理           | [详情](/reference/store/log.md)  |
+
+### 创建 Store
 
 Pinia 已经内置在脚手架中，并且与 vue 已经做好了关联，你可以在任何位置创建一个 store：
 
