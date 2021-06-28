@@ -91,7 +91,7 @@ module.exports = {
           },
         ]
       },
-      { text: '贡献代码', link: '/contribution' },
+      { text: '贡献代码', link: '/guide/contribution.md' },
     ],
     sidebar: {
       '/guide/': [
