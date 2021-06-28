@@ -110,6 +110,7 @@ module.exports = {
           children: [
             '/guide/ui/style.md',
             '/guide/ui/icon.md',
+            '/guide/ui/components.md',
             '/guide/ui/theme.md',
             '/guide/ui/i18n.md',
             '/guide/ui/layout.md',
