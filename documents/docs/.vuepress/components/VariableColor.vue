@@ -17,7 +17,7 @@
         <div>{{ item.explain }}</div>
         <div>{{ item.value }}</div>
         <div>{{ item.variable }}</div>
-        <span><a @click="copy(item.variable)">复制</a></span>
+        <span><a @click="copyText(item.variable)">复制</a></span>
       </li>
     </ul>
   </div>
@@ -25,15 +25,11 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
-import { ElTable, ElTableColumn } from "element-plus";
-import "element-plus/lib/theme-chalk/el-table.css";
-import "element-plus/lib/theme-chalk/el-table-column.css";
+import useClipboard from "../../../../template/src/hooks/useClipboard";
+
 export default defineComponent({
-  components: {
-    ElTable,
-    ElTableColumn,
-  },
   setup() {
+    let { copyText } = useClipboard();
     const colorData = reactive([
       { explain: "主色调", value: "#1BA2FF", variable: "$primary-color" },
       { explain: "成功", value: "#24CBB2", variable: "$success-color" },
@@ -44,7 +40,7 @@ export default defineComponent({
       { explain: "注释", value: "#CDD0D3", variable: "$notes-color" },
       { explain: "数字", value: "#1BA2FF", variable: "$number-color" },
     ]);
-    return { colorData };
+    return { colorData, copyText };
   },
 });
 </script>
@@ -63,9 +59,9 @@ ul {
     padding: 15px 0;
     font-size: 14px;
     color: #051724;
-    span{
-      a{
-      cursor: pointer;
+    span {
+      a {
+        cursor: pointer;
       }
     }
     div {

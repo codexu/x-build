@@ -16,63 +16,63 @@
         <div>{{ item.explain }}</div>
         <div>{{ item.value }}</div>
         <div>{{ item.variable }}</div>
-        <span><a @click="copy(item.variable)">复制</a></span>
+        <span><a @click="copyText(item.variable)">复制</a></span>
       </li>
       <br />
       <li class="title-h1">
         <h1>标题 H1</h1>
         <h1>26px</h1>
         <h1>$heading-1-size</h1>
-        <span><a @click="copy('$heading-1-size')">复制</a></span>
+        <span><a @click="copyText('$heading-1-size')">复制</a></span>
       </li>
       <li class="title-h2">
         <h2>标题 H2</h2>
         <h2>24px</h2>
         <h2>$heading-2-size</h2>
-        <span><a @click="copy('$heading-2-size')">复制</a></span>
+        <span><a @click="copyText('$heading-2-size')">复制</a></span>
       </li>
       <li class="title-h3">
         <h3>标题 H3</h3>
         <h3>22px</h3>
         <h3>$heading-3-size</h3>
-        <span><a @click="copy('$heading-3-size')">复制</a></span>
+        <span><a @click="copyText('$heading-3-size')">复制</a></span>
       </li>
       <li class="title-h4">
         <h4>标题 H4</h4>
         <h4>20px</h4>
         <h4>$heading-4-size</h4>
-        <span><a @click="copy('$heading-4-size')">复制</a></span>
+        <span><a @click="copyText('$heading-4-size')">复制</a></span>
       </li>
       <li class="title-h5">
         <h5>标题 H5</h5>
         <h5>18px</h5>
         <h5>$heading-5-size</h5>
-        <span><a @click="copy('$heading-5-size')">复制</a></span>
+        <span><a @click="copyText('$heading-5-size')">复制</a></span>
       </li>
       <li class="title-h6">
         <h6>标题 H6</h6>
         <h6>16px</h6>
         <h6>$heading-6-size</h6>
-        <span><a @click="copy('$heading-6-size')">复制</a></span>
+        <span><a @click="copyText('$heading-6-size')">复制</a></span>
       </li>
       <br />
       <li>
         <div>行高</div>
         <div>2</div>
         <div>$line-height-base</div>
-        <span><a @click="copy('$line-height-base')">复制</a></span>
+        <span><a @click="copyText('$line-height-base')">复制</a></span>
       </li>
       <li>
         <div>字间距</div>
         <div>2</div>
         <div>$letter-space-base</div>
-        <span><a @click="copy('$letter-space-base')">复制</a></span>
+        <span><a @click="copyText('$letter-space-base')">复制</a></span>
       </li>
       <li>
         <div>默认字体</div>
         <div>Microsoft YaHei,PingFang SC</div>
         <div>$font-family-base</div>
-        <span><a @click="copy('$font-family-base')">复制</a></span>
+        <span><a @click="copyText('$font-family-base')">复制</a></span>
       </li>
     </ul>
   </div>
@@ -80,21 +80,17 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
-import { ElTable, ElTableColumn } from "element-plus";
-import "element-plus/lib/theme-chalk/el-table.css";
-import "element-plus/lib/theme-chalk/el-table-column.css";
+import useClipboard from "../../../../template/src/hooks/useClipboard";
+
 export default defineComponent({
-  components: {
-    ElTable,
-    ElTableColumn,
-  },
   setup() {
+    let { copyText } = useClipboard();
     const sizeData = reactive([
       { explain: "辅助文字", value: "12px", variable: "$font-size-sm" },
       { explain: "正文", value: "14px", variable: "$font-size-base" },
       { explain: "大号文字", value: "16px", variable: "$font-size-base" },
     ]);
-    return { sizeData };
+    return { sizeData, copyText };
   },
 });
 </script>
@@ -128,9 +124,9 @@ ul {
       font-size: 14px;
       display: flex;
       align-items: center;
-        a {
-          cursor: pointer;
-        }
+      a {
+        cursor: pointer;
+      }
     }
     &.head {
       font-size: 16px;
