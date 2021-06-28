@@ -1,0 +1,159 @@
+<template>
+  <div style="padding-top: 16px">
+    <ul>
+      <li class="head">
+        <div>说明</div>
+        <div>值</div>
+        <div>变量</div>
+        <span>操作</span>
+      </li>
+      <li
+        class="size"
+        v-for="(item, index) in sizeData"
+        :key="index"
+        :style="{ 'font-size': item.value }"
+      >
+        <div>{{ item.explain }}</div>
+        <div>{{ item.value }}</div>
+        <div>{{ item.variable }}</div>
+        <span><a @click="copy(item.variable)">复制</a></span>
+      </li>
+      <br />
+      <li class="title-h1">
+        <h1>标题 H1</h1>
+        <h1>26px</h1>
+        <h1>$heading-1-size</h1>
+        <span><a @click="copy('$heading-1-size')">复制</a></span>
+      </li>
+      <li class="title-h2">
+        <h2>标题 H2</h2>
+        <h2>24px</h2>
+        <h2>$heading-2-size</h2>
+        <span><a @click="copy('$heading-2-size')">复制</a></span>
+      </li>
+      <li class="title-h3">
+        <h3>标题 H3</h3>
+        <h3>22px</h3>
+        <h3>$heading-3-size</h3>
+        <span><a @click="copy('$heading-3-size')">复制</a></span>
+      </li>
+      <li class="title-h4">
+        <h4>标题 H4</h4>
+        <h4>20px</h4>
+        <h4>$heading-4-size</h4>
+        <span><a @click="copy('$heading-4-size')">复制</a></span>
+      </li>
+      <li class="title-h5">
+        <h5>标题 H5</h5>
+        <h5>18px</h5>
+        <h5>$heading-5-size</h5>
+        <span><a @click="copy('$heading-5-size')">复制</a></span>
+      </li>
+      <li class="title-h6">
+        <h6>标题 H6</h6>
+        <h6>16px</h6>
+        <h6>$heading-6-size</h6>
+        <span><a @click="copy('$heading-6-size')">复制</a></span>
+      </li>
+      <br />
+      <li>
+        <div>行高</div>
+        <div>2</div>
+        <div>$line-height-base</div>
+        <span><a @click="copy('$line-height-base')">复制</a></span>
+      </li>
+      <li>
+        <div>字间距</div>
+        <div>2</div>
+        <div>$letter-space-base</div>
+        <span><a @click="copy('$letter-space-base')">复制</a></span>
+      </li>
+      <li>
+        <div>默认字体</div>
+        <div>Microsoft YaHei,PingFang SC</div>
+        <div>$font-family-base</div>
+        <span><a @click="copy('$font-family-base')">复制</a></span>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, reactive } from "vue";
+import { ElTable, ElTableColumn } from "element-plus";
+import "element-plus/lib/theme-chalk/el-table.css";
+import "element-plus/lib/theme-chalk/el-table-column.css";
+export default defineComponent({
+  components: {
+    ElTable,
+    ElTableColumn,
+  },
+  setup() {
+    const sizeData = reactive([
+      { explain: "辅助文字", value: "12px", variable: "$font-size-sm" },
+      { explain: "正文", value: "14px", variable: "$font-size-base" },
+      { explain: "大号文字", value: "16px", variable: "$font-size-base" },
+    ]);
+    return { sizeData };
+  },
+});
+</script>
+
+<style scoped lang="scss">
+$heading-1-size: 26px; // 标题1
+$heading-2-size: 24px; // 标题2
+$heading-3-size: 22px; // 标题3
+$heading-4-size: 20px; // 标题4
+$heading-5-size: 18px; // 标题5
+$heading-6-size: 16px; // 标题6
+ul {
+  list-style: none;
+  li {
+    display: flex;
+    padding: 15px 0;
+    font-size: 14px;
+
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      flex: 1;
+      margin: 0;
+      border: 0;
+    }
+    span {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+        a {
+          cursor: pointer;
+        }
+    }
+    &.head {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  h1 {
+    font-size: $heading-1-size;
+  }
+  h2 {
+    font-size: $heading-2-size;
+  }
+  h3 {
+    font-size: $heading-3-size;
+  }
+  h4 {
+    font-size: $heading-4-size;
+  }
+  h5 {
+    font-size: $heading-5-size;
+  }
+  h6 {
+    font-size: $heading-6-size;
+  }
+}
+</style>
