@@ -180,6 +180,33 @@ module.exports = {
           ]
         },
       ],
+      '/reference/': [
+        {
+          text: '样式(scss)',
+          collapsable: false,
+          children: [
+            '/reference/style/variable.md',
+            '/reference/style/mixins.md',
+          ]
+        },
+        {
+          text: '全局组件',
+          collapsable: false,
+          children: [
+            '/reference/components/staticFile.md',
+            '/reference/components/svgIcon.md',
+          ]
+        },
+        {
+          text: '全局状态管理',
+          collapsable: false,
+          children: [
+            '/reference/store/user.md',
+            '/reference/store/menu.md',
+            '/reference/store/log.md',
+          ]
+        },
+      ],
       '/contribution/': [
         {
           text: '介绍',
