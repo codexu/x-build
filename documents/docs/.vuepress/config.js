@@ -110,9 +110,21 @@ module.exports = {
           children: [
             '/guide/ui/style.md',
             '/guide/ui/icon.md',
+            '/guide/ui/components.md',
             '/guide/ui/theme.md',
             '/guide/ui/i18n.md',
             '/guide/ui/layout.md',
+          ]
+        },
+        {
+          text: '功能',
+          collapsable: false,
+          children: [
+            '/guide/core/hooks.md',
+            '/guide/core/emitter.md',
+            '/guide/core/pinia.md',
+            '/guide/core/request.md',
+            '/guide/core/env.md',
           ]
         },
         {
@@ -123,25 +135,6 @@ module.exports = {
             '/guide/router/keep-alive.md',
             '/guide/router/menu.md',
             '/guide/router/permissions.md',
-          ]
-        },
-        {
-          text: '功能',
-          collapsable: false,
-          children: [
-            '/guide/core/env.md',
-            '/guide/core/pinia.md',
-            '/guide/core/hooks.md',
-            '/guide/core/emitter.md',
-          ]
-        },
-        {
-          text: 'HTTP',
-          collapsable: false,
-          children: [
-            '/guide/http/request.md',
-            '/guide/http/mock.md',
-            '/guide/http/cros.md',
           ]
         },
         {
@@ -184,6 +177,33 @@ module.exports = {
             '/hooks/sideEffect/useDebounceFn.md',
             '/hooks/sideEffect/useThrottle.md',
             '/hooks/sideEffect/useThrottleFn.md',
+          ]
+        },
+      ],
+      '/reference/': [
+        {
+          text: '样式(scss)',
+          collapsable: false,
+          children: [
+            '/reference/style/variable.md',
+            '/reference/style/mixins.md',
+          ]
+        },
+        {
+          text: '全局组件',
+          collapsable: false,
+          children: [
+            '/reference/components/staticFile.md',
+            '/reference/components/svgIcon.md',
+          ]
+        },
+        {
+          text: '全局状态管理',
+          collapsable: false,
+          children: [
+            '/reference/store/user.md',
+            '/reference/store/menu.md',
+            '/reference/store/log.md',
           ]
         },
       ],
