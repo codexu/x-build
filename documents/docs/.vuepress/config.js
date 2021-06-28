@@ -39,7 +39,7 @@ module.exports = {
             text: '样式(scss)',
             children: [
               { text: '预设变量', link: '/reference/style/variable.md' },
-              { text: 'Mixins', link: '/reference/style/variable.md' },
+              { text: 'Mixins', link: '/reference/style/mixins.md' },
             ]
           },
           { 
