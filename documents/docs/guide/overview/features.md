@@ -3,8 +3,8 @@
 <a href="https://v3.cn.vuejs.org/" target="blank">
   <img src="https://img.shields.io/badge/vue-3.0.0-brightgreen.svg" />
 </a>
-<a href="https://element-plus.gitee.io/#/zh-CN" target="blank">
-  <img src="https://img.shields.io/badge/element--plus-1.0.2-brightgreen.svg" />
+<a href="https://www.npmjs.com/package/x-build" target="blank">
+  <img src="https://img.shields.io/npm/v/x-build/latest" />
 </a>
 <a href="https://pinia.esm.dev/" target="blank">
   <img src="https://img.shields.io/badge/pinia-2.0.0-brightgreen.svg" />

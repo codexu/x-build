@@ -3,8 +3,8 @@
 <a href="https://v3.cn.vuejs.org/" target="blank">
   <img src="https://img.shields.io/badge/vue-3.0.0-brightgreen.svg" />
 </a>
-<a href="https://element-plus.gitee.io/#/zh-CN" target="blank">
-  <img src="https://img.shields.io/badge/element--plus-1.0.2-brightgreen.svg" />
+<a href="https://www.npmjs.com/package/x-build" target="blank">
+  <img src="https://img.shields.io/npm/v/x-build/latest" />
 </a>
 <a href="https://pinia.esm.dev/" target="blank">
   <img src="https://img.shields.io/badge/pinia-2.0.0-brightgreen.svg" />
@@ -27,7 +27,7 @@ X-BUILD 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的�
 
 ## 文档
 
-要了解有关 X-BUILD 的更多信息，请[查看文档](https://github.com/code-device/x-build)。
+要了解有关 X-BUILD 的更多信息，请[查看文档](https://code-device.github.io/x-build/)。
 
 ## License
 
