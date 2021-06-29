@@ -27,7 +27,7 @@ X-BUILD 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的�
 
 ## 文档
 
-要了解有关 X-BUILD 的更多信息，请[查看文档](https://github.com/code-device/x-build)。
+要了解有关 X-BUILD 的更多信息，请[查看文档](https://code-device.github.io/x-build/)。
 
 ## License
 
