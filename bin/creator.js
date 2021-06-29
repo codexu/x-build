@@ -7,6 +7,8 @@ const {
 } = require('child_process');
 const clearConsole = require('./utils/clearConsole');
 
+const CreateTemplate = require('./createTemplate')
+
 let startTime, endTime;
 
 module.exports = async function (name) {
@@ -14,12 +16,16 @@ module.exports = async function (name) {
   const src = path.resolve(__dirname, '../template');
   // 目标路径
   const dest = path.resolve(process.cwd(), name);
+  const createTemplate  = CreateTemplate(dest)
 
-  startTime = new Date().getTime()
+  // startTime = new Date().getTime()
   clearConsole('cyan', `X-BUILD v${require('../package').version}`);
   console.log(`> 项目模板生成于目录： ${chalk.yellow(dest)}`);
   // 拷贝模板文件
   await fs.copy(src, dest);
+  await createTemplate('package.json');
+  await createTemplate('src/test.ts');
+  
   await spawnCmd(dest, null, 'git', ['init'])
   await spawnCmd(dest, null, 'git', ['add .'])
   await spawnCmd(dest, null, 'git', ['commit -m "Initialize by X-BUILD"'])
@@ -29,7 +35,7 @@ module.exports = async function (name) {
   await spawnCmd(dest, 'inherit', 'npm', ['install']);
   clearConsole('cyan', `Mapwhale v${require('../package').version}`);
   endTime = new Date().getTime();
-  usageTime = (endTime - startTime) / 1000
+  const usageTime = (endTime - startTime) / 1000
   console.log(`> 项目已经创建成功，用时${chalk.cyan(usageTime)}s，请输入以下命令继续...`);
   console.log('');
   console.log(chalk.cyan(' $ ') + chalk.blueBright(`cd ${name}`));
