@@ -13,7 +13,7 @@
 import {
   defineComponent, computed, ref, Ref, watch, onMounted,
 } from 'vue';
-import { url as filterUrl } from '@/libs/filters';
+import { baseStaticUrl } from '@/libs/utils';
 import useDevice from '@/hooks/useDevice';
 
 export default defineComponent({
@@ -25,16 +25,16 @@ export default defineComponent({
   },
   setup(props) {
     // 经过环境变量处理的 src
-    const envSrc = computed(() => filterUrl(props.src));
+    const envSrc = computed(() => baseStaticUrl(props.src));
 
     // 处理视频自动播放（解决 chrome 无法自动播放的问题）
     const { deviceType } = useDevice();
-    const poster = computed(() => (deviceType.value === 'desktop' ? '' : filterUrl(props.src)));
+    const poster = computed(() => (deviceType.value === 'desktop' ? '' : baseStaticUrl(props.src)));
     const videoRef: Ref<HTMLVideoElement | null> = ref(null);
 
     function videoAutoPlay() {
       if (props.type === 'video' && videoRef.value !== null) {
-        videoRef.value.src = filterUrl(props.src);
+        videoRef.value.src = baseStaticUrl(props.src);
       }
       if (props.autoplay && videoRef.value) {
         videoRef.value.oncanplay = () => {
