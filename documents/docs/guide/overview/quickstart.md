@@ -17,14 +17,14 @@
   <CodeGroupItem title="npm">
 
 ```bash:no-line-numbers
-npm install x-build -g
+npm install x-build@next -g
 ```
 
   </CodeGroupItem>
   <CodeGroupItem title="yarn">
 
 ```bash:no-line-numbers
-yarn global add x-build
+yarn global add x-build@next
 ```
 
   </CodeGroupItem>
