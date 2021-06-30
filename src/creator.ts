@@ -31,6 +31,7 @@ export default async function (name: string): Promise<void> {
   console.log(`> 项目模板生成于目录： ${chalk.yellow(options.dest)}`);
   await writeTemplate('package.json');
   await writeTemplate('vue.config.js');
+  await writeTemplate('babel.config.js');
   await writeTemplate('.stylelintrc.js');
   
   await cmdIgnore('git', ['init'])
@@ -40,8 +41,6 @@ export default async function (name: string): Promise<void> {
   console.log(`> 正在自动安装依赖，请稍等...`);
   console.log('');
   await cmdInherit('npm', ['install']);
-  await cmdIgnore('git', ['add .'])
-  await cmdIgnore('git', ['commit -m "Initialize by X-BUILD"'])
   clearConsole('cyan', `Mapwhale v${options.version}`);
   endTime = new Date().getTime();
   const usageTime = (endTime - startTime) / 1000
