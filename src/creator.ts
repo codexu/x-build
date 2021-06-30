@@ -33,6 +33,7 @@ export default async function (name: string): Promise<void> {
   await writeTemplate('vue.config.js');
   await writeTemplate('babel.config.js');
   await writeTemplate('.stylelintrc.js');
+  await writeTemplate('src/components/index.ts');
   
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
@@ -41,7 +42,7 @@ export default async function (name: string): Promise<void> {
   console.log(`> 正在自动安装依赖，请稍等...`);
   console.log('');
   await cmdInherit('npm', ['install']);
-  clearConsole('cyan', `Mapwhale v${options.version}`);
+  clearConsole('cyan', `X-BUILD v${options.version}`);
   endTime = new Date().getTime();
   const usageTime = (endTime - startTime) / 1000
   console.log(`> 项目已经创建成功，用时${chalk.cyan(usageTime)}s，请输入以下命令继续...`);
