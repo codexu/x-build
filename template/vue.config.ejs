@@ -14,8 +14,21 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `
-        @import '@/styles/variable.scss';
-        @import '@/styles/mixins.scss';
+        <% if (precss === 'scss') { -%>
+          @import '@/styles/variable.scss';
+          @import '@/styles/mixins.scss';
+          @import '@/styles/global.scss';
+        <% } -%>
+        <% if (precss === 'less') { -%>
+          @import '@/styles/variable.less';
+          @import '@/styles/mixins.less';
+          @import '@/styles/global.less';
+        <% } -%>
+        <% if (precss === 'stylus') { -%>
+          @import '@/styles/variable.styl';
+          @import '@/styles/mixins.styl';
+          @import '@/styles/global.styl';
+        <% } -%>
         `,
       },
     },

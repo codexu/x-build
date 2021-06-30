@@ -1,11 +1,9 @@
 interface Options {
-  name: string
-  version: string
-  src: string
-  dest: string
-  components: {
-    [key: string]: boolean
-  }
+  name: string;
+  version: string;
+  src: string;
+  dest: string;
+  [key: string]: string;
 }
 
 const options: Options = {
@@ -13,9 +11,6 @@ const options: Options = {
   version: '',
   src: '',
   dest: '',
-  components: {
-    elementPlus: false,
-  }
 }
 
 export default options

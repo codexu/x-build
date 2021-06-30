@@ -2,6 +2,7 @@
 import fs = require('fs-extra');
 import chalk = require('chalk');
 import path = require('path');
+import createQuestions from './questions';
 import clearConsole from './utils/clearConsole';
 import createSpawnCmd from './utils/createSpawnCmd';
 import createTemplate from './createTemplate';
@@ -21,10 +22,16 @@ export default async function (name: string): Promise<void> {
 
   startTime = new Date().getTime()
   clearConsole('cyan', `X-BUILD v${options.version}`);
-  console.log(`> 项目模板生成于目录： ${chalk.yellow(options.dest)}`);
+  
+  const questions = await createQuestions();
+  Object.assign(options, questions);
+  
   // 拷贝模板文件
   await fs.copy(src, options.dest);
+  console.log(`> 项目模板生成于目录： ${chalk.yellow(options.dest)}`);
   await writeTemplate('package.json');
+  await writeTemplate('vue.config.js');
+  await writeTemplate('.stylelintrc.js');
   
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
