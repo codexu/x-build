@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "<%= name %>",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,7 +18,12 @@
     "core-js": "^3.6.5",
     "current-device": "^0.10.2",
     "dayjs": "^1.10.4",
-    "element-plus": "^1.0.2-beta.35",
+    <% if (components === 'element') { -%>
+      "element-plus": "^1.0.2-beta.35",
+    <% } -%>
+    <% if (components === 'antd') { -%>
+      "ant-design-vue": "^2.2.0-rc.1",
+    <% } -%>
     "fuse.js": "^6.4.6",
     "lodash": "^4.17.21",
     "mitt": "^2.1.0",
@@ -60,11 +65,21 @@
     "eslint-plugin-vue": "^7.0.0-0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
+    <% if (precss === 'scss') { -%>
+      "sass": "^1.26.5",
+      "sass-loader": "^8.0.2",
+      "stylelint-scss": "^3.19.0",
+    <% } -%>
+    <% if (precss === 'less') { -%>
+      "less": "^3.0.4",
+      "less-loader": "^5.0.0",
+    <% } -%>
+    <% if (precss === 'stylus') { -%>
+      "stylus": "^0.54.7",
+      "stylus-loader": "^3.0.2",
+    <% } -%>
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "stylelint-scss": "^3.19.0",
     "svg-sprite-loader": "^6.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0",

@@ -13,10 +13,27 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
+      <% if (precss === 'scss') { -%>
         prependData: `
-        @import '@/styles/variable.scss';
-        @import '@/styles/mixins.scss';
+          @import '@/styles/variable.scss';
+          @import '@/styles/mixins.scss';
+          @import '@/styles/global.scss';
         `,
+      <% } -%>
+      <% if (precss === 'less') { -%>
+        prependData: `
+          @import '@/styles/variable.less';
+          @import '@/styles/mixins.less';
+          @import '@/styles/global.less';
+        `,
+      <% } -%>
+      <% if (precss === 'stylus') { -%>
+        prependData: `
+          @import '@/styles/variable.styl';
+          @import '@/styles/mixins.styl';
+          @import '@/styles/global.styl';
+        `,
+      <% } -%>
       },
     },
   },
