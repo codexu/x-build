@@ -25,7 +25,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style>
 .x-svg {
   width: 1em;
   height: 1em;

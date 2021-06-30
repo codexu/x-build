@@ -13,10 +13,15 @@ export default function (templatePath: string) {
     const templateCode = await fs.readFile(readFilePath);
 
     const code = ejs.render(templateCode.toString(), options);
-    let extname = path.extname(src).replace(/[.]/g, '');
-    if (extname === 'ts') extname = 'typescript';
-    if (extname === 'js') extname = 'babel';
-    const prettierCode = prettier.format(code, { parser: extname });
+    const extname = path.extname(src).replace(/[.]/g, '');
+    let prettierCode
+    if (extname === 'ts' || extname === 'js') {
+      await prettier.resolveConfig(options.src).then((options) => {
+        prettierCode = prettier.format(code, options);
+      });
+    } else {
+      prettierCode = prettier.format(code, { parser: extname });
+    }
 
     await fs.outputFile(outputFilePath, prettierCode)
     await fs.remove(readFilePath)

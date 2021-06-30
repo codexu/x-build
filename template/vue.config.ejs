@@ -12,29 +12,33 @@ module.exports = {
   productionSourceMap: false,
   css: {
     loaderOptions: {
-      sass: {
       <% if (precss === 'scss') { -%>
+      sass: {
         prependData: `
           @import '@/styles/variable.scss';
           @import '@/styles/mixins.scss';
           @import '@/styles/global.scss';
         `,
+      },
       <% } -%>
       <% if (precss === 'less') { -%>
+      less: {
         prependData: `
           @import '@/styles/variable.less';
           @import '@/styles/mixins.less';
           @import '@/styles/global.less';
         `,
+      }
       <% } -%>
       <% if (precss === 'stylus') { -%>
+      stylus: {
         prependData: `
           @import '@/styles/variable.styl';
           @import '@/styles/mixins.styl';
           @import '@/styles/global.styl';
         `,
+      }
       <% } -%>
-      },
     },
   },
   chainWebpack: (config) => {
