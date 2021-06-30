@@ -15,6 +15,7 @@ export default function (templatePath: string) {
     const code = ejs.render(templateCode.toString(), options);
     let extname = path.extname(src).replace(/[.]/g, '');
     if (extname === 'ts') extname = 'typescript';
+    if (extname === 'js') extname = 'babel';
     const prettierCode = prettier.format(code, { parser: extname });
 
     await fs.outputFile(outputFilePath, prettierCode)
