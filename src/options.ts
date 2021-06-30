@@ -1,5 +1,6 @@
-module.exports = {
+export default {
   name: '',
+  version: '',
   components: {
     elementPlus: false
   }

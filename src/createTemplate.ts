@@ -1,13 +1,13 @@
-const ejs = require("ejs");
-const fs = require('fs-extra');
-const path = require("path");
-const prettier = require("prettier");
-const options = require("./options");
+import ejs = require("ejs");
+import fs = require('fs-extra');
+import path = require("path");
+import prettier = require("prettier");
+import options from "./options";
 
-module.exports = (templatePath) => {
-  return async function (src) {
+export default function (templatePath: string) {
+  return async function (src: string): Promise<void> {
     const file = path.parse(src);
-    const readFilePath = path.resolve(templatePath, file.dir ,`${file.name}.ejs`);
+    const readFilePath = path.resolve(templatePath, file.dir, `${file.name}.ejs`);
     const outputFilePath = path.resolve(templatePath, src);
 
     const templateCode = await fs.readFile(readFilePath);
@@ -20,4 +20,4 @@ module.exports = (templatePath) => {
     await fs.outputFile(outputFilePath, prettierCode)
     await fs.remove(readFilePath)
   }
-};
+}
