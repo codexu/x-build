@@ -1,0 +1,16 @@
+module.exports = {
+  presets: [
+    '@vue/cli-plugin-babel/preset',
+  ],
+  plugins: [
+    <% if (components === 'element') { -%>
+    [
+      "import",
+      {
+        libraryName: 'element-plus',
+        customStyleName: (name) => `element-plus/lib/theme-chalk/${name}.css`,
+      },
+    ],
+    <% } -%>
+  ],
+};

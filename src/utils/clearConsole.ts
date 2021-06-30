@@ -1,16 +1,11 @@
-const chalk = require('chalk');
-const readline = require('readline');
+import chalk = require('chalk');
+import readline = require('readline');
+import options from '../options';
 
-/**
- * 控制台清空，并输出提示信息
- * @param {String} 输出信息颜色
- * @param {String} 输出信息
- */
-
-function clearConsole(color, str) {
+export default function (color: string, str: string):void {
   if (process.stdout.isTTY) {
     console.log('');
-    const cutLine = ` x-build ${require('../../package.json').version} `;
+    const cutLine = ` x-build ${options.version} `;
     console.log(chalk.bgCyan(' -'.repeat((process.stdout.columns - cutLine.length) / 4) + cutLine + '- '.repeat((process.stdout.columns - cutLine.length) / 4)));
     const blank = '\n'.repeat(process.stdout.rows);
     console.log(blank);
@@ -20,5 +15,3 @@ function clearConsole(color, str) {
     console.log('');
   }
 }
-
-module.exports = clearConsole;

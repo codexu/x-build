@@ -12,12 +12,24 @@ module.exports = {
   productionSourceMap: false,
   css: {
     loaderOptions: {
+      <% if (precss === 'scss') { -%>
       sass: {
         prependData: `
-        @import '@/styles/variable.scss';
-        @import '@/styles/mixins.scss';
+          @import '@/styles/variable.scss';
+          @import '@/styles/mixins.scss';
+          @import '@/styles/global.scss';
         `,
       },
+      <% } -%>
+      <% if (precss === 'stylus') { -%>
+      stylus: {
+        prependData: `
+          @import '@/styles/variable.styl';
+          @import '@/styles/mixins.styl';
+          @import '@/styles/global.styl';
+        `,
+      }
+      <% } -%>
     },
   },
   chainWebpack: (config) => {
@@ -45,5 +57,17 @@ module.exports = {
         .plugin('webpack-bundle-analyzer')
         .use(WebpackBundleAnalyzer.BundleAnalyzerPlugin);
     }
+  },
+  pluginOptions: {
+    <% if (precss === 'less') { -%>
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        path.resolve(__dirname, './src/styles/variable.less'),
+        path.resolve(__dirname, './src/styles/global.less'),
+        path.resolve(__dirname, './src/styles/mixins.less'),
+      ],
+    },
+    <% } -%>
   },
 };
