@@ -21,15 +21,6 @@ module.exports = {
         `,
       },
       <% } -%>
-      <% if (precss === 'less') { -%>
-      less: {
-        prependData: `
-          @import '@/styles/variable.less';
-          @import '@/styles/mixins.less';
-          @import '@/styles/global.less';
-        `,
-      }
-      <% } -%>
       <% if (precss === 'stylus') { -%>
       stylus: {
         prependData: `
@@ -66,5 +57,17 @@ module.exports = {
         .plugin('webpack-bundle-analyzer')
         .use(WebpackBundleAnalyzer.BundleAnalyzerPlugin);
     }
+  },
+  pluginOptions: {
+    <% if (precss === 'less') { -%>
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        path.resolve(__dirname, './src/styles/variable.less'),
+        path.resolve(__dirname, './src/styles/global.less'),
+        path.resolve(__dirname, './src/styles/mixins.less'),
+      ],
+    },
+    <% } -%>
   },
 };
