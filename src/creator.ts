@@ -2,9 +2,8 @@
 import fs = require('fs-extra');
 import chalk = require('chalk');
 import path = require('path');
-// import { spawn } from 'child_process';
 import clearConsole from './utils/clearConsole';
-import execa = require('execa');
+import createSpawnCmd from './utils/createSpawnCmd';
 import createTemplate from './createTemplate';
 import options from './options';
 
@@ -16,8 +15,9 @@ export default async function (name: string): Promise<void> {
   // 获取基础参数
   options.name = name;
   options.dest = path.resolve(process.cwd(), name);
-  const writeTemplate  = createTemplate(options.dest)
-  // const execa = createExeca(options.dest)
+  const writeTemplate  = createTemplate(options.dest);
+  const cmdIgnore = createSpawnCmd(options.dest, 'ignore');
+  const cmdInherit = createSpawnCmd(options.dest, 'inherit');
 
   startTime = new Date().getTime()
   clearConsole('cyan', `X-BUILD v${options.version}`);
@@ -26,13 +26,15 @@ export default async function (name: string): Promise<void> {
   await fs.copy(src, options.dest);
   await writeTemplate('package.json');
   
-  await execa('git', ['init']);
-  await execa('git', ['add', '.']);
-  await execa('git', ['commit', '-m', '"Initialize by X-BUILD"']);
+  await cmdIgnore('git', ['init'])
+  await cmdIgnore('git', ['add .'])
+  await cmdIgnore('git', ['commit -m "Initialize by X-BUILD"'])
   console.log(`> 成功初始化 Git 仓库`);
   console.log(`> 正在自动安装依赖，请稍等...`);
   console.log('');
-  await execa('npm', ['install']);
+  await cmdInherit('npm', ['install']);
+  await cmdIgnore('git', ['add .'])
+  await cmdIgnore('git', ['commit -m "Initialize by X-BUILD"'])
   clearConsole('cyan', `Mapwhale v${options.version}`);
   endTime = new Date().getTime();
   const usageTime = (endTime - startTime) / 1000
@@ -41,25 +43,3 @@ export default async function (name: string): Promise<void> {
   console.log(chalk.cyan(' $ ') + chalk.blueBright(`cd ${name}`));
   console.log(chalk.cyan(' $ ') + chalk.blueBright('npm run serve'));
 }
-
-/**
- * 安装依赖指令
- * @param {string} dest 需要执行指令的路径
- */
-// function spawnCmd(dest: string, stdio = [0, 1, 2], cmd: string, instruction) {
-//   const ls = spawn(cmd, instruction, {
-//     cwd: dest,
-//     stdio: stdio,
-//     shell: true
-//   });
-//   return new Promise((resolve, reject) => {
-//     ls.on('close', (code) => {
-//       if (code === 0) {
-//         resolve(true)
-//       } else {
-//         reject();
-//       }
-//     });
-//   })
-
-// }
