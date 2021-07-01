@@ -2,26 +2,21 @@ import StaticFile from '@/components/sys/StaticFile/index.vue';
 import SvgIcon from '@/components/sys/SvgIcon/index.vue';
 import '@/components/sys/SvgIcon';
 
-import {
-  ElIcon,
-  ElButton,
-  ElNotification,
-  ElSwitch,
-} from 'element-plus';
+<% if (components === 'element') { -%>
+import { ElIcon } from 'element-plus';
 
 import locale from 'element-plus/lib/locale';
 import lang from 'element-plus/lib/locale/lang/zh-cn';
 
 locale.use(lang);
+<% } -%>
 
 export const components = [
   StaticFile,
   SvgIcon,
+  <% if (components === 'element') { -%>
   ElIcon,
-  ElButton,
-  ElSwitch,
+  <% } -%>
 ];
 
-export const plugins = [
-  ElNotification,
-];
+export const plugins = [];
