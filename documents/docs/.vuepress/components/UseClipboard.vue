@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import useClipboard from "../../../../template/src/hooks/useClipboard";
+import useClipboard from "../hooks/useClipboard";
 import { ElButton, ElInput } from "element-plus";
 import "element-plus/lib/theme-chalk/index.css";
 

@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ElButton, ElSwitch } from "element-plus";
-import useBoolean from "../../../../template/src/hooks/useBoolean";
+import useBoolean from "../hooks/useBoolean";
 
 import "element-plus/lib/theme-chalk/index.css";
 

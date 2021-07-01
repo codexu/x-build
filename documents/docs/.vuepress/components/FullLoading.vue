@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import useLoading from '../../../../template/src/hooks/useLoading';
+import useLoading from '../hooks/useLoading';
 import { ElButton, ElLoading } from 'element-plus';
 import 'element-plus/lib/theme-chalk/index.css';
 

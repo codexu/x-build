@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import useDevice from "../../../../template/src/hooks/useDevice";
+import useDevice from "../hooks/useDevice";
 
 export default defineComponent({
   setup() {
