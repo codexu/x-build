@@ -34,6 +34,9 @@ export default async function (name: string): Promise<void> {
   await writeTemplate('babel.config.js');
   await writeTemplate('.stylelintrc.js');
   await writeTemplate('src/components/index.ts');
+  await writeTemplate(`src/styles/global.${options.precss}`);
+  await writeTemplate(`src/styles/mixins.${options.precss}`);
+  await writeTemplate(`src/styles/variable.${options.precss}`);
   
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
