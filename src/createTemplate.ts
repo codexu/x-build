@@ -14,7 +14,7 @@ export default function (templatePath: string) {
 
     const code = ejs.render(templateCode.toString(), options);
     const extname = path.extname(src).replace(/[.]/g, '');
-    let prettierCode
+    let prettierCode: string;
     if (extname === 'ts' || extname === 'js') {
       await prettier.resolveConfig(options.src).then((options) => {
         prettierCode = prettier.format(code, options);
