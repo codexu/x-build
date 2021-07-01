@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ElButton } from "element-plus";
-import useFullcreenfull from "../../../../template/src/hooks/useFullscreen";
+import useFullcreenfull from "../hooks/useFullscreen";
 
 import "element-plus/lib/theme-chalk/index.css";
 
