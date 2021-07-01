@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ElButton } from "element-plus";
-import useDebounce from "../../../../template/src/hooks/useDebounce";
+import useDebounce from "../hooks/useDebounce";
 
 import "element-plus/lib/theme-chalk/index.css";
 

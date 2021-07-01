@@ -12,7 +12,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ElButton } from "element-plus";
-import useToggle from "../../../../template/src/hooks/useToggle";
+import useToggle from "../hooks/useToggle";
 
 import "element-plus/lib/theme-chalk/index.css";
 

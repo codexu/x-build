@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
-import useClipboard from "../../../../template/src/hooks/useClipboard";
+import useClipboard from "../hooks/useClipboard";
 
 export default defineComponent({
   setup() {
