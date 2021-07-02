@@ -1,6 +1,5 @@
 import { ref } from 'vue';
 import { merge } from 'lodash';
-<% if (components === 'element') { -%>
 import { ElLoading } from 'element-plus';
 import { ILoadingOptions, ILoadingInstance } from 'element-plus/lib/el-loading/src/loading.type.d';
 
@@ -25,4 +24,3 @@ export default function useLoading(options?: ILoadingOptions) {
     loading, loadingTarget, openLoading, closeLoading,
   };
 }
-<% } -%>
