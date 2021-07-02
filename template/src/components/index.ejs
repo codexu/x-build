@@ -13,7 +13,12 @@ locale.use(lang);
 
 <% if (components === 'antd') { -%>
   import { Button } from 'ant-design-vue';
-  <% } -%>
+<% } -%>
+
+<% if (components === 'vant') { -%>
+  import { Button } from 'vant';
+<% } -%>
+  
 
 export const components = [
   StaticFile,
@@ -23,6 +28,10 @@ export const components = [
   <% } -%>
 
   <% if (components === 'antd') { -%>
+    Button
+  <% } -%>
+
+  <% if (components === 'vant') { -%>
     Button
   <% } -%>
 ];
