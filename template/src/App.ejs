@@ -1,10 +1,4 @@
 <template>
-<% if (components === 'element') { -%>
-  <div id="app">
-    <router-view/>
-  </div>
-<% } -%>
-
 <% if (components === 'antd') { -%>
   <a-config-provider :locale="locale">
     <div id="app">
@@ -17,8 +11,8 @@
     <router-view/>
   </div>
 <% } -%>
-  
 </template>
+
 <% if (components === 'antd') { -%>
 <script>
   import zhCN from 'ant-design-vue/es/locale/zh_CN';
