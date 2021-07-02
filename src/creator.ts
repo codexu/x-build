@@ -33,7 +33,12 @@ export default async function (name: string): Promise<void> {
   // 编译 ejs 模板文件
   await Promise.all(fetchTemplateFiles().map(file => ejsRender(file)));
   console.log(`> 项目模板生成于目录： ${chalk.yellow(options.dest)}`);
-
+  // 生成 gitignore
+  await fs.move(
+    path.resolve(options.dest, '.gitignore.ejs'),
+    path.resolve(options.dest, '.gitignore'),
+    { overwrite: true }
+  );
   // Git 初始化
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])

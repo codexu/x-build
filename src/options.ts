@@ -17,6 +17,7 @@ export function fetchTemplateFiles(): string[] {
     'vue.config.js',
     'babel.config.js',
     '.stylelintrc.js',
+    'postcss.config.js',
     'src/App.vue',
     'src/components/index.ts',
     'src/store/sys/log.ts',
