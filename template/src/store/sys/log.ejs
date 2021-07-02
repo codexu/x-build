@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia';
 import { uniqueId } from 'lodash';
+<% if (components === 'element') { -%>
 import { ElNotification } from 'element-plus';
 import { INotificationOptions } from 'element-plus/lib/el-notification/src/notification.type.d';
+<% } -%>
 
 interface ErrorLog {
   id: string;
@@ -32,6 +34,7 @@ export const useLogStore = defineStore({
       this.errorLogs = [];
     },
     // 消息提示
+    <% if (components === 'element') { -%>
     notification(payload: string | Error | INotificationOptions) {
       if (typeof payload === 'string') {
         ElNotification({
@@ -51,5 +54,6 @@ export const useLogStore = defineStore({
         }
       }
     },
+    <% } -%>
   },
 });

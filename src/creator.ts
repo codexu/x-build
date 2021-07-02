@@ -20,11 +20,11 @@ export default async function (name: string): Promise<void> {
   const cmdIgnore = createSpawnCmd(options.dest, 'ignore');
   const cmdInherit = createSpawnCmd(options.dest, 'inherit');
 
-  startTime = new Date().getTime()
   clearConsole('cyan', `X-BUILD v${options.version}`);
   
-  const questions = await createQuestions();
-  Object.assign(options, questions);
+  await createQuestions();
+
+  startTime = new Date().getTime()
   
   // 拷贝模板文件
   await fs.copy(src, options.dest);
@@ -34,6 +34,8 @@ export default async function (name: string): Promise<void> {
   await writeTemplate('babel.config.js');
   await writeTemplate('.stylelintrc.js');
   await writeTemplate('src/components/index.ts');
+  await writeTemplate('src/hooks/useLoading.ts');
+  await writeTemplate('src/store/sys/log.ts');
   await writeTemplate(`src/styles/global.${options.precss}`);
   await writeTemplate(`src/styles/mixins.${options.precss}`);
   await writeTemplate(`src/styles/variable.${options.precss}`);
