@@ -4,9 +4,7 @@ import { uniqueId } from 'lodash';
 import { ElNotification } from 'element-plus';
 import { INotificationOptions } from 'element-plus/lib/el-notification/src/notification.type.d';
 <% } -%>
-
-<% if (components === 'element') { -%>
-  import { Notification } from 'ant-design-vue';
+<% if (components === 'antd') { -%>
   import { notification } from 'ant-design-vue';
   import { NotificationArgsProps } from 'ant-design-vue/lib/notification/index';
 <% } -%>
@@ -63,7 +61,6 @@ export const useLogStore = defineStore({
     <% } -%>
 
     <% if (components === 'antd') { -%>
-      // 消息提示
       notifications(payload: string | Error | NotificationArgsProps) {
         if (typeof payload === 'string') {
           notification.success({
