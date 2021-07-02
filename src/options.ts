@@ -1,16 +1,10 @@
 interface Options {
-  name: string;
-  version: string;
-  src: string;
-  dest: string;
-  [key: string]: string;
+  name?: string;
+  version?: string;
+  src?: string;
+  dest?: string;
+  precss?: 'less' | 'scss' | '';
+  device?: 'pc' | 'mobile';
 }
 
-const options: Options = {
-  name: '',
-  version: '',
-  src: '',
-  dest: '',
-}
-
-export default options
+export default {} as Options;
