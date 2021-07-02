@@ -2,7 +2,7 @@ import { prompt, QuestionCollection } from 'inquirer';
 import options from '../options';
 import precss from './precss';
 import device from './device';
-import { pcComponents, mobileComponents } from './components';
+import components from './components';
 
 async function createQuestion(quesiton) {
   const result: QuestionCollection = await prompt([quesiton]);
@@ -10,16 +10,11 @@ async function createQuestion(quesiton) {
   return Promise.resolve();
 }
   
-async function createQuestions (): Promise<boolean> {
+async function createQuestions (): Promise<void> {
   await createQuestion(device)
-  // 根据选择的设备提示不同选项
-  if (options.device === 'pc') {
-    await createQuestion(pcComponents)
-  } else {
-    await createQuestion(mobileComponents)
-  }
+  await createQuestion(components)
   await createQuestion(precss)
-  return Promise.resolve(true);
+  return Promise.resolve();
 }
 
 export default createQuestions;
