@@ -1,15 +1,15 @@
-import { prompt } from 'inquirer';
+import { prompt, QuestionCollection } from 'inquirer';
 import options from '../options';
 import precss from './precss';
 import device from './device';
 import { pcComponents, mobileComponents } from './components';
 
 async function createQuestion(quesiton) {
-  const result = await prompt([quesiton]);
+  const result: QuestionCollection = await prompt([quesiton]);
   Object.assign(options, result);
   return Promise.resolve();
 }
-
+  
 async function createQuestions (): Promise<boolean> {
   await createQuestion(device)
   // 根据选择的设备提示不同选项

@@ -14,5 +14,7 @@ export const mobileComponents = {
   message: '选择 UI 框架',
   choices: [
     { name: 'Vant', value: 'vant' },
+    { name: 'NutUI', value: 'nut' },
+    { name: 'Varlet', value: 'varlet' },
   ],
 }
