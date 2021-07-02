@@ -22,5 +22,15 @@ module.exports = {
         },
       ],
       <% } -%>
+      <% if (components === 'vant') { -%>
+        [
+        "import",
+        {
+          "libraryName": "vant",
+          "libraryDirectory": "es",
+          "style": true
+        }
+      ]
+        <% } -%>
   ],
 };
