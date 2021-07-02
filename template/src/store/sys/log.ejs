@@ -8,6 +8,10 @@ import { INotificationOptions } from 'element-plus/lib/el-notification/src/notif
   import { notification } from 'ant-design-vue';
   import { NotificationArgsProps } from 'ant-design-vue/lib/notification/index';
 <% } -%>
+<% if (components === 'vant') { -%>
+  import { Notify } from 'vant';
+  import { NotifyType, NotifyOptions } from 'vant/lib/notify/index';
+<% } -%>
 
 interface ErrorLog {
   id: string;
@@ -80,6 +84,35 @@ export const useLogStore = defineStore({
               type = payload.type;
             }
             notification[type](payload);
+          }
+        }
+      },
+    <% } -%>  
+    <% if (components === 'vant') { -%>
+      notify(payload: string | Error | NotifyOptions) {
+        if (typeof payload === 'string') {
+          Notify({
+            type: 'success',
+            message: payload,
+          });
+        } else if (typeof payload === 'object') {
+          if (payload instanceof Error) {
+            const { message } = payload;
+            Notify({
+              type: 'danger',
+              message,
+            });
+          } else {
+            let type: NotifyType;
+            if (payload.type === undefined) {
+              type = 'success';
+            } else {
+              type = payload.type;
+            }
+            Notify({
+              type,
+              message: payload.message,
+            });
           }
         }
       },
