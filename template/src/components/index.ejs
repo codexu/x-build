@@ -11,12 +11,23 @@ import lang from 'element-plus/lib/locale/lang/zh-cn';
 locale.use(lang);
 <% } -%>
 
+<% if (components === 'antd') { -%>
+  import Vue from 'vue';
+
+  import { Button } from 'ant-design-vue';
+
+  Vue.use(Button);
+  <% } -%>
+
 export const components = [
   StaticFile,
   SvgIcon,
   <% if (components === 'element') { -%>
   ElIcon,
   <% } -%>
+  <% if (components === 'antd') { -%>
+    Icon,
+    <% } -%>
 ];
 
 export const plugins = [];
