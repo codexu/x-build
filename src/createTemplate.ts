@@ -14,13 +14,22 @@ export async function ejsRender (filePath: string): Promise<void> {
   const code = ejs.render(templateCode.toString(), options);
   const extname = path.extname(filePath).replace(/[.]/g, '');
   let prettierCode: string
-  if (extname === 'ts' || extname === 'js') {
-    await prettier.resolveConfig(options.src).then((options) => {
-      prettierCode = prettier.format(code, options);
-    });
-  } else {
-    prettierCode = prettier.format(code, { parser: extname });
-  }
+  await prettier.resolveConfig(options.src).then((options) => {
+    switch (extname) {
+      case 'ts':
+        prettierCode = prettier.format(code, options);
+        break;
+      case 'js':
+        prettierCode = prettier.format(code, options);
+        break;
+      case 'vue':
+        prettierCode = prettier.format(code, Object.assign(options, { parser: extname }));
+        break;
+      default:
+        prettierCode = prettier.format(code, { parser: extname });
+        break;
+    }
+  });
 
   await fs.outputFile(outputFilePath, prettierCode)
   await fs.remove(readFilePath)
