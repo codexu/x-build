@@ -39,7 +39,8 @@ export default async function (name: string): Promise<void> {
   await writeTemplate(`src/styles/global.${options.precss}`);
   await writeTemplate(`src/styles/mixins.${options.precss}`);
   await writeTemplate(`src/styles/variable.${options.precss}`);
-  
+  await writeTemplate('src/App.vue');
+
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
   await cmdIgnore('git', ['commit -m "Initialize by X-BUILD"'])
