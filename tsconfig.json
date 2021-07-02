@@ -18,10 +18,5 @@
       "*": ["src/*"]
     }
   },
-  "exclude": [
-    "bin",
-    "test",
-    "documents",
-    "template",
-  ]
+  "include": ["src"]
 }

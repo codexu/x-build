@@ -3,8 +3,31 @@ interface Options {
   version?: string;
   src?: string;
   dest?: string;
+  components?: string;
   precss?: 'less' | 'scss' | '';
   device?: 'pc' | 'mobile';
 }
 
-export default {} as Options;
+const options: Options = {};
+export default options;
+
+export function fetchTemplateFiles(): string[] {
+  return [
+    'package.json',
+    'vue.config.js',
+    'babel.config.js',
+    '.stylelintrc.js',
+    'src/App.vue',
+    'src/components/index.ts',
+    'src/store/sys/log.ts',
+    `src/styles/global.${options.precss}`,
+    `src/styles/mixins.${options.precss}`,
+    `src/styles/variable.${options.precss}`,
+  ]
+}
+
+export function fetchPackageFiles(): string[] {
+  const packages = [];
+  if (options.components === 'element') packages.push('hooks/useLoading.ts');
+  return packages;
+}
