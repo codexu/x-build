@@ -4,6 +4,10 @@ import { uniqueId } from 'lodash';
 import { ElNotification } from 'element-plus';
 import { INotificationOptions } from 'element-plus/lib/el-notification/src/notification.type.d';
 <% } -%>
+<% if (components === 'antd') { -%>
+  import { notification } from 'ant-design-vue';
+  import { NotificationArgsProps } from 'ant-design-vue/lib/notification/index';
+<% } -%>
 
 interface ErrorLog {
   id: string;
@@ -37,7 +41,7 @@ export const useLogStore = defineStore({
     <% if (components === 'element') { -%>
     notification(payload: string | Error | INotificationOptions) {
       if (typeof payload === 'string') {
-        ElNotification({
+        Notification({
           type: 'success',
           message: payload,
         });
@@ -45,15 +49,40 @@ export const useLogStore = defineStore({
         if (payload instanceof Error) {
           const { message } = payload;
           this.addErrorLogs(payload);
-          ElNotification({
+          Notification({
             type: 'error',
             message,
           });
         } else {
-          ElNotification(payload);
+          Notification(payload);
         }
       }
     },
     <% } -%>
+
+    <% if (components === 'antd') { -%>
+      notifications(payload: string | Error | NotificationArgsProps) {
+        if (typeof payload === 'string') {
+          notification.success({
+            message: payload,
+          });
+        } else if (typeof payload === 'object') {
+          if (payload instanceof Error) {
+            const { message } = payload;
+            notification.error({
+              message,
+            });
+          } else {
+            let type;
+            if (payload.type === undefined) {
+              type = 'success';
+            } else {
+              type = payload.type;
+            }
+            notification[type](payload);
+          }
+        }
+      },
+    <% } -%>  
   },
 });

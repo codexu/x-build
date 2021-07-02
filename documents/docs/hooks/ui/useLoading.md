@@ -1,6 +1,9 @@
 # useLoading
 
 基于 element-plus Loading 的 Hook，可以方便控制页面中整体或局部的 loading 效果。
+:::warning 警告
+仅支持 element-plus
+:::
 
 ## 示例
 
