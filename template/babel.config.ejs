@@ -12,5 +12,15 @@ module.exports = {
       },
     ],
     <% } -%>
+    <% if (components === 'antd') { -%>
+      [
+        "import",
+        {
+          libraryName: 'ant-design-vue',
+          libraryDirectory: 'es',
+          style:'css'
+        },
+      ],
+      <% } -%>
   ],
 };

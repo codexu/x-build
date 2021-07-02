@@ -12,11 +12,7 @@ locale.use(lang);
 <% } -%>
 
 <% if (components === 'antd') { -%>
-  import Vue from 'vue';
-
   import { Button } from 'ant-design-vue';
-
-  Vue.use(Button);
   <% } -%>
 
 export const components = [
@@ -25,9 +21,10 @@ export const components = [
   <% if (components === 'element') { -%>
   ElIcon,
   <% } -%>
+
   <% if (components === 'antd') { -%>
-    Icon,
-    <% } -%>
+    Button
+  <% } -%>
 ];
 
 export const plugins = [];
