@@ -41,19 +41,22 @@
   },
   "devDependencies": {
     <% if (precss === 'scss') { -%>
-      "sass": "^1.26.5",
-      "sass-loader": "^8.0.2",
-      "stylelint-scss": "^3.19.0",
+      "sass": "1.26.5",
+      "sass-loader": "8.0.2",
+      "stylelint-scss": "3.19.0",
     <% } -%>
     <% if (precss === 'less') { -%>
-      "less": "^3.0.4",
-      "less-loader": "^5.0.0",
-      "style-resources-loader": "^1.4.1",
-      "vue-cli-plugin-style-resources-loader": "~0.1.5",
+      "less": "3.0.4",
+      "less-loader": "5.0.0",
+      "style-resources-loader": "1.4.1",
+      "vue-cli-plugin-style-resources-loader": "0.1.5",
     <% } -%>
     <% if (precss === 'stylus') { -%>
-      "stylus": "^0.54.7",
-      "stylus-loader": "^3.0.2",
+      "stylus": "0.54.7",
+      "stylus-loader": "3.0.2",
+    <% } -%>
+    <% if (device === 'mobile') { -%>
+      "postcss-px-to-viewport": "1.1.1",
     <% } -%>
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
