@@ -101,6 +101,7 @@ module.exports = {
           children: [
             '/guide/overview/features.md',
             '/guide/overview/quickstart.md',
+            '/guide/overview/questions.md',
             '/guide/overview/build.md',
           ]
         },
