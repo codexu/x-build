@@ -1,0 +1,2 @@
+*.ejs linguist-language=typescript
+*.vue linguist-language=typescript
