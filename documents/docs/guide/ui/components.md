@@ -11,7 +11,7 @@
 
 ## 组件库
 
-基础组件库选择 [Element-plus](https://element-plus.gitee.io/#/zh-CN/component/installation)，如果不了解请详细阅读文档。
+为了提高开发效率，建议初始化项目时选择一个组件库，脚手架已经对其做好优化，下面以 Element Plus 为例：
 
 ### 全局加载
 
@@ -41,7 +41,7 @@ export const plugins = [
 
 ### 国际化
 
-默认情况已经将 element-plus 设置为中文：
+默认情况已经将设置为中文：
 
 ```typescript
 import locale from 'element-plus/lib/locale';

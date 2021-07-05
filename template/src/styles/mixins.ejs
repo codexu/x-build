@@ -1,107 +1,111 @@
 <% if (precss === 'less') { -%>
-  // 文字一行超出显示省略号
-  .ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+// 文字一行超出显示省略号
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文字超出显示省略号
+.ellipsis-multiline(@number: 4) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @number;
+}
+
+// 美化文本的选中
+.beauty-select(@color, @bgcolor) {
+  &::selection {
+    color: @color;
+    background-color: @bgcolor;
   }
-  
-  // 多行文字超出显示省略号
-  .ellipsis-multiline(@number: 4) {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    word-break: break-all;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: @number;
-  }
-  
-  // 美化文本的选中
-  .beauty-select(@color, @bgcolor) {
-    &::selection {
-      color: @color;
-      background-color: @bgcolor;
-    }
-  }
-  
-  // 毛玻璃效果
-  .blur(@blur: 10px) {
-    -webkit-filter: blur(@blur);
-    -moz-filter: blur(@blur);
-    -o-filter: blur(@blur);
-    -ms-filter: blur(@blur);
-    filter: progid:dximagetransform.microsoft.blur(pixelradius='@{blur}');
-    filter: blur(@blur);
-    *zoom: 1;
-  }
-  
-  // 滤镜: 将彩色照片显示为黑白照片、保留图片层次
-  .grayscale {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-  }
-  
+}
+
+// 毛玻璃效果
+.blur(@blur: 10px) {
+  -webkit-filter: blur(@blur);
+  -moz-filter: blur(@blur);
+  -o-filter: blur(@blur);
+  -ms-filter: blur(@blur);
+  filter: progid:dximagetransform.microsoft.blur(pixelradius='@{blur}');
+  filter: blur(@blur);
+  *zoom: 1;
+}
+
+// 滤镜: 将彩色照片显示为黑白照片、保留图片层次
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+  <% if (device === 'mobile') { -%>
   // 移动端解决 100vh 的问题
   .vh(@height: 100vh) {
     height: @height;
     height: calc(@height - var(--browser-address-bar, 0px));
   }
-  
-    <% } -%>
-  
-  <% if (precss === 'scss') { -%>
-    // 文字一行超出显示省略号
-   @mixin ellipsis {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+  <% } -%>
+
+<% } -%>
+
+<% if (precss === 'scss') { -%>
+// 文字一行超出显示省略号
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文字超出显示省略号
+@mixin ellipsis-multiline($number: 4) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $number;
+}
+
+// 美化文本的选中
+@mixin beauty-select($color, $bgcolor) {
+  &::selection {
+    color: $color;
+    background-color: $bgcolor;
+  }
+}
+
+// 毛玻璃效果
+@mixin blur($blur: 10px) {
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: progid:dximagetransform.microsoft.blur(pixelradius='${blur}');
+  filter: blur($blur);
+  *zoom: 1;
+}
+
+// 滤镜: 将彩色照片显示为黑白照片、保留图片层次
+@mixin grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+  <% if (device === 'mobile') { -%>
+  // 移动端解决 100vh 的问题
+  @mixin vh($height: 100vh) {
+    height: $height;
+    height: calc(#{$height} - var(--browser-address-bar, 0px));
+  }
+  <% } -%>
     
-    // 多行文字超出显示省略号
-    @mixin ellipsis-multiline($number: 4) {
-      display: -webkit-box;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      word-break: break-all;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: $number;
-    }
-    
-    // 美化文本的选中
-    @mixin beauty-select($color, $bgcolor) {
-      &::selection {
-        color: $color;
-        background-color: $bgcolor;
-      }
-    }
-    
-    // 毛玻璃效果
-    @mixin blur($blur: 10px) {
-      -webkit-filter: blur($blur);
-      -moz-filter: blur($blur);
-      -o-filter: blur($blur);
-      -ms-filter: blur($blur);
-      filter: progid:dximagetransform.microsoft.blur(pixelradius='${blur}');
-      filter: blur($blur);
-      *zoom: 1;
-    }
-    
-    // 滤镜: 将彩色照片显示为黑白照片、保留图片层次
-    @mixin grayscale {
-      -webkit-filter: grayscale(100%);
-      -moz-filter: grayscale(100%);
-      -ms-filter: grayscale(100%);
-      -o-filter: grayscale(100%);
-      filter: grayscale(100%);
-    }
-    
-    // 移动端解决 100vh 的问题
-    @mixin vh($height: 100vh) {
-      height: $height;
-      height: calc(#{$height} - var(--browser-address-bar, 0px));
-    }
-    
-    <% } -%>
+<% } -%>

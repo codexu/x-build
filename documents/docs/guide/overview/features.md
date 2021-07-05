@@ -4,10 +4,7 @@
   <img src="https://img.shields.io/badge/vue-3.0.0-brightgreen.svg" />
 </a>
 <a href="https://www.npmjs.com/package/x-build" target="blank">
-  <img src="https://img.shields.io/npm/v/x-build/latest" />
-</a>
-<a href="https://pinia.esm.dev/" target="blank">
-  <img src="https://img.shields.io/badge/pinia-2.0.0-brightgreen.svg" />
+  <img src="https://img.shields.io/npm/v/x-build/next" />
 </a>
 <a href="https://github.com/code-device/x-build/actions" target="blank">
   <img src="https://github.com/code-device/x-build/workflows/GitHub%20Actions/badge.svg" />
@@ -29,7 +26,7 @@ X-BUILD 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的�
 在使用此脚手架前，请确保你对以下的技术有足够的知识储备：
 
 - 语言基础：JavasSript、TypeScript
-- Vue 基础：[vue3](https://v3.cn.vuejs.org/)、[vue-router4.0](https://next.router.vuejs.org/)、[Pinia](https://pinia.esm.dev/)、[element-plus](https://element-plus.gitee.io/#/zh-CN)
+- Vue 基础：[vue3](https://v3.cn.vuejs.org/)、[vue-router4.0](https://next.router.vuejs.org/)、Vuex 和 [Pinia](https://pinia.esm.dev/)
 - 前端工程化：[@vue/cli4](https://cli.vuejs.org/zh/guide/)、[Webpack](https://webpack.docschina.org/concepts/)
 :::
 
