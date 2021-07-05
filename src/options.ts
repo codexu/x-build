@@ -19,6 +19,7 @@ export function fetchTemplateFiles(): string[] {
     '.stylelintrc.js',
     'postcss.config.js',
     'src/App.vue',
+    'src/main.ts',
     'src/components/index.ts',
     'src/store/sys/log.ts',
     `src/styles/global.${options.precss}`,
@@ -29,6 +30,11 @@ export function fetchTemplateFiles(): string[] {
 
 export function fetchPackageFiles(): string[] {
   const packages = [];
-  if (options.components === 'element') packages.push('hooks/useLoading.ts');
+  if (options.components === 'element') {
+    packages.push('hooks/useLoading.ts')
+  }
+  if (options.device === 'mobile') {
+    packages.push('styles/vhCheck.ts')
+  }
   return packages;
 }

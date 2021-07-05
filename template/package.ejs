@@ -22,10 +22,12 @@
     <% if (components === 'vant') { -%>
       "vant": "3.1.1",
     <% } -%>
+    <% if (device === 'mobile') { -%>
+      "vh-check": "2.0.5",
+    <% } -%>
     "axios": "0.21.1",
     "core-js": "3.15.2",
     "current-device": "0.10.2",
-    "dayjs": "1.10.5",
     "fuse.js": "6.4.6",
     "lodash": "4.17.21",
     "mitt": "2.1.0",
@@ -35,7 +37,6 @@
     "screenfull": "5.1.0",
     "store": "2.0.12",
     "ua-parser-js": "0.7.28",
-    "vh-check": "2.0.5",
     "vue": "3.1.2",
     "vue-router": "4.0.10",
   },
