@@ -1,5 +1,5 @@
 import { prompt, QuestionCollection } from 'inquirer';
-import options from '../options';
+import options from '../../options';
 import precss from './precss';
 import device from './device';
 import components from './components';

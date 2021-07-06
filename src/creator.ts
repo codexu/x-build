@@ -2,7 +2,7 @@
 import fs = require('fs-extra');
 import chalk = require('chalk');
 import path = require('path');
-import createQuestions from './questions';
+import createQuestions from './questions/creator';
 import clearConsole from './utils/clearConsole';
 import createSpawnCmd from './utils/createSpawnCmd';
 import { ejsRender, packageRender } from './createTemplate';
