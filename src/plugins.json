@@ -19,5 +19,15 @@
       { "name": "xlsx", "version": "0.16.8" },
       { "name": "file-saver", "version": "2.0.2" }
     ]
+  },
+  {
+    "name": "富文本编辑器",
+    "value": "Editor",
+    "type": "components",
+    "src": "components/Editor",
+    "dest": "src/components/sys/Editor",
+    "packages": [
+      { "name": "wangeditor", "version": "4.7.5" }
+    ]
   }
 ]
