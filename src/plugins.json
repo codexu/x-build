@@ -29,5 +29,15 @@
     "packages": [
       { "name": "wangeditor", "version": "4.7.5" }
     ]
+  },
+  {
+    "name": "代码高粱",
+    "value": "Highlight",
+    "type": "components",
+    "src": "components/Highlight",
+    "dest": "src/components/sys/Highlight",
+    "packages": [
+      { "name": "highlight.js", "version": "11.0.1" }
+    ]
   }
 ]
