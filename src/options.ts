@@ -4,6 +4,8 @@ interface Options {
   src?: string;
   dest?: string;
   components?: string;
+  pluginType?: 'component' | 'hook' | 'directive';
+  plugins?: string[];
   precss?: 'less' | 'scss' | '';
   device?: 'pc' | 'mobile';
 }
