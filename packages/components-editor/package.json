@@ -1,0 +1,35 @@
+{
+  "name": "components-editor",
+  "version": "0.0.0",
+  "description": "组件 - 富文本编辑器",
+  "dest": "src/components/Editor",
+  "author": "lixu <461229187@qq.com>",
+  "homepage": "https://github.com/codexu/x-build/packages/hook-loading",
+  "license": "ISC",
+  "main": "src/useLoading.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://39.99.145.114:18600/nexus/repository/npm-group/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codexu/x-build.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/codexu/x-build/issues"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "vue": "3.1.4",
+    "wangeditor": "^4.7.5"
+  }
+}

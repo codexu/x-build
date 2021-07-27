@@ -5,8 +5,8 @@ import path = require('path');
 import createQuestions from './questions/creator';
 import clearConsole from './utils/clearConsole';
 import createSpawnCmd from './utils/createSpawnCmd';
-import { ejsRender, packageRender } from './createTemplate';
-import options, { fetchTemplateFiles, fetchPackageFiles } from './options';
+import { ejsRender } from './createTemplate';
+import options, { fetchTemplateFiles } from './options';
 
 let startTime: number, endTime: number;
 
@@ -28,8 +28,6 @@ export default async function (name: string): Promise<void> {
   startTime = new Date().getTime()
   // 拷贝基础模板文件
   await fs.copy(options.src, options.dest);
-  // 拷贝 package 模板文件
-  await Promise.all(fetchPackageFiles().map(file => packageRender(file)));
   // 编译 ejs 模板文件
   await Promise.all(fetchTemplateFiles().map(file => ejsRender(file)));
   console.log(`> 项目模板生成于目录： ${chalk.yellow(options.dest)}`);

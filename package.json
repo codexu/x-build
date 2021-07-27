@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "6.0.0-beta.14",
+  "version": "6.0.0-beta.15",
   "description": "",
   "main": "bin/x-build.js",
   "bin": {
@@ -31,8 +31,7 @@
     "execa": "^5.1.1",
     "fs-extra": "^9.0.1",
     "inquirer": "^8.1.1",
-    "prettier": "^2.3.2",
-    "wangeditor": "^4.7.5"
+    "prettier": "^2.3.2"
   },
   "devDependencies": {
     "@types/ejs": "^3.0.6",
@@ -43,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "eslint": "^7.29.0",
+    "lerna": "^4.0.0",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.3.4"
   }

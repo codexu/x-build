@@ -34,9 +34,3 @@ export async function ejsRender (filePath: string): Promise<void> {
   await fs.outputFile(outputFilePath, prettierCode)
   await fs.remove(readFilePath)
 }
-
-export async function packageRender(filePath: string): Promise<void> {
-  const src = path.resolve(__dirname, '../package', filePath);
-  const dest = path.resolve(options.dest, 'src', filePath);
-  await fs.copy(src, dest);
-}

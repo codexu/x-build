@@ -1,14 +1,15 @@
 import fs = require('fs-extra');
 import path = require('path');
 import chalk = require('chalk');
-import createQuestions from './questions/plugins';
+import clearConsole from './utils/clearConsole';
+import createQuestions from './questions/packages';
 import options from './options';
 import readJson from './utils/readJson';
 import createSpawnCmd from './utils/createSpawnCmd';
 
 export default async function (name: string): Promise<void> {
   // CLI package 文件夹路径
-  options.src = path.resolve(__dirname, '../package');
+  options.src = path.resolve(__dirname, '../packages');
   // 获取基础参数
   options.name = name;
   options.dest = process.cwd();
@@ -29,10 +30,9 @@ export default async function (name: string): Promise<void> {
 }
 
 export async function copyPlugins(): Promise<void> {
-  const plugins = await readJson('plugins.json');
   const pluginsPromise = options.plugins.map((name) => {
-    const plugin = plugins.find(item => item.value === name);
-    const src = path.resolve(options.src, plugin.src);
+    const plugin = options.allPackages.find(item => item.name === name);
+    const src = path.resolve(options.src, plugin.name, 'src');
     const dest = path.resolve(options.dest, plugin.dest);
     return fs.copy(src, dest);
   })
@@ -40,25 +40,27 @@ export async function copyPlugins(): Promise<void> {
 }
 
 export async function install(): Promise<void> {
-  const plugins = await readJson('plugins.json');
-  const dependencies = options.plugins.map((pluginName) => {
-    const { packages } = plugins.find(item => item.value === pluginName);
-    const packageDependencies = packages.map(pkg => `${pkg.name}@${pkg.version}`)
-    return packageDependencies.join(' ');
+  const packages = [];
+  options.plugins.forEach((pluginName) => {
+    const { dependencies } = options.allPackages.find(item => item.name === pluginName);
+    const packageDependencies = Object.keys(dependencies).map(key => `${key}@${dependencies[key]}`)
+    packages.push(...packageDependencies);
   })
+  const packagesStr = [...new Set(packages)].join(' ')
   const cmdInherit = createSpawnCmd(options.dest, 'inherit');
-  await cmdInherit('npm', [`install ${dependencies.join(' ')} --save`]);
+  await cmdInherit('npm', [`install ${packagesStr} --save`]);
 }
 
 export async function pluginConsole(): Promise<void> {
   const installed = [];
-  const plugins = await readJson('plugins.json');
   options.plugins.forEach(pluginName => {
-    const plugin = plugins.find(item => item.value === pluginName);
+    const plugin = options.allPackages.find(item => item.name === pluginName);
     if (plugin) installed.push(plugin);
   })
+  clearConsole('cyan', `X-BUILD v${options.version}`);
   console.log(chalk.cyan('成功安装插件：'));
+  console.log('');
   installed.forEach(item => {
-    console.log(` - ${item.name} (${item.dest})`);
+    console.log(`- ${item.description} [${chalk.green(item.version)}] (${item.dest})`);
   })
 }

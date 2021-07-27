@@ -6,6 +6,7 @@ interface Options {
   components?: string;
   pluginType?: 'component' | 'hook' | 'directive';
   plugins?: string[];
+  allPackages?: any[];
   precss?: 'less' | 'scss' | '';
   device?: 'pc' | 'mobile';
 }
@@ -28,15 +29,4 @@ export function fetchTemplateFiles(): string[] {
     `src/styles/mixins.${options.precss}`,
     `src/styles/variable.${options.precss}`,
   ]
-}
-
-export function fetchPackageFiles(): string[] {
-  const packages = [];
-  if (options.components === 'element') {
-    packages.push('hooks/useLoading.ts')
-  }
-  if (options.device === 'mobile') {
-    packages.push('styles/vhCheck.ts')
-  }
-  return packages;
 }

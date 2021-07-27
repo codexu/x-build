@@ -19,7 +19,7 @@ import {
 } from 'wangeditor/dist/config/menus.d';
 
 export default defineComponent({
-  name: 'mw-editor',
+  name: 'Editor',
   props: {
     defaultData: {
       type: String,
