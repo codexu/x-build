@@ -35,6 +35,8 @@ a img{ padding-right: 5px; }
 
 **X-BUILD** 是一个基于 [vue3](https://v3.cn.vuejs.org/) + typescript 搭建的前端脚手架，不同于众多的中后台解决方案（[ant-design-pro](https://pro.ant.design/docs/getting-started-cn)、[vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/)、[d2-admin](https://d2.pub/zh/doc/d2-admin/) 等）。它的宗旨是快速创建一套**纯净**却具备强大基础功能的模板，协助开发者自由发挥快速搭建任何类型的项目。
 
+**X-BUILD** 还具备另一个强大的功能，就是基于 Lerna 实现的包管理功能，如果你正负责一个前端团队，那这项功能将极大的提升你的团队开发效率，具体使用请查看[packages](/packages)。
+
 ## 安装CLI
 
 我们推荐使用 npm 的方式进行**全局**安装：

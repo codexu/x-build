@@ -91,6 +91,7 @@ module.exports = {
           },
         ]
       },
+      { text: 'Packages', link: '/packages/README.md' },
       { text: '贡献代码', link: '/guide/contribution.md' },
     ],
     sidebar: {
@@ -205,6 +206,15 @@ module.exports = {
             '/reference/store/user.md',
             '/reference/store/menu.md',
             '/reference/store/log.md',
+          ]
+        },
+      ],
+      '/packages/': [
+        {
+          text: 'Packages',
+          collapsable: false,
+          children: [
+            '/packages/',
           ]
         },
       ],
