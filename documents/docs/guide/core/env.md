@@ -21,7 +21,7 @@ VUE_APP_TITLE=X-BUILD
 | 文件             | 说明     | 命令               |
 | ---------------- | -------- | ------------------ |
 | .env             | 通用配置 | -                  |
-| .env.development | 开发环境 | npm run serve      |
+| .env.development | 开发环境 | npm run dev      |
 | .env.test        | 测试环境 | npm run build:test |
 | .env.production  | 生产环境 | npm run build      |
 
