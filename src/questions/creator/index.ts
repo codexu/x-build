@@ -1,7 +1,6 @@
 import { prompt, QuestionCollection } from 'inquirer';
 import options from '../../options';
 import precss from './precss';
-import device from './device';
 import components from './components';
 
 async function createQuestion(quesiton) {
@@ -11,7 +10,6 @@ async function createQuestion(quesiton) {
 }
   
 async function createQuestions (): Promise<void> {
-  await createQuestion(device)
   await createQuestion(components)
   await createQuestion(precss)
   return Promise.resolve();

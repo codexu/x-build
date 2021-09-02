@@ -11,7 +11,7 @@ export const frameIn: Array<RouteRecordRaw> = [
       {
         path: 'example',
         name: 'Example',
-        component: () => import(/* webpackChunkName: "example" */ '@/views/example/index.vue'),
+        component: () => import('@/views/example/index.vue'),
         meta: {
           title: '示例',
         },
@@ -25,7 +25,7 @@ const frameOut = [
   {
     path: '/user/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "login" */ '@/views/system/login/index.vue'),
+    component: () => import('@/views/sys/login/index.vue'),
     meta: {
       title: '登录',
     },
@@ -36,7 +36,7 @@ const errorPage = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import(/* webpackChunkName: "404" */ '@/views/system/error/404.vue'),
+    component: () => import('@/views/sys/error/404.vue'),
   },
 ];
 
