@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
+import viteSvgIcons from 'vite-plugin-svg-icons';
 import { 
   <% if (components === 'element') { -%>
     ElementPlusResolver,
@@ -18,6 +19,10 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [
     vue(),
+    viteSvgIcons({
+      iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+      symbolId: 'icon-[dir]-[name]',
+    }),
     Components({
       resolvers: [
         <% if (components === 'element') { -%>
