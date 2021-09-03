@@ -54,5 +54,5 @@ export default async function (name: string): Promise<void> {
   console.log(`> 项目已经创建成功，用时${chalk.cyan(usageTime)}s，请输入以下命令继续...`);
   console.log('');
   console.log(chalk.cyan(' $ ') + chalk.blueBright(`cd ${name}`));
-  console.log(chalk.cyan(' $ ') + chalk.blueBright('npm run serve'));
+  console.log(chalk.cyan(' $ ') + chalk.blueBright('npm run dev'));
 }

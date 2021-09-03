@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
 import { components, plugins } from './components';
 import App from './App.vue';
-import store from './store';
+import store from './stores';
 import router from './router';
 import '@/router/permission';
 
 // css
-import 'normalize.css';
+import '@/styles/tailwind.css';
 
 const app = createApp(App);
 app.use(store);

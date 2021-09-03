@@ -14,16 +14,16 @@ export async function ejsRender (filePath: string): Promise<void> {
   const code = ejs.render(templateCode.toString(), options);
   const extname = path.extname(filePath).replace(/[.]/g, '');
   let prettierCode: string
-  await prettier.resolveConfig(options.src).then((options) => {
+  await prettier.resolveConfig(options.src).then((opts) => {
     switch (extname) {
       case 'ts':
-        prettierCode = prettier.format(code, options);
+        prettierCode = prettier.format(code, { parser: 'babel' ,...opts});
         break;
       case 'js':
-        prettierCode = prettier.format(code, options);
+        prettierCode = prettier.format(code, { parser: 'babel' ,...opts});
         break;
       case 'vue':
-        prettierCode = prettier.format(code, Object.assign(options, { parser: extname }));
+        prettierCode = prettier.format(code, Object.assign(opts, { parser: extname }));
         break;
       default:
         prettierCode = prettier.format(code, { parser: extname });

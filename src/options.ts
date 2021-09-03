@@ -18,9 +18,8 @@ export function fetchTemplateFiles(): string[] {
     'package.json',
     'babel.config.js',
     '.stylelintrc.js',
+    'vite.config.ts',
     'src/main.ts',
-    'src/components/index.ts',
-    'src/store/sys/log.ts',
     `src/styles/global.${options.precss}`,
   ]
 }

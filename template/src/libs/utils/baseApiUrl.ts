@@ -1,7 +1,7 @@
-export default function (port?: number) {
-  const { VUE_APP_BASE_URL } = process.env;
+export default function baseApiUrl(port?: number) {
+  const { BASE_URL } = import.meta.env;
   if (port) {
-    return `${VUE_APP_BASE_URL}:${port}`;
+    return `${BASE_URL}:${port}`;
   }
-  return VUE_APP_BASE_URL;
+  return BASE_URL;
 }

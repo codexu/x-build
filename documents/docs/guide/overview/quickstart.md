@@ -79,7 +79,7 @@ x create [name]
   <CodeGroupItem title="开发环境">
 
 ```bash:no-line-numbers
-npm run serve
+npm run dev
 ```
 
   </CodeGroupItem>
