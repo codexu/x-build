@@ -1,8 +1,8 @@
 // 处理静态资源链接
 export default function baseStaticUrl(src = '') {
-  const { STATIC_URL } = import.meta.env;
+  const { VITE_APP_STATIC_URL } = import.meta.env;
   if (src) {
-    return `${STATIC_URL}${src}`;
+    return `${VITE_APP_STATIC_URL}${src}`;
   }
-  return STATIC_URL as string;
+  return VITE_APP_STATIC_URL as string;
 }
