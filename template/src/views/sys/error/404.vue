@@ -26,9 +26,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-.page-error-404 {
-  position: relative;
-}
-</style>
