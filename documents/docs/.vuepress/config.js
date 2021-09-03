@@ -57,41 +57,17 @@ module.exports = {
               { text: '日志管理', link: '/reference/store/log.md'},
             ]
           },
-        ]
-      },
-      { 
-        text: 'Hooks',
-        children: [
           { 
-            text: 'State',
+            text: 'Hooks',
             children: [
-              '/hooks/state/useDevice.md',
-              '/hooks/state/useBoolean.md',
-              '/hooks/state/useToggle.md',
-              '/hooks/state/useLocalStorage.md',
-              '/hooks/state/useSessionStorage.md',
-            ]
-          },
-          { 
-            text: 'UI',
-            children: [
-              '/hooks/ui/useLoading.md',
-              '/hooks/ui/useClipboard.md',
-              '/hooks/ui/useFullscreen.md',
-            ]
-          },
-          { 
-            text: 'SideEffect',
-            children: [
-              '/hooks/sideEffect/useDebounce.md',
-              '/hooks/sideEffect/useDebounceFn.md',
-              '/hooks/sideEffect/useThrottle.md',
-              '/hooks/sideEffect/useThrottleFn.md',
+              '/hooks/useLoading.md',
+              '/hooks/useClipboard.md',
+              '/hooks/useFullscreen.md',
             ]
           },
         ]
       },
-      { text: 'Packages', link: '/packages/README.md' },
+      { text: '包管理', link: '/packages/README.md' },
       { text: '贡献代码', link: '/guide/contribution.md' },
     ],
     sidebar: {
@@ -102,8 +78,6 @@ module.exports = {
           children: [
             '/guide/overview/features.md',
             '/guide/overview/quickstart.md',
-            '/guide/overview/questions.md',
-            '/guide/overview/build.md',
           ]
         },
         {
@@ -152,35 +126,14 @@ module.exports = {
       ],
       '/hooks/': [
         {
-          text: 'State',
-          collapsable: false,
+          text: 'Hooks',
           children: [
-            '/hooks/state/useDevice.md',
-            '/hooks/state/useBoolean.md',
-            '/hooks/state/useToggle.md',
-            '/hooks/state/useLocalStorage.md',
-            '/hooks/state/useSessionStorage.md',
+            '/hooks/useDevice.md',
+            '/hooks/useLoading.md',
+            '/hooks/useClipboard.md',
+            '/hooks/useFullscreen.md',
           ]
-        },
-        {
-          text: 'UI',
-          collapsable: false,
-          children: [
-            '/hooks/ui/useLoading.md',
-            '/hooks/ui/useClipboard.md',
-            '/hooks/ui/useFullscreen.md',
-          ]
-        },
-        {
-          text: 'SideEffect',
-          collapsable: false,
-          children: [
-            '/hooks/sideEffect/useDebounce.md',
-            '/hooks/sideEffect/useDebounceFn.md',
-            '/hooks/sideEffect/useThrottle.md',
-            '/hooks/sideEffect/useThrottleFn.md',
-          ]
-        },
+        }
       ],
       '/reference/': [
         {

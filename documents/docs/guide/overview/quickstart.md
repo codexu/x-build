@@ -57,6 +57,21 @@ x create [name]
   </CodeGroupItem>
 </CodeGroup>
 
+### 选择特性
+
+使用创建命令会提示一系列问题，需要你根据实际需求做出选择：
+
+#### 选择默认 CSS 预处理器
+
+- Scss
+- Less
+
+#### 选择默认组件库
+
+- Element Plus
+- Ant Design Vue
+- Vant
+
 ### 安装依赖
 
 - 输入命令后，模板文件会自动创建名字为[name] 的文件夹，并将模板文件复制到此文件夹内。
@@ -71,7 +86,7 @@ x create [name]
 
 :::
 
-### NPM Script
+## NPM Script
 
 根据安装后的相关提示，输入相关命令以继续：
 
@@ -83,10 +98,10 @@ npm run dev
 ```
 
   </CodeGroupItem>
-  <CodeGroupItem title="测试环境">
+  <CodeGroupItem title="预生产环境">
 
 ```bash:no-line-numbers
-npm run build:test
+npm run staging
 ```
 
   </CodeGroupItem>

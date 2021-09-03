@@ -13,7 +13,7 @@
 环境文件只包含环境变量的“键=值”对：
 
 ```bash
-VUE_APP_TITLE=X-BUILD
+VITE_APP_TITLE=X-BUILD
 ```
 
 ## Mode
@@ -22,12 +22,12 @@ VUE_APP_TITLE=X-BUILD
 | ---------------- | -------- | ------------------ |
 | .env             | 通用配置 | -                  |
 | .env.development | 开发环境 | npm run dev      |
-| .env.test        | 测试环境 | npm run build:test |
+| .env.staging        | 预生产环境 | npm run staging |
 | .env.production  | 生产环境 | npm run build      |
 
 ## Params
 
-### VUE_APP_TITLE
+### VITE_APP_TITLE
 
 用于显示默认的页面标题，配合路由 mate.title 属性，最后展示效果：
 
@@ -35,23 +35,23 @@ VUE_APP_TITLE=X-BUILD
 首页 ｜ X-BUILD
 ```
 
-### VUE_APP_API
+### BASE_URL
 
 默认异步请求路径前缀，区分开发环境和生产环，在做异步请求时，推荐使用 `@/libs/request.ts` 来创建 `axios` 请求实例：
 
 ```js{2}
 const request = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL,
+  baseURL: process.env.VITE_APP_BASE_URL,
   timeout: 10000,
 });
 ```
 
 > 代码参考 @/libs/request.js
 
-### VUE_APP_STATIC_URL
+### VITE_APP_STATIC_URL
 
 静态资源路径前缀，区分开发环境和生产环境，具体用法参考 [静态资源加载组件](/Components/Static.md)。
 
 ::: warning 注意
-环境变量必须以VUE_APP_为开头，例如：VUE_APP_API、VUE_APP_TITLE
+环境变量必须以 `VITE_APP` 为开头，例如：VITE_APP_TITLE、VITE_APP_STATIC_URL。
 :::

@@ -11,45 +11,8 @@
 
 ## 组件库
 
-为了提高开发效率，建议初始化项目时选择一个组件库，脚手架已经对其做好优化，下面以 Element Plus 为例：
+为了提高开发效率，建议初始化项目时选择一个组件库，脚手架已经对其做好优化。
 
-### 全局加载
+### Tree Shaking
 
-所有的组件均在 @/components/index.ts 中按需加载：
-
-```typescript
-import Vue from 'vue';
-
-import {
-  ElButton,
-  ElNotification,
-  ...
-} from 'element-plus';
-
-export const components = [
-  ElButton,
-  ...
-];
-
-export const plugins = [
-  ElNotification,
-  ...
-];
-```
-
-分别以 components、plugins 两种形式导出，例如 ElButton 为 components，同时 `Element-plus` 也提供了 例如 ElNotification 这种插件的形式导出。
-
-### 国际化
-
-默认情况已经将设置为中文：
-
-```typescript
-import locale from 'element-plus/lib/locale';
-import lang from 'element-plus/lib/locale/lang/zh-cn';
-
-locale.use(lang);
-```
-
-### 优化
-
-使用 babel 已对组件库做按需加载处理。
+通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，实现了只注册你使用的组件。
