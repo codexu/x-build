@@ -26,41 +26,8 @@
 
 ## 自动注册 Svg 图标
 
-在 `src/assets/icons` 文件夹下的 svg 图表会被自动注册，这是因为已经对 webpack 和 svg-sprite-loader 进行了相关设置，文件全部打包成 svg-sprite。
-
-webpack 配置：`vue.config.js`
-
-```js {12-13}
-chainWebpack: (config) => {
-  config.module
-    .rule('svg')
-    .exclude.add(resolve('src/assets/icons'))
-    .end();
-
-  config.module
-    .rule('icons')
-    .test(/\.svg$/)
-    .include.add(resolve('src/assets/icons'))
-    .end()
-    .use('svg-sprite-loader')
-    .loader('svg-sprite-loader');
-},
-```
-
-加载所有的 svg 图标：`@/components/SvgIcon/index.ts`
-
-```js
-const requireAll = (requireContext) => requireContext
-  .keys()
-  .map(requireContext);
-const req = require.context('@/assets/icons', false, /\.svg$/);
-requireAll(req);
-```
+在 `src/assets/icons` 文件夹下的 svg 图表会被自动注册，这是因为使用了 [vite-plugin-svg-icons](https://github.com/anncwb/vite-plugin-svg-icons) 插件进行了相关设置，文件全部打包成 svg-sprite。
 
 ### 组件
 
 通过全局注册的组件 `<svg-icon />` 即可显示已经注册的 svg 图表，[查看组件详细说明](/Components/Svg)。
-
-## 组件库图标
-
-当你引入某些组件后，发现缺少了图标，这是因为脚手架为了极致的压缩 chunk 包的大小作出的牺牲，改为按需加载，以少量的开发成本的代价，减少了大量的无用图标的引入，具体方式请阅读[构建优化章节](/Guide/Basics/BuildOptimization)。

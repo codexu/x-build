@@ -11,27 +11,8 @@ Hooks 是一个基于 Composition API 的实用函数集合，使用 typescript 
 | Hook      | 说明                               | API                                    |
 | --------- | ---------------------------------- | -------------------------------------- |
 | useDevice | 查询设备信息，可用于PC、移动等适配 | [详情](/docs/hooks/state/useDevice.md) |
-| useBoolean | 管理 boolean 值 | [详情](/docs/hooks/state/useBoolean.md) |
-| useToggle | 用于在两个状态值间切换 | [详情](/docs/hooks/state/useToggle.md) |
-| useLocalStorage | 储存于 LocalStorage 的值 | [详情](/docs/hooks/state/useLocalStorage.md) |
-| useSessionStorage | 储存于 SessionStorage 的值 | [详情](/docs/hooks/state/useSessionStorage.md) |
-
-### UI
-
-| Hook      | 说明                               | API                                    |
-| --------- | ---------------------------------- | -------------------------------------- |
-| useLoading | 方便控制页面中整体或局部的 loading 效果 | [详情](/docs/hooks/ui/useLoading.md) |
 | useClipboard | 快捷文本复制功能 | [详情](/docs/hooks/ui/useClipboard.md) |
 | useFullscreen | 浏览器全屏的开关控制 | [详情](/docs/hooks/ui/useFullscreen.md) |
-
-### SideEffect
-
-| Hook      | 说明                               | API                                    |
-| --------- | ---------------------------------- | -------------------------------------- |
-| useDebounce | 用来处理 **值** 的防抖 | [详情](/docs/hooks/sideEffect/useDebounce.md) |
-| useDebounceFn | 用来处理 **函数** 的防抖 | [详情](/docs/hooks/sideEffect/useDebounceFn.md) |
-| useThrottle | 用来处理 **值** 的节流 | [详情](/docs/hooks/sideEffect/useThrottle.md) |
-| useThrottleFn | 用来处理 **函数** 的节流 | [详情](/docs/hooks/sideEffect/useThrottleFn.md) |
 
 ## 使用
 
@@ -57,3 +38,12 @@ export default {
 ```typescript:no-line-numbers
 const device = reactive(useDevice())
 ```
+
+## 其他
+
+推荐使用 [vueuse](https://github.com/vueuse/vueuse)：
+
+- 交互式文档和演示
+- 无缝迁移，支持 Vue 2 与 Vue 3
+- tree shakable
+- 使用 Typescript 编写
