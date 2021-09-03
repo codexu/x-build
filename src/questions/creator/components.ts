@@ -5,7 +5,6 @@ export default {
   choices: [
     { name: 'Element Plus', value: 'element' },
     { name: 'Ant Design Vue 2.x', value: 'antd' },
-    // { name: 'Vuetify 3.x', value: 'vuetify' },
     { name: 'Vant 3.x', value: 'vant' },
   ],
 }

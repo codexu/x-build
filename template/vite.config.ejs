@@ -1,0 +1,46 @@
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import Components from 'unplugin-vue-components/vite';
+import { 
+  <% if (components === 'element') { -%>
+    ElementPlusResolver,
+  <% } -%>
+  <% if (components === 'antd') { -%>
+    AntDesignVueResolver,
+  <% } -%>
+  <% if (components === 'vant') { -%>
+    VantResolver,
+  <% } -%>
+} from 'unplugin-vue-components/resolvers';
+
+import { resolve } from 'path';
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [
+        <% if (components === 'element') { -%>
+          ElementPlusResolver(),
+        <% } -%>
+        <% if (components === 'antd') { -%>
+          AntDesignVueResolver(),
+        <% } -%>
+        <% if (components === 'vant') { -%>
+          VantResolver(),
+        <% } -%>
+      ],
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
+  base: './',
+  server: {
+    port: 8080,
+    open: true,
+    cors: true,
+  },
+});

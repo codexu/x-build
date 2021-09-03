@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "staging": "vue-tsc --noEmit && vite build --mode staging",
     "serve": "vite preview",
     "prepare": "husky install",
     "lint": "eslint --fix",
@@ -14,7 +15,7 @@
       "element-plus": "1.0.2-beta.53",
     <% } -%>
     <% if (components === 'antd') { -%>
-      "ant-design-vue": "2.2.0-rc.1",
+      "ant-design-vue": "^2.2.6",
     <% } -%>
     <% if (components === 'vant') { -%>
       "vant": "3.1.1",
@@ -49,6 +50,7 @@
     "@types/jest": "^26.0.22",
     "@types/nprogress": "^0.2.0",
     "@types/store": "^2.0.2",
+    "@types/ua-parser-js": "^0.7.36",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "@vitejs/plugin-vue": "^1.6.0",
@@ -70,6 +72,7 @@
     "stylelint-config-standard": "22.0.0",
     "stylelint-scss": "^3.20.1",
     "typescript": "^4.3.2",
+    "unplugin-vue-components": "^0.14.9",
     "vite": "^2.5.2",
     "vue-jest": "^5.0.0-alpha.7",
     "vue-tsc": "^0.2.2"
