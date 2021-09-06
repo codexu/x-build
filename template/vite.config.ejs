@@ -13,12 +13,14 @@ import {
     VantResolver,
   <% } -%>
 } from 'unplugin-vue-components/resolvers';
+import viteCompression from 'vite-plugin-compression';
 
 import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [
     vue(),
+    viteCompression(),
     viteSvgIcons({
       iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
       symbolId: 'icon-[dir]-[name]',
