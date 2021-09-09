@@ -138,3 +138,13 @@ npm run stylelint
 ::: warning 提示
 通常情况下 ESLint 与 Stylelint 没必要单独执行，husky 提供的 git commit 钩子会在你提交代码时对你缓存区里的代码做校验，这会节省你很多的时间。
 :::
+
+## 必备插件
+
+推荐使用 vscode 作为代码编辑器，安装以下插件可以更好的体验脚手架：
+
+- ESLint
+- Prettier - Code formatter
+- stylelint
+- Tailwind CSS IntelliSense
+- Volar
