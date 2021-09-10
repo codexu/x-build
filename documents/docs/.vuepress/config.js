@@ -36,13 +36,6 @@ module.exports = {
         text: '参考',
         children: [
           { 
-            text: '样式(scss)',
-            children: [
-              { text: '预设变量', link: '/reference/style/variable.md' },
-              { text: 'Mixins', link: '/reference/style/mixins.md' },
-            ]
-          },
-          { 
             text: '全局组件',
             children: [
               { text: '静态资源', link: '/reference/components/staticFile.md'},
@@ -60,15 +53,27 @@ module.exports = {
           { 
             text: 'Hooks',
             children: [
-              '/hooks/useLoading.md',
-              '/hooks/useClipboard.md',
-              '/hooks/useFullscreen.md',
+              { text: 'useLoading', link: '/reference/hooks/useLoading.md'},
+              { text: 'useClipboard', link: '/reference/hooks/useClipboard.md'},
+              { text: 'useFullscreen', link: '/reference/hooks/useFullscreen.md'},
             ]
           },
         ]
       },
       { text: '包管理', link: '/packages/README.md' },
-      { text: '贡献代码', link: '/guide/contribution.md' },
+      {
+        text: '相关说明',
+        children: [
+          { 
+            text: '贡献',
+            link: '/contribution/README.md'
+          },
+          { 
+            text: '版本回顾',
+            link: '/contribution/history.md'
+          },
+        ]
+      },
     ],
     sidebar: {
       '/guide/': [
@@ -124,26 +129,7 @@ module.exports = {
           ]
         },
       ],
-      '/hooks/': [
-        {
-          text: 'Hooks',
-          children: [
-            '/hooks/useDevice.md',
-            '/hooks/useLoading.md',
-            '/hooks/useClipboard.md',
-            '/hooks/useFullscreen.md',
-          ]
-        }
-      ],
       '/reference/': [
-        {
-          text: '样式(scss)',
-          collapsable: false,
-          children: [
-            '/reference/style/variable.md',
-            '/reference/style/mixins.md',
-          ]
-        },
         {
           text: '全局组件',
           collapsable: false,
@@ -161,10 +147,19 @@ module.exports = {
             '/reference/store/log.md',
           ]
         },
+        {
+          text: 'Hooks',
+          collapsable: false,
+          children: [
+            '/reference/hooks/useLoading.md',
+            '/reference/hooks/useClipboard.md',
+            '/reference/hooks/useFullscreen.md',
+          ]
+        },
       ],
       '/packages/': [
         {
-          text: 'Packages',
+          text: '包管理',
           collapsable: false,
           children: [
             '/packages/',
@@ -177,6 +172,16 @@ module.exports = {
           collapsable: false,
           children: [
             '/contribution/',
+          ]
+        },
+      ],
+      '/contribution/': [
+        {
+          text: '相关说明',
+          collapsable: false,
+          children: [
+            '/contribution/',
+            '/contribution/history.md',
           ]
         },
       ]

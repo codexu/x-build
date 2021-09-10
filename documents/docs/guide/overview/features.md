@@ -59,9 +59,6 @@ a img{ padding-right: 5px; }
   - 静态资源加载页面
   - 页面载入进度条
   - 美化滚动条
-- 解决浏览器差异：
-  - 内置 normalize.css
-  - 解决 vh 在移动端与 PC 浏览器高度不一致的问题
 ```
 
   </CodeGroupItem>
@@ -104,10 +101,8 @@ a img{ padding-right: 5px; }
   <CodeGroupItem title="&nbsp;优化&nbsp;">
 
 ```bash:no-line-numbers
-- babel 针对 element-plus、lodash 按需加载优化
 - svg 雪碧图打包优化
 - gzip
-- 包分析工具
 ```
 
   </CodeGroupItem>
@@ -117,4 +112,4 @@ a img{ padding-right: 5px; }
 
 文档代码在项目的 `/document` 中，由于文档中有部分 vue3 的功能演示，所以采用 vuepress2 开发。
 
-有任何修改和建议都可以该项目 pr 和 issue，详情请参考 [贡献代码](/Contribution.md)。
+有任何修改和建议都可以该项目 pr 和 issue，详情请参考 [贡献代码](/Contribution/README.md)。
