@@ -55,3 +55,7 @@ const request = axios.create({
 ::: warning 注意
 环境变量必须以 `VITE_APP` 为开头，例如：VITE_APP_TITLE、VITE_APP_STATIC_URL。
 :::
+
+### VITE_PUBLIC_PATH
+
+构建静态资源路径，与 vite.config.ts 中的 base 属性对应。
