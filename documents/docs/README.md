@@ -72,4 +72,4 @@ yarn global add x-build
 
 文档代码在项目的 `/document` 中，由于文档中有部分 vue3 的功能演示，所以采用 vuepress2 开发。
 
-有任何修改和建议都可以该项目 pr 和 issue，详情请参考[贡献代码](/Contribution.md)
+有任何修改和建议都可以该项目 pr 和 issue，详情请参考[贡献代码](/Contribution/README.md)
