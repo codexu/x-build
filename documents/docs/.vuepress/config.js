@@ -46,8 +46,6 @@ module.exports = {
             text: '全局状态管理',
             children: [
               { text: '用户登录', link: '/reference/store/user.md'},
-              { text: '菜单管理', link: '/reference/store/menu.md'},
-              { text: '日志管理', link: '/reference/store/log.md'},
             ]
           },
           { 
@@ -143,8 +141,6 @@ module.exports = {
           collapsable: false,
           children: [
             '/reference/store/user.md',
-            '/reference/store/menu.md',
-            '/reference/store/log.md',
           ]
         },
         {
