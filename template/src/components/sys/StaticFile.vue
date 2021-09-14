@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref, Ref, withDefaults, defineProps, onMounted, watch } from 'vue';
+import { computed, ref, Ref, withDefaults, onMounted, watch } from 'vue';
 import { baseStaticUrl } from '@/libs/utils';
 import useDevice from '@/hooks/useDevice';
 
