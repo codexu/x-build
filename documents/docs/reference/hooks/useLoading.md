@@ -5,12 +5,6 @@
 仅支持 element-plus
 :::
 
-## 示例
-
-<FullLoading />
-
-<PartLoading />
-
 ## API
 
 ```javascript

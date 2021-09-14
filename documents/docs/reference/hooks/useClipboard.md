@@ -2,10 +2,6 @@
 
 基于 clipboard@2.0.6 的文本复制 vue 指令。
 
-## 示例
-
-<UseClipboard />
-
 ## API
 
 ```typescript

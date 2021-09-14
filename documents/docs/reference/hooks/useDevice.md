@@ -2,10 +2,6 @@
 
 用于PC、移动等适配
 
-## 示例
-
-<UseDevice />
-
 ## API
 
 ```typescript
