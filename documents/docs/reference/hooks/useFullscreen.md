@@ -1,9 +1,5 @@
 # useFullscreen
 
-## 示例
-
-<FullScreen />
-
 ## API
 
 ```typescript

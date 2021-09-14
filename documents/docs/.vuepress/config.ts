@@ -1,6 +1,9 @@
+import { defineUserConfig } from 'vuepress'
+import type { DefaultThemeOptions } from 'vuepress'
+
 const { path } = require('@vuepress/utils')
 
-module.exports = {
+export default defineUserConfig<DefaultThemeOptions>({
   title: 'X-BUILD FOR VUE3.0',
   base: '/x-build/',
   port: 3000,
@@ -24,7 +27,7 @@ module.exports = {
     docsDir: 'docs',
     docsBranch: 'next',
     editLinks: true,
-    lastUpdated: '上次更新',
+    lastUpdated: true,
     smoothScroll: true,
     darkMode: false,
     navbar: [
@@ -77,7 +80,6 @@ module.exports = {
       '/guide/': [
         {
           text: '指南',
-          collapsable: false,
           children: [
             '/guide/overview/features.md',
             '/guide/overview/quickstart.md',
@@ -85,7 +87,6 @@ module.exports = {
         },
         {
           text: 'UI',
-          collapsable: false,
           children: [
             '/guide/ui/style.md',
             '/guide/ui/icon.md',
@@ -97,7 +98,6 @@ module.exports = {
         },
         {
           text: '功能',
-          collapsable: false,
           children: [
             '/guide/core/hooks.md',
             '/guide/core/emitter.md',
@@ -108,7 +108,6 @@ module.exports = {
         },
         {
           text: '路由',
-          collapsable: false,
           children: [
             '/guide/router/router.md',
             '/guide/router/keep-alive.md',
@@ -118,7 +117,6 @@ module.exports = {
         },
         {
           text: '规范',
-          collapsable: false,
           children: [
             '/guide/standard/es-lint.md',
             '/guide/standard/style-lint.md',
@@ -130,7 +128,6 @@ module.exports = {
       '/reference/': [
         {
           text: '全局组件',
-          collapsable: false,
           children: [
             '/reference/components/staticFile.md',
             '/reference/components/svgIcon.md',
@@ -138,14 +135,12 @@ module.exports = {
         },
         {
           text: '全局状态管理',
-          collapsable: false,
           children: [
             '/reference/store/user.md',
           ]
         },
         {
           text: 'Hooks',
-          collapsable: false,
           children: [
             '/reference/hooks/useLoading.md',
             '/reference/hooks/useClipboard.md',
@@ -156,7 +151,6 @@ module.exports = {
       '/packages/': [
         {
           text: '包管理',
-          collapsable: false,
           children: [
             '/packages/',
           ]
@@ -164,17 +158,7 @@ module.exports = {
       ],
       '/contribution/': [
         {
-          text: '介绍',
-          collapsable: false,
-          children: [
-            '/contribution/',
-          ]
-        },
-      ],
-      '/contribution/': [
-        {
           text: '相关说明',
-          collapsable: false,
           children: [
             '/contribution/',
             '/contribution/history.md',
@@ -183,4 +167,4 @@ module.exports = {
       ]
     },
   },
-}
+})
