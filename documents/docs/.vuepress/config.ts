@@ -33,7 +33,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar: [
       { 
         text: '指南',
-        link: '/guide/overview/features.md',
+        link: '/README.md',
       },
       { 
         text: '参考',
@@ -75,13 +75,26 @@ export default defineUserConfig<DefaultThemeOptions>({
           },
         ]
       },
+      {
+        text: 'v6.x',
+        children: [
+          { 
+            text: 'v6.x',
+            link: '/'
+          },
+          { 
+            text: 'v5.x',
+            link: 'https://codexu.github.io/'
+          },
+        ]
+      },
     ],
     sidebar: {
-      '/guide/': [
+      '/': [
         {
           text: '指南',
           children: [
-            '/guide/overview/features.md',
+            '/',
             '/guide/overview/quickstart.md',
           ]
         },
@@ -150,7 +163,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       ],
       '/packages/': [
         {
-          text: '包管理',
+          text: '拓展',
           children: [
             '/packages/',
           ]
