@@ -18,10 +18,6 @@
   </a>
 </p>
 
-<style>
-a img{ padding-right: 5px; }
-</style>
-
 ## 简介
 
 > 一款协助你快速从"零"搭建大型应用的前端脚手架。
@@ -30,13 +26,12 @@ a img{ padding-right: 5px; }
 
 另一个强大的功能，就是基于 Lerna 实现的包管理功能，如果你正负责一个前端团队，那这项功能将极大的提升你的团队开发效率，具体使用请查看[packages](/packages)。
 
-::: tip 基础
+## 基础
 在使用此脚手架前，请确保你对以下的技术有足够的知识储备：
 
 - 语言基础：JavasSript、TypeScript
 - Vue 基础：[vue3](https://v3.cn.vuejs.org/)、[vue-router4.0](https://next.router.vuejs.org/)、Vuex 和 [Pinia](https://pinia.esm.dev/)
 - 前端工程化：[@vue/cli4](https://cli.vuejs.org/zh/guide/)、[Webpack](https://webpack.docschina.org/concepts/)
-:::
 
 ## 文档
 
