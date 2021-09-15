@@ -16,3 +16,5 @@
 ### Tree Shaking
 
 通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，实现了只注册你使用的组件。
+
+理论上 `unplugin-vue-components` 支持很多组件库，但目前脚手架安装时仅提供了 **Ant Design Vue**、**Element Plus**、**Vant**，如果你是用其他组件库可以查看文档，选择对应的 **Resolver** 进行配置。

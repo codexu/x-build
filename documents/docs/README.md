@@ -67,7 +67,6 @@ a img{ padding-right: 5px; }
 - 页面登录访问权限、指令权限
 - 页面缓存（基于 `keep-alive` 实现）
 - 支持 `gzip`
-- `Mock` 数据（开发中...）
 
 ### UI
 
@@ -75,7 +74,6 @@ a img{ padding-right: 5px; }
 - 根据路由与环境变量自动变化标签栏 Title
 - 静态资源加载页面
 - 页面载入进度条
-- 美化滚动条
 
 ### 规范
 
