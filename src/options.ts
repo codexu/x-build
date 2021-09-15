@@ -20,6 +20,5 @@ export function fetchTemplateFiles(): string[] {
     '.stylelintrc.js',
     'vite.config.ts',
     'src/main.ts',
-    `src/styles/global.${options.precss}`,
   ]
 }

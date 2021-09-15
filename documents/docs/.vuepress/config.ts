@@ -124,7 +124,6 @@ export default defineUserConfig<DefaultThemeOptions>({
           children: [
             '/guide/router/router.md',
             '/guide/router/keep-alive.md',
-            '/guide/router/menu.md',
             '/guide/router/permissions.md',
           ]
         },
