@@ -4,7 +4,7 @@ import type { DefaultThemeOptions } from 'vuepress'
 const { path } = require('@vuepress/utils')
 
 export default defineUserConfig<DefaultThemeOptions>({
-  title: 'X-BUILD FOR VUE3.0',
+  title: 'X-BUILD',
   base: '/x-build/',
   port: 3000,
   plugins: [
