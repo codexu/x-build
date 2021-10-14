@@ -8,7 +8,21 @@ module.exports = {
       plugins: ['stylelint-scss'],
   <% } -%>
   rules: {
-    'at-rule-no-unknown': null,
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [
+          "mixin",
+          "include",
+          "tailwind",
+          "extend",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+        ],
+      },
+    ],
     <% if (precss === 'scss') { -%>
       'scss/at-rule-no-unknown': true,
     <% } -%>
