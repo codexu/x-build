@@ -32,10 +32,10 @@ VITE_APP_TITLE=X-BUILD
 用于显示默认的页面标题，配合路由 mate.title 属性，最后展示效果：
 
 ```title
-首页 ｜ X-BUILD
+首页 ｜ X-BUILD 
 ```
 
-### BASE_URL
+### VITE_APP_BASE_URL
 
 默认异步请求路径前缀，区分开发环境和生产环，在做异步请求时，推荐使用 `@/libs/request.ts` 来创建 `axios` 请求实例：
 

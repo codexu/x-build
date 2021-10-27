@@ -1,11 +1,11 @@
 import axios, { AxiosError } from 'axios';
 import storage from 'store';
 
-const { BASE_URL } = import.meta.env;
+const { VITE_APP_BASE_URL } = import.meta.env;
 
 const request = axios.create({
   // API 请求的默认前缀
-  baseURL: BASE_URL,
+  baseURL: VITE_APP_BASE_URL,
   timeout: 10000, // 请求超时时间
 });
 
