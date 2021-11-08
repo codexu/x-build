@@ -46,7 +46,12 @@ export default async function (name: string): Promise<void> {
   // 依赖安装
   console.log(`> 正在自动安装依赖，请稍等...`);
   console.log('');
-  await cmdInherit('npm', ['install']);
+  if (options.components === 'element') {
+    // 修复 peer vue https://github.com/element-plus/element-plus/issues/2349
+    await cmdInherit('npm', ['install --force',]);
+  } else {
+    await cmdInherit('npm', ['install']);
+  }
 
   clearConsole('cyan', `X-BUILD v${options.version}`);
   endTime = new Date().getTime();
