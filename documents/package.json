@@ -10,10 +10,5 @@
     "i": "^0.3.6",
     "npm": "^7.18.1",
     "vuepress": "^2.0.0-beta.19"
-  },
-  "dependencies": {
-    "current-device": "^0.10.2",
-    "element-plus": "^1.0.2-beta.48",
-    "screenfull": "^5.1.0"
   }
 }
