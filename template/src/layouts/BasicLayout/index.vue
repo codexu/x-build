@@ -1,5 +1,5 @@
 <template>
-  <div class="basic-layout">
+  <div class="relative">
     <basic-header />
     <router-view v-slot="{ Component, route }">
       <keep-alive>
@@ -11,18 +11,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts" setup name="BasicLayout">
 import BasicHeader from './components/BasicHeader.vue';
 import BasicFooter from './components/BasicFooter.vue';
-
-export default {
-  name: 'BasicLayout',
-  components: { BasicHeader, BasicFooter },
-};
 </script>
-
-<style>
-.basic-layout {
-  position: relative;
-}
-</style>

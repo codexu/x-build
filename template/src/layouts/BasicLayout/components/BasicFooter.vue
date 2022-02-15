@@ -1,10 +1,6 @@
 <template>
-  <footer>
-  </footer>
+  <footer></footer>
 </template>
 
-<script>
-export default {
-  name: 'BaseFooter',
-};
+<script lang="ts" setup name="BasicFooter">
 </script>

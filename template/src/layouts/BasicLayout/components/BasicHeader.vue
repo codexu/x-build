@@ -1,10 +1,6 @@
 <template>
-  <header>
-  </header>
+  <header></header>
 </template>
 
-<script>
-export default {
-  name: 'BaseHeader',
-};
+<script lang="ts" setup name="BasicHeader">
 </script>

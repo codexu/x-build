@@ -4,8 +4,5 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BlankLayout',
-};
+<script lang="ts" setup name="BlankLayout">
 </script>

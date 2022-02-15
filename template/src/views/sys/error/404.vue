@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="404">
 import { ref } from 'vue';
 import router from '@/router';
 

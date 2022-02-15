@@ -14,6 +14,7 @@ import {
   <% } -%>
 } from 'unplugin-vue-components/resolvers';
 import viteCompression from 'vite-plugin-compression';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 
 import { resolve } from 'path';
 
@@ -39,6 +40,7 @@ export default ({ mode }) => {
           <% } -%>
         ],
       }),
+      vueSetupExtend(),
     ],
     resolve: {
       alias: {
