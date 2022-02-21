@@ -1,6 +1,5 @@
 import { ref } from 'vue';
 import axios, { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
-import { notification } from 'ant-design-vue';
 import storage from 'store';
 import { useUserStore } from '@/stores/user';
 
@@ -55,7 +54,6 @@ const errorHandler = (error: AxiosError) => {
     default:
       break;
   }
-  notification.error({ message: error.message });
   return Promise.reject(error);
 };
 
@@ -84,10 +82,8 @@ request.interceptors.response.use((response: AxiosResponse) => {
       return dataAxios.data;
     case 1:
       // code === 1 代表请求错误
-      notification.error({ message: msg });
       throw Error(msg);
     case 401:
-      notification.error({ message: msg });
       useStore.logout();
       throw Error(msg);
     default:
@@ -128,14 +124,11 @@ export function useRequest<T>(
     return request<T>(config)
       .then((res: T) => {
         data.value = res;
-        if (requestConfig?.successMessage) {
-          notification.success({ message: requestConfig.successMessage });
-        }
       })
       .catch((err: Error) => {
         error.value = err;
         if (requestConfig?.errorMessage) {
-          notification.error({ message: requestConfig.errorMessage });
+          throw Error(requestConfig.errorMessage);
         }
       })
       .finally(() => {
