@@ -3,13 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="VuePress 2.0.0-beta.27">
+    <meta name="generator" content="VuePress 2.0.0-beta.35">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
     <title>X-BUILD</title><meta name="description" content="">
-    <link rel="preload" href="/x-build/assets/js/runtime~app.28e3ff1c.js" as="script"><link rel="preload" href="/x-build/assets/css/styles.d2d38799.css" as="style"><link rel="preload" href="/x-build/assets/js/567.405156bf.js" as="script"><link rel="preload" href="/x-build/assets/js/app.cdb8712a.js" as="script">
-    <link rel="stylesheet" href="/x-build/assets/css/styles.d2d38799.css">
+    <link rel="modulepreload" href="/x-build/assets/app.b400f69e.js"><link rel="modulepreload" href="/x-build/assets/404.html.f166316b.js"><link rel="modulepreload" href="/x-build/assets/404.html.bee13de6.js"><link rel="modulepreload" href="/x-build/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/x-build/assets/style.eac5763c.css">
   </head>
   <body>
-    <div id="app"><!--[--><div class="theme-container"><div class="theme-default-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/x-build/" class="">Take me home</a></div></div><!----><!--]--></div>
-    <script src="/x-build/assets/js/runtime~app.28e3ff1c.js" defer></script><script src="/x-build/assets/js/567.405156bf.js" defer></script><script src="/x-build/assets/js/app.cdb8712a.js" defer></script>
+    <div id="app"><!--[--><div class="theme-container"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a href="/x-build/" class="">Take me home</a></div></div><!----><!--]--></div>
+    <script type="module" src="/x-build/assets/app.b400f69e.js" defer></script>
   </body>
 </html>
