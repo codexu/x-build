@@ -15,6 +15,7 @@ import {
 } from 'unplugin-vue-components/resolvers';
 import viteCompression from 'vite-plugin-compression';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
+import AutoImport from 'unplugin-auto-import/vite';
 
 import { resolve } from 'path';
 
@@ -23,6 +24,7 @@ export default ({ mode }) => {
     plugins: [
       vue(),
       viteCompression(),
+      AutoImport({ dts: 'src/auto-imports.d.ts', imports: ['vue'] }),
       viteSvgIcons({
         iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]',
