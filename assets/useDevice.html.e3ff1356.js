@@ -1,0 +1,1 @@
+const e={key:"v-315135f8",path:"/reference/hooks/useDevice.html",title:"useDevice",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"API",slug:"api",children:[]}],git:{updatedTime:1645606811e3,contributors:[{name:"codexu",email:"461229187@qq.com",commits:1}]},filePathRelative:"reference/hooks/useDevice.md"};export{e as data};
