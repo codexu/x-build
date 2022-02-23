@@ -1,16 +1,102 @@
-# 路由配置
+# 文件路由
 
-在 `@/router/routes.ts` 中配置路由，如果页面较多，建议再做拆分。
+> 从 v6.2.0 版本起，采用基于 page 文件路径的方式自动生成路由。
 
-## 分类
+什么是文件路由？确切的说应该是基于文件系统的路由（file system based routing）。通常情况下我们只需要写 vue 页面就可以自动生成路由，而访问者只要访问具体的路由，即可访问对应文件包含的内容了，这样做我们就不用像传统 Vue 项目开发那样在 vue-router 中配置专门的路由映射。
 
-路由分为3类：`frameIn`, `frameOut`, `errorPage`
+[vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) 插件为我们提供了这样的功能。
 
-frameIn：基于 `BasicLayout`，通常需要登录或权限认证的路由。
+## 基本路由
 
-frameOut：不继承任何 layout 的页面，如登录页或开发其他独立页面。
+自动将你的 pages 目录中的文件映射到具有相同名称的路由：
 
-errorPage：暂只提供 404 页面。
+- `src/pages/users.vue` -> `/users`
+- `src/pages/users/profile.vue` -> `/users/profile`
+- `src/pages/settings.vue` -> `/settings`
+
+## 索引路由
+
+文件名称为 index 被视为路由的索引页：
+
+- `src/pages/index.vue` -> `/`
+- `src/pages/users/index.vue` -> `/users`
+
+## 动态路由
+
+动态路由使用方括号表示，目录和页面都可以是动态的：
+
+- `src/pages/users/[id].vue` -> `/users/:id( /users/one)`
+- `src/pages/[user]/settings.vue` -> `/:user/settings( /one/settings)`
+
+任何动态参数都将传递给页面。例如，给定文件src/pages/users/[id].vue，路由/users/abc将传递以下参数：
+
+```js
+{ id：'abc'  }
+```
+
+## 嵌套路由
+
+我们可以利用 Vue Routers 子路由来创建嵌套布局，父组件可以通过赋予它与包含您的子路由的目录相同的名称来定义。
+
+比如这个目录结构：
+
+```
+src/pages/
+  ├── users/
+  │  ├── [id].vue
+  │  └── index.vue
+  └── users.vue
+```
+
+将转化为此路由配置：
+
+```js
+[
+  {
+    path: '/users',
+    component: '/src/pages/users.vue',
+    children: [
+      {
+        path: '',
+        component: '/src/pages/users/index.vue',
+        name: 'users'
+      },
+      {
+        path: ':id',
+        component: '/src/pages/users/[id].vue',
+        name: 'users-id'
+      }
+    ]
+  }
+]
+```
+
+## 自定义数据
+
+`<route>` 通过将块添加到 SFC 将路由元添加到路由。这将在生成后直接添加到路由中，并将覆盖它。
+
+JSON/JSON5：
+
+```vue
+<route>
+{
+  name: "name-override",
+  meta: {
+    requiresAuth: false
+  }
+}
+</route>
+```
+
+YAML:
+
+```vue
+<route lang="yaml">
+name: name-override
+meta:
+  requiresAuth: true
+</route>
+```
 
 ## Meta 配置
 

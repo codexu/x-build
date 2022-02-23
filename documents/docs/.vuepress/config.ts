@@ -61,7 +61,7 @@ export default defineUserConfig<DefaultThemeOptions>({
           },
         ]
       },
-      { text: '包管理', link: '/packages/README.md' },
+      { text: '包管理（试验性）', link: '/packages/README.md' },
       {
         text: '相关说明',
         children: [
