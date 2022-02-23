@@ -7,8 +7,8 @@ const countdown = ref(3);
 const countdownInterval = setInterval(() => {
   countdown.value -= 1;
   if (countdown.value === 0) {
-    clearInterval(countdownInterval);
     router.push('/');
+    clearInterval(countdownInterval);
   }
 }, 1000);
 </script>

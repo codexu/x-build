@@ -16,6 +16,8 @@ import {
 import viteCompression from 'vite-plugin-compression';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import AutoImport from 'unplugin-auto-import/vite';
+import Pages from 'vite-plugin-pages';
+import Layouts from 'vite-plugin-vue-layouts';
 
 import { resolve } from 'path';
 
@@ -43,6 +45,8 @@ export default ({ mode }) => {
         ],
       }),
       vueSetupExtend(),
+      Pages(),
+      Layouts({ defaultLayout: 'default/index' }),
     ],
     resolve: {
       alias: {

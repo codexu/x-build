@@ -2,5 +2,5 @@
   <header></header>
 </template>
 
-<script lang="ts" setup name="BasicHeader">
+<script lang="ts" setup name="DefaultHeader">
 </script>
