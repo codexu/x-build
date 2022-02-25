@@ -35,32 +35,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         text: '指南',
         link: '/README.md',
       },
-      { 
-        text: '参考',
-        children: [
-          { 
-            text: '全局组件',
-            children: [
-              { text: '静态资源', link: '/reference/components/staticFile.md'},
-              { text: 'SVG 图标', link: '/reference/components/svgIcon.md'}
-            ]
-          },
-          { 
-            text: '全局状态管理',
-            children: [
-              { text: '用户登录', link: '/reference/store/user.md'},
-            ]
-          },
-          { 
-            text: 'Hooks',
-            children: [
-              { text: 'useDevice', link: '/reference/hooks/useDevice.md'},
-              { text: 'useClipboard', link: '/reference/hooks/useClipboard.md'},
-              { text: 'useFullscreen', link: '/reference/hooks/useFullscreen.md'},
-            ]
-          },
-        ]
-      },
       { text: '包管理（试验性）', link: '/packages/README.md' },
       {
         text: '相关说明',
@@ -112,19 +86,12 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: '功能',
           children: [
+            '/guide/core/router.md',
             '/guide/core/hooks.md',
             '/guide/core/emitter.md',
             '/guide/core/pinia.md',
             '/guide/core/request.md',
             '/guide/core/env.md',
-          ]
-        },
-        {
-          text: '路由',
-          children: [
-            '/guide/router/router.md',
-            '/guide/router/keep-alive.md',
-            '/guide/router/permissions.md',
           ]
         },
         {

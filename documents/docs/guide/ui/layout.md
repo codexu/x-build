@@ -4,24 +4,11 @@
 
 布局组件存放在 `/layouts` 文件夹中。
 
-## BasicLayout
+## default
 
 基础页面布局，包含了头部和底部，当然里面什么也没做，需要你自由发挥。
 
-我们把具备同样功能的页面写在了 frameIn 中，它处于路由的 `/` 根路径下，所有的子页面都处于 BasicLayout 之内。
-
-```typescript {7}
-import BasicLayout from '@/layouts/BasicLayout/index.vue';
-
-// 主框架内显示的路由
-export const frameIn: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    component: BasicLayout,
-    children: [...],
-  },
-];
-```
+我们把具备同样功能的页面写在了 frameIn 中，它处于路由的 `/` 根路径下，所有的子页面都处于 default 之内。
 
 ## BlankLayout
 

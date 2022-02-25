@@ -71,7 +71,7 @@ src/pages/
 ]
 ```
 
-## 自定义数据
+## 自定义参数
 
 `<route>` 通过将块添加到 SFC 将路由元添加到路由。这将在生成后直接添加到路由中，并将覆盖它。
 
@@ -98,7 +98,7 @@ meta:
 </route>
 ```
 
-## Meta 配置
+## 内置 Meta 配置
 
 vue-router 配置时，需要匹配 `<RouteRecordRaw>` 类型，我们唯一可以自定义的类型就是 `meta`，在路由配置中，集成了**权限验证**、**页面标题**、**页面缓存**：
 
@@ -112,3 +112,41 @@ vue-router 配置时，需要匹配 `<RouteRecordRaw>` 类型，我们唯一可�
 ::: tip 提示
 permissions 每一个 key 对应权限功能的验证，当 key 的值为 true 时，代表具有权限，若 key 为 false，若配合 `v-permission` 指令，可以隐藏相应的 DOM。
 :::
+
+### 页面缓存
+
+keepalive是Vue的内置组件，作用是将组件缓存在内存当中，防止重复渲染DOM，属于消耗内存获取速度。常用的用法是将组件或者路由缓存。
+
+::: warning 警告
+此配置只在 frameIn 中的路由有效。
+:::
+
+对应页面的 vue 文件配置 meta.keepAlive 属性：
+
+```vue
+<router lang="yaml">
+meta:
+  keepAlive: true
+</router>
+```
+
+### 权限管理
+
+通过获取当前用户的权限去比对路由表，生成当前用户具的权限可访问的路由表，通过 router.addRoutes 动态挂载到 router 上。
+
+- 判断页面是否需要登陆状态，需要则跳转到 `/user/login`。
+- 本地存储中不存在 `token` 则跳转到 `/user/login`。
+- 如果存在 `token`，用户信息不存在，自动调用 vuex `/system/user/getInfo`。
+
+需要登陆后才可以访问的页面配置：
+
+在 路由配置 中，`meta` 属性中定义 `auth` 属性为 `true`。
+
+```vue
+<router lang="yaml">
+meta:
+  auth: true
+</router>
+```
+
+> 路由层面权限的控制代码都在 @/router/permission.ts 中，如果想修改逻辑，直接在适当的判断逻辑中 next() 释放钩子即可。

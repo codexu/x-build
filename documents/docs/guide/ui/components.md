@@ -2,12 +2,39 @@
 
 ## 内置全局组件
 
-内置两个非常实用的全局组件：
+### 静态资源
 
-| 组件              | 说明                         | API                                         |
-| ----------------- | ---------------------------- | ------------------------------------------- |
-| `<static-file />` | 根据**环境变量**动态引入静态资源 | [详情](/reference/components/staticFile.md) |
-| `<svg-icon />`    | 自动加载的 SVG 图标          | [详情](/reference/components/svgIcon.md)    |
+自动补全区分环境的静态资源展示组件。
+
+```vue
+<static-file src="filePath" type="img" />
+```
+
+| 属性     | 说明                                        | 类型    | 默认值  |
+| -------- | ------------------------------------------- | ------- | ------- |
+| src      | 静态资源的路径                              | string  | -       |
+| type     | 文件类型，仅支持 img、video、audio          | 'img', 'video', 'audio' | 'img' |
+| autoplay | 如果是 video 类型，可以控制视频是否自动播放 | boolean | true    |
+
+### SVG 图标
+
+首先将下载的 .svg 图标放入 `@/assets/icons` 文件夹下
+
+然后使用组件
+
+```vue
+<svg-icon name="filename" />
+```
+
+| 属性 | 说明                                     | 类型   | 默认值 |
+| ---- | ---------------------------------------- | ------ | ------ |
+| name | 放置在 `@/assets/icons` 文件夹下的文件名 | string | -      |
+| fill | 颜色填充，使用此项会默认覆盖图标颜色     | string | -      |
+
+#### 样式
+
+- 图标的大小可以通过 width + height 属性改变。
+- 通过改变 font-size 属性改变，宽高 = font-zise * 1.4
 
 ## 组件库
 
