@@ -12,6 +12,9 @@ import {
   <% if (components === 'vant') { -%>
     VantResolver,
   <% } -%>
+  <% if (components === 'naive') { -%>
+    NaiveUiResolver,
+  <% } -%>
 } from 'unplugin-vue-components/resolvers';
 import viteCompression from 'vite-plugin-compression';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
@@ -41,6 +44,9 @@ export default ({ mode }) => {
           <% } -%>
           <% if (components === 'vant') { -%>
             VantResolver(),
+          <% } -%>
+          <% if (components === 'naive') { -%>
+            NaiveUiResolver(),
           <% } -%>
         ],
       }),

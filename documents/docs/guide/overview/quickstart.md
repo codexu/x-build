@@ -70,6 +70,7 @@ x create [name]
 
 - Element Plus
 - Ant Design Vue
+- Naive UI
 - Vant
 
 ### 安装依赖
