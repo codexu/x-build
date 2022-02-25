@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/vue-3.2.6-brightgreen.svg" />
 </a>
 <a href="https://www.npmjs.com/package/x-build" target="blank">
-  <img src="https://img.shields.io/npm/v/x-build/next" />
+  <img src="https://img.shields.io/npm/v/x-build" />
 </a>
 <a href="https://github.com/code-device/x-build/actions" target="blank">
   <img src="https://github.com/code-device/x-build/workflows/GitHub%20Actions/badge.svg" />
