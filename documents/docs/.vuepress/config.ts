@@ -54,7 +54,7 @@ export default defineUserConfig<DefaultThemeOptions>({
           { 
             text: 'Hooks',
             children: [
-              { text: 'useLoading', link: '/reference/hooks/useLoading.md'},
+              { text: 'useDevice', link: '/reference/hooks/useDevice.md'},
               { text: 'useClipboard', link: '/reference/hooks/useClipboard.md'},
               { text: 'useFullscreen', link: '/reference/hooks/useFullscreen.md'},
             ]
@@ -154,7 +154,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: 'Hooks',
           children: [
-            '/reference/hooks/useLoading.md',
+            '/reference/hooks/useDevice.md',
             '/reference/hooks/useClipboard.md',
             '/reference/hooks/useFullscreen.md',
           ]
