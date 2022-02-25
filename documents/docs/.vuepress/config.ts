@@ -82,38 +82,7 @@ export default defineUserConfig<DefaultThemeOptions>({
             '/guide/core/pinia.md',
             '/guide/core/request.md',
             '/guide/core/env.md',
-          ]
-        },
-        {
-          text: '规范',
-          children: [
-            '/guide/standard/es-lint.md',
-            '/guide/standard/style-lint.md',
-            '/guide/standard/commit-lint.md',
-            '/guide/standard/git-hook.md',
-          ]
-        },
-      ],
-      '/reference/': [
-        {
-          text: '全局组件',
-          children: [
-            '/reference/components/staticFile.md',
-            '/reference/components/svgIcon.md',
-          ]
-        },
-        {
-          text: '全局状态管理',
-          children: [
-            '/reference/store/user.md',
-          ]
-        },
-        {
-          text: 'Hooks',
-          children: [
-            '/reference/hooks/useDevice.md',
-            '/reference/hooks/useClipboard.md',
-            '/reference/hooks/useFullscreen.md',
+            '/guide/core/standard.md',
           ]
         },
       ],
