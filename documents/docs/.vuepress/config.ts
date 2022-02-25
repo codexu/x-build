@@ -73,20 +73,10 @@ export default defineUserConfig<DefaultThemeOptions>({
           ]
         },
         {
-          text: 'UI',
-          children: [
-            '/guide/ui/style.md',
-            '/guide/ui/icon.md',
-            '/guide/ui/components.md',
-            // '/guide/ui/theme.md',
-            // '/guide/ui/i18n.md',
-            '/guide/ui/layout.md',
-          ]
-        },
-        {
-          text: '功能',
+          text: '核心',
           children: [
             '/guide/core/router.md',
+            '/guide/core/style.md',
             '/guide/core/hooks.md',
             '/guide/core/emitter.md',
             '/guide/core/pinia.md',
