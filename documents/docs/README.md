@@ -82,8 +82,6 @@ a img{ padding-right: 5px; }
 - Stylelint
 - husky & Commitlint
 
-> 虽然严格的规范让开发过程中产生不快，但坚持一阵你会发现这种功能很棒！
-
 ## 浏览器支持
 
 本地开发：推荐使用 <Badge text="Chrome" vertical="middle" /> 最新版浏览器，不支持 Chrome 80 以下版本。
