@@ -3,11 +3,14 @@ import { components, plugins } from './components';
 import App from './App.vue';
 import store from './stores';
 import router from './router';
+import { useRegisterSW } from 'virtual:pwa-register/vue';
 import '@/router/permission';
 import 'virtual:svg-icons-register';
 
 // css
 import '@/styles/tailwind.css';
+
+useRegisterSW();
 
 const app = createApp(App);
 app.use(store);

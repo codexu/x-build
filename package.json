@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "description": "",
   "main": "bin/x-build.js",
   "bin": {
@@ -8,11 +8,11 @@
     "x": "./bin/x-build.js"
   },
   "scripts": {
-    "test": "rm -rf bin && rm -rf test && tsc --build && sudo npm link && x-build create test && sudo npm uninstall -g x-build",
+    "test": "sudo npm uninstall -g x-build && rm -rf bin && rm -rf test && tsc --build && sudo npm link && x-build create test",
     "test:add": "rm -rf bin && rm -rf test && tsc --build && sudo npm link && x add",
     "dev": "ts-node-dev --respawn --transpile-only src/x-build.ts",
     "build": "rm -rf bin && tsc --build",
-    "push": "rm -rf bin && tsc --build && npm publish"
+    "push": "rm -rf bin && tsc --build && nrm use npm && npm publish"
   },
   "repository": {
     "type": "git",
