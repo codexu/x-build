@@ -35,20 +35,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         text: '指南',
         link: '/README.md',
       },
-      { text: '包管理（试验性）', link: '/packages/README.md' },
-      {
-        text: '相关说明',
-        children: [
-          { 
-            text: '贡献',
-            link: '/contribution/README.md'
-          },
-          { 
-            text: '版本回顾',
-            link: '/contribution/history.md'
-          },
-        ]
-      },
       {
         text: 'v6.x',
         children: [
@@ -86,24 +72,15 @@ export default defineUserConfig<DefaultThemeOptions>({
             '/guide/core/standard.md',
           ]
         },
-      ],
-      '/packages/': [
         {
-          text: '拓展',
+          text: '相关',
           children: [
-            '/packages/',
+            '/guide/depth/plugin.md',
+            '/guide/depth/history.md',
+            '/guide/depth/contribution.md',
           ]
         },
       ],
-      '/contribution/': [
-        {
-          text: '相关说明',
-          children: [
-            '/contribution/',
-            '/contribution/history.md',
-          ]
-        },
-      ]
     },
   },
 })
