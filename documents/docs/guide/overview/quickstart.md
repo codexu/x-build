@@ -2,14 +2,17 @@
 
 本节将介绍如何在全局环境安装 X-BUILD 和通过命令行快速的生成项目。
 
+## 环境搭建
+
+- 需要在本地安装 [Node.js](https://nodejs.org/en/) 和 [Git](https://git-scm.com/)。
+- 推荐使用 [vscode](https://code.visualstudio.com/) 作为代码编辑器，安装以下插件可以更好的体验脚手架：
+  - [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)（Vue3 开发必备）
+  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)（Javascript 代码检查）
+  - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)（CSS 代码检查）
+  - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)（代码格式化）
+  - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)（Tailwind 提示插件）
+
 ## 安装 CLI
-
-### 准备
-
-- 需要在本地安装 [node.js](https://nodejs.org/en/) 和 [git](https://git-scm.com/)。
-- （可选）全局安装 vue-cli@4.5，本项目基于 vue-cli@4.5 构建，理论上支持所有功能。
-
-### 安装
 
 我们推荐使用 npm 的方式进行**全局**安装：
 
@@ -87,7 +90,7 @@ x create [name]
 
 :::
 
-## NPM Script
+## 开发环境
 
 根据安装后的相关提示，输入相关命令以继续：
 
@@ -96,20 +99,6 @@ x create [name]
 
 ```bash:no-line-numbers
 npm run dev
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="预生产环境">
-
-```bash:no-line-numbers
-npm run staging
-```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="正式环境">
-
-```bash:no-line-numbers
-npm run build
 ```
 
   </CodeGroupItem>
@@ -139,13 +128,3 @@ npm run stylelint
 ::: warning 提示
 通常情况下 ESLint 与 Stylelint 没必要单独执行，husky 提供的 git commit 钩子会在你提交代码时对你缓存区里的代码做校验，这会节省你很多的时间。
 :::
-
-## 必备插件
-
-推荐使用 vscode 作为代码编辑器，安装以下插件可以更好的体验脚手架：
-
-- ESLint
-- Prettier - Code formatter
-- stylelint
-- Tailwind CSS IntelliSense
-- Volar

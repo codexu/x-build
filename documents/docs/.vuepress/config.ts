@@ -70,6 +70,7 @@ export default defineUserConfig<DefaultThemeOptions>({
           children: [
             '/',
             '/guide/overview/quickstart.md',
+            '/guide/overview/deploy.md',
           ]
         },
         {
