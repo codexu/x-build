@@ -62,6 +62,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: '核心',
           children: [
+            '/guide/core/speedy.md',
             '/guide/core/router.md',
             '/guide/core/style.md',
             '/guide/core/hooks.md',
