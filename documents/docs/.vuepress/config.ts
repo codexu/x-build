@@ -1,27 +1,22 @@
-import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
+import { defaultTheme, defineUserConfig } from 'vuepress'
+const { nprogressPlugin } = require('@vuepress/plugin-nprogress')
+const { searchPlugin } = require('@vuepress/plugin-search')
+const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 
 const { path } = require('@vuepress/utils')
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   title: 'X-BUILD',
   base: '/x-build/',
   port: 3000,
   plugins: [
-    [
-      '@vuepress/register-components',
-      {
-        componentsDir: path.resolve(__dirname, './components'),
-      },
-    ],
-    [
-      '@vuepress/plugin-nprogress'
-    ],
-    [
-      '@vuepress/plugin-search'
-    ],
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
+    nprogressPlugin(),
+    searchPlugin(),
   ],
-  themeConfig: {
+  theme: defaultTheme({
     repo: 'code-device/x-build',
     docsRepo: 'code-device/x-build',
     docsDir: 'docs',
@@ -83,5 +78,5 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
       ],
     },
-  },
+  }),
 })
