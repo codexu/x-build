@@ -6,6 +6,7 @@ import createQuestions from './questions/packages';
 import options from './options';
 import readJson from './utils/readJson';
 import createSpawnCmd from './utils/createSpawnCmd';
+import { readdir } from "fs/promises";
 
 export default async function (name: string): Promise<void> {
   // CLI package 文件夹路径
@@ -13,6 +14,13 @@ export default async function (name: string): Promise<void> {
   // 获取基础参数
   options.name = name;
   options.dest = process.cwd();
+  const packages = [];
+  const dirs = await readdir(options.src);
+  dirs.forEach(pluginPath => {
+    const src = path.resolve(options.src, pluginPath, 'package.json')
+    packages.push(fs.readJsonSync(src));
+  })
+  options.allPackages = packages;
 
   if (name === undefined) {
     // 执行自定义选项
