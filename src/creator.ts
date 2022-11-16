@@ -40,7 +40,8 @@ export default async function (name: string): Promise<void> {
   // Git 初始化
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
-  await cmdIgnore('git', ['commit -m "Initialize by X-BUILD"'])
+  // await cmdIgnore('git', ['commit', ' -m', '"Initialize by X-BUILD"'])
+
   console.log(`> 成功初始化 Git 仓库`);
 
   // 依赖安装

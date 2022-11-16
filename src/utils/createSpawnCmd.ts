@@ -8,7 +8,7 @@ function createSpawnCmd(dest: string, stdio: StdioOptions = 'inherit') {
       shell: true
     });
     return new Promise((resolve, reject) => {
-      ls.on('close', (code) => { code === 0 ? resolve(true) : reject(false) });
+      ls.on('close', (code) => { code === 0 ? resolve(true) : reject(new Error()) });
     })
   };
 }

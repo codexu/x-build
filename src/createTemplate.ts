@@ -9,7 +9,7 @@ export async function ejsRender (filePath: string): Promise<void> {
   const readFilePath = path.resolve(options.dest, file.dir, `${file.name}.ejs`);
   const outputFilePath = path.resolve(options.dest, filePath);
 
-  const templateCode = await fs.readFile(readFilePath);
+  const templateCode = fs.readFileSync(readFilePath);
 
   const code = ejs.render(templateCode.toString(), options);
   const extname = path.extname(filePath).replace(/[.]/g, '');
