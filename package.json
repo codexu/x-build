@@ -9,10 +9,10 @@
   },
   "scripts": {
     "test": "npm uninstall -g x-build && rimraf bin && rimraf test && tsc --build && npm link && x-build create test",
-    "test:add": "rm -rf bin && rm -rf test && tsc --build && sudo npm link && x add",
+    "test:add": "rimraf bin && rimraf test && tsc --build && sudo npm link && x add",
     "dev": "ts-node-dev --respawn --transpile-only src/x-build.ts",
-    "build": "rm -rf bin && tsc --build",
-    "push": "rm -rf bin && tsc --build && nrm use npm && npm publish"
+    "build": "rimraf bin && tsc --build",
+    "push": "rimraf bin && tsc --build && nrm use npm && npm publish"
   },
   "repository": {
     "type": "git",
