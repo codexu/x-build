@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "6.2.4",
+  "version": "6.2.5",
   "description": "",
   "main": "bin/x-build.js",
   "bin": {
@@ -11,8 +11,7 @@
     "test": "npm uninstall -g x-build && rimraf bin && rimraf test && tsc --build && npm link && x-build create test",
     "test:add": "rimraf bin && rimraf test && tsc --build && sudo npm link && x add",
     "dev": "ts-node-dev --respawn --transpile-only src/x-build.ts",
-    "build": "rimraf bin && tsc --build",
-    "push": "rimraf bin && tsc --build && nrm use npm && npm publish"
+    "build": "tsc --build"
   },
   "repository": {
     "type": "git",
