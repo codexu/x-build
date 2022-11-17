@@ -1,6 +1,6 @@
 {
   "name": "x-build",
-  "version": "6.2.3",
+  "version": "6.2.4",
   "description": "",
   "main": "bin/x-build.js",
   "bin": {
