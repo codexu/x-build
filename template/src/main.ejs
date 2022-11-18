@@ -1,9 +1,10 @@
 import { createApp } from 'vue';
+import { useRegisterSW } from 'virtual:pwa-register/vue';
 import { components, plugins } from './components';
 import App from './App.vue';
 import store from './stores';
 import router from './router';
-import { useRegisterSW } from 'virtual:pwa-register/vue';
+import i18n from './locales';
 import '@/router/permission';
 import 'virtual:svg-icons-register';
 
@@ -15,6 +16,7 @@ useRegisterSW();
 const app = createApp(App);
 app.use(store);
 app.use(router);
+app.use(i18n);
 app.mount('#app');
 
 // 加载全局组件
